@@ -1,0 +1,33 @@
+{
+  "name": "@subuta/snippets",
+  "version": "0.1.0",
+  "description": "my javascript re-usable snippets used along with https://github.com/subuta/matryoshka.js :)",
+  "scripts": {
+    "publish": "npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subuta/snippets.js.git"
+  },
+  "author": "subuta <shunta.3110@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subuta/snippets.js/issues"
+  },
+  "homepage": "https://github.com/subuta/snippets.js#readme",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.24.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-module-resolver": "^2.7.1",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0"
+  },
+  "dependencies": {
+    "bld.js": "^0.1.3",
+    "lodash": "^4.17.4",
+    "pluralize": "^7.0.0"
+  }
+}
