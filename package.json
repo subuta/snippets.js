@@ -1,10 +1,8 @@
 {
   "name": "@subuta/snippets",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "my javascript re-usable snippets used along with https://github.com/subuta/matryoshka.js :)",
-  "scripts": {
-    "publish": "npm publish --access public"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/subuta/snippets.js.git"

@@ -3,3 +3,6 @@ my javascript re-usable snippets used along with https://github.com/subuta/matry
 
 ### How to use
 Install(`npm i`) or Link(`npm link`) `@subuta/snippets` to projects.
+
+### To publish package
+`npm publish --access public`
