@@ -19,6 +19,7 @@
     [
       "module-resolver",
       {
+        "cwd": "babelrc",
         "root": [
           "./"
         ]
