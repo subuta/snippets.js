@@ -12,13 +12,23 @@ test.afterEach((t) => {
 
 // https://github.com/erikras/ducks-modular-redux
 test('should create Ducks based module', async (t) => {
-  const code = Module({
+  const RouteConfig = {
+    except: [
+      'update',
+      'show'
+    ],
+    eager: '[attachment, commentedBy]'
+  }
+
+  const ModelConfig = {
     tableName: 'books',
     relations: {
       users: {},
       shops: {}
     }
-  })
+  }
+
+  const code = Module(RouteConfig, ModelConfig)
 
   const expected = build`
     import _ from 'lodash'
@@ -47,6 +57,35 @@ test('should create Ducks based module', async (t) => {
       }
     }
     
+    export const requestBooks = () => {
+      return (dispatch) => {
+        dispatch({type: REQUEST_BOOKS})
+        return api.books.index().then((data) => {
+          dispatch(setBooks(data))
+          return data
+        })
+      }
+    }
+    
+    export const createBook = (params) => {
+      return (dispatch) => {
+        dispatch({type: REQUEST_BOOKS})
+        return api.books.create(params).then((data) => {
+          dispatch(setBooks(data))
+          return data
+        })
+      }
+    }
+    
+    export const deleteBook = (id) => {
+      return (dispatch) => {
+        dispatch({type: REQUEST_BOOKS})
+        return api.books.destroy(id).then(() => {
+          dispatch(setBooks({}))
+        })
+      }
+    }
+
     // -------------
     // Reducers
     // -------------
