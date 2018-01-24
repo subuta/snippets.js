@@ -4,7 +4,8 @@ const babel = require('babel-core')
 module.exports = function (wallaby) {
   return {
     files: [
-      'lib/**/*.js'
+      'lib/**/*.js',
+      'test/fixtures/**/*.js',
     ],
 
     tests: [

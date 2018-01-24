@@ -3,6 +3,8 @@ import { build, format, snippets as s } from 'bld.js'
 
 import Routes from 'lib/koa/api'
 
+import { Routes as RoutesConfig } from 'test/fixtures/config'
+
 test.beforeEach(async (t) => {
 
 })
@@ -11,7 +13,7 @@ test.afterEach((t) => {
 })
 
 test('should create koa Base', async (t) => {
-  const code = Routes()
+  const code = Routes(RoutesConfig)
 
   const expected = build`
     import Router from 'koa-router'
