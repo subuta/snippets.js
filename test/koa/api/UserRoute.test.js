@@ -12,7 +12,7 @@ test.afterEach((t) => {
 
 test('should create koa UserRoute', async (t) => {
   const code = UserRoute({
-    model: 'User',
+    model: 'user',
     config: {}
   })
 
@@ -20,28 +20,28 @@ test('should create koa UserRoute', async (t) => {
     import Router from 'koa-router'
     import _ from 'lodash'
     
-    const Users = new Router()
+    const user = new Router()
     
-    Users.get('/me', async (ctx) => {
+    user.get('/me', async (ctx) => {
       const {User} = ctx.state.models
       ctx.body = await ctx.state.getCurrentUser()
     })
     
-    Users.put('/me', async (ctx) => {
+    user.put('/me', async (ctx) => {
       const {User} = ctx.state.models
-      const {User} = ctx.request.body
+      const {user} = ctx.request.body
       const {sub} = ctx.state.user
     
       // findOrCreate specified user.
       // update id with current user in params if specified
-      const params = {...User, auth0Id: sub}
+      const params = {...user, auth0Id: sub}
       ctx.body = await User.query()
         .eager('')
         .findOrCreate({where: {auth0Id: sub}, defaults: params})
     })
     
     export default {
-      routes: () => _.cloneDeep(Users.routes()),
+      routes: () => _.cloneDeep(user.routes()),
       register: (routers) => {
         /* mat Register [start] */
         /* mat Register [end] */

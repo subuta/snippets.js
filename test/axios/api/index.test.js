@@ -16,16 +16,16 @@ test('should create axios Api index.', async (t) => {
   const code = ApiIndex(RoutesConfig)
 
   const expected = build`
-    import channels from "./channels"
-    import comments from "./comments"
-    import attachments from "./attachments"
-    import users from "./users"
+    import channel from "./channel"
+    import comment from "./comment"
+    import attachment from "./attachment"
+    import user from "./user"
         
     export default {
-      channels,
-      comments,
-      attachments,
-      users
+      channel,
+      comment,
+      attachment,
+      user
     }
   `
 

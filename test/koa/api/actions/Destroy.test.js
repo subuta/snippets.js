@@ -1,7 +1,7 @@
 import test from 'ava'
 import { build, format, snippets as s } from 'bld.js'
 
-import DeleteAction from 'lib/koa/api/actions/Delete'
+import DestroyAction from 'lib/koa/api/actions/Destroy'
 
 test.beforeEach(async (t) => {
 
@@ -11,13 +11,13 @@ test.afterEach((t) => {
 })
 
 test('should create koa Base', async (t) => {
-  const code = DeleteAction({
-    model: 'User',
+  const code = DestroyAction({
+    model: 'user',
     config: {}
   })
 
   const expected = build`
-    Users.delete('/:id', async (ctx) => {
+    user.delete('/:id', async (ctx) => {
       const {User} = ctx.state.models
       await User.query()
         .delete()

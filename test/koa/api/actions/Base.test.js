@@ -12,14 +12,14 @@ test.afterEach((t) => {
 
 test('should create koa Base', async (t) => {
   const code = Base({
-    model: 'User',
+    model: 'user',
     config: {},
     path: '/',
     method: 'post'
   })
 
   const expected = build`
-    Users.post('/', async (ctx) => {
+    user.post('/', async (ctx) => {
       const {User} = ctx.state.models
     })
   `

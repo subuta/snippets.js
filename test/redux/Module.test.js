@@ -21,10 +21,12 @@ test('should create Ducks based module', async (t) => {
   }
 
   const ModelConfig = {
-    tableName: 'books',
-    relations: {
-      users: {},
-      shops: {}
+    schema: {
+      tableName: 'books',
+      relations: {
+        users: {},
+        shops: {}
+      }
     }
   }
 
@@ -37,8 +39,8 @@ test('should create Ducks based module', async (t) => {
     import { denormalize } from 'src/utils/schema'
     import api from 'src/utils/api'
     
-    import {SET_USERS} from './users'
-    import {SET_SHOPS} from './shops'
+    import {SET_USERS} from './user'
+    import {SET_SHOPS} from './shop'
     
     // -------------
     // Constants
@@ -60,7 +62,7 @@ test('should create Ducks based module', async (t) => {
     export const requestBooks = () => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.index().then((data) => {
+        return api.book.index().then((data) => {
           dispatch(setBooks(data))
           return data
         })
@@ -70,7 +72,7 @@ test('should create Ducks based module', async (t) => {
     export const createBook = (params) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.create(params).then((data) => {
+        return api.book.create(params).then((data) => {
           dispatch(setBooks(data))
           return data
         })
@@ -80,7 +82,7 @@ test('should create Ducks based module', async (t) => {
     export const deleteBook = (id) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.destroy(id).then(() => {
+        return api.book.destroy(id).then(() => {
           dispatch(setBooks({}))
         })
       }
@@ -125,15 +127,15 @@ test('should create Ducks based module', async (t) => {
     export default combineReducers({
       entities,
       ids,
-      requestProgress
+      isRequestProgress
     })
     
     // -------------
     // Selectors
     // -------------
-    export const getEntities = state.book.entities
-    export const getIds = state.book.ids
-    export const getRequestProgress = state.book.requestProgress
+    export const getEntities = (state) => state.book.entities
+    export const getIds = (state) => state.book.ids
+    export const getIsRequestProgress = (state) => state.book.isRequestProgress
     export const getAll = createSelector(
       getEntities,
       getIds,

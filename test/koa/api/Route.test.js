@@ -12,7 +12,7 @@ test.afterEach((t) => {
 
 test('should create koa Base', async (t) => {
   const code = Route({
-    model: 'User',
+    model: 'user',
     config: {}
   })
 
@@ -20,9 +20,9 @@ test('should create koa Base', async (t) => {
     import Router from 'koa-router'
     import _ from 'lodash'
     
-    const Users = new Router()
+    const user = new Router()
     
-    Users.get('/', async (ctx) => {
+    user.get('/', async (ctx) => {
       const {User} = ctx.state.models
       let params = {}
     
@@ -34,7 +34,7 @@ test('should create koa Base', async (t) => {
         .where(params)
     })
     
-    Users.get('/:id', async (ctx) => {
+    user.get('/:id', async (ctx) => {
       const {User} = ctx.state.models
       let params = {}
     
@@ -46,9 +46,9 @@ test('should create koa Base', async (t) => {
         .findFirst({...params, id: ctx.params.id})
     })
     
-    Users.post('/', async (ctx) => {
+    user.post('/', async (ctx) => {
       const {User} = ctx.state.models
-      const {User} = ctx.request.body
+      const {user} = ctx.request.body
     
       let params = {}
     
@@ -57,7 +57,7 @@ test('should create koa Base', async (t) => {
     
       let response = await User.query()
         .insert({
-          ...User,
+          ...user,
           ...params
         })
         .eager('')
@@ -68,12 +68,12 @@ test('should create koa Base', async (t) => {
       ctx.body = response
     })
     
-    Users.put('/:id', async (ctx) => {
+    user.put('/:id', async (ctx) => {
       const {User} = ctx.state.models
-      const {User} = ctx.request.body
+      const {user} = ctx.request.body
       const {sub} = ctx.state.user
     
-      // update specified User.
+      // update specified user.
       const params = {}
     
       /* mat Before update [start] */
@@ -81,14 +81,14 @@ test('should create koa Base', async (t) => {
     
       ctx.body = await User.query()
         .update({
-          ...User,
+          ...user,
           ...params
         })
         .where({id: ctx.params.id})
         .eager('')
     })
     
-    Users.delete('/:id', async (ctx) => {
+    user.delete('/:id', async (ctx) => {
       const {User} = ctx.state.models
       await User.query()
         .delete()
@@ -97,12 +97,13 @@ test('should create koa Base', async (t) => {
     })
     
     export default {
-      routes: () => _.cloneDeep(Users.routes()),
+      routes: () => _.cloneDeep(user.routes()),
       register: (routers) => {
         /* mat Register [start] */
         /* mat Register [end] */
       }
     }
+
   `
 
   t.is(format(code), format(expected))

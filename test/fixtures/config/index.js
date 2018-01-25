@@ -8,7 +8,7 @@ export const Routes = {
   channel: {
     except: [
       'update',
-      'delete'
+      'destroy'
     ],
     eager: '[comments.[attachment, commentedBy]]'
   },

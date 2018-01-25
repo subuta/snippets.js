@@ -12,7 +12,9 @@ test.afterEach((t) => {
 
 test('should create redux entities Reducer', async (t) => {
   const code = Reducer.entities({
-    tableName: 'books'
+    schema: {
+      tableName: 'books'
+    }
   })
 
   const expected = build`
@@ -29,10 +31,12 @@ test('should create redux entities Reducer', async (t) => {
 
 test('should create redux entities Reducer with relations', async (t) => {
   const code = Reducer.entities({
-    tableName: 'books',
-    relations: {
-      users: {},
-      shops: {}
+    schema: {
+      tableName: 'books',
+      relations: {
+        users: {},
+        shops: {}
+      }
     }
   })
 
@@ -54,7 +58,9 @@ test('should create redux entities Reducer with relations', async (t) => {
 
 test('should create redux ids Reducer', async (t) => {
   const code = Reducer.ids({
-    tableName: 'books'
+    schema: {
+      tableName: 'books'
+    }
   })
 
   const expected = build`
@@ -73,8 +79,10 @@ test('should create redux ids Reducer', async (t) => {
 })
 
 test('should create redux requestProgress Reducer', async (t) => {
-  const code = Reducer.requestProgress({
-    tableName: 'books'
+  const code = Reducer.isRequestProgress({
+    schema: {
+      tableName: 'books'
+    }
   })
 
   const expected = build`

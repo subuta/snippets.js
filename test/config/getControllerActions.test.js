@@ -16,7 +16,7 @@ test('should return all Actions by default', async (t) => {
     'show',
     'create',
     'update',
-    'delete'
+    'destroy'
   ])
 })
 
@@ -29,6 +29,6 @@ test('should return valid Actions with except', async (t) => {
     'show',
     'create',
     'update',
-    'delete'
+    'destroy'
   ])
 })

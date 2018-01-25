@@ -18,14 +18,15 @@ test('should create koa Base', async (t) => {
   const expected = build`
     import Router from 'koa-router'
     import _ from 'lodash'
+    import pluralize from 'pluralize'
     import koaBody from 'koa-body'
     import auth, {getCurrentUser} from './middlewares/auth'
     import models from './middlewares/models'
-    import Channels from './Channels'
-    import Comments from './Comments'
-    import Users from './Users'
-    import Attachments from './Attachments'
-    
+    import channel from './channel'
+    import comment from './comment'
+    import attachment from './attachment'
+    import user from './user'
+
     const api = new Router({
       prefix: '/api'
     })
@@ -34,7 +35,7 @@ test('should create koa Base', async (t) => {
     const registerRouters = (routers) => {
       _.each(routers, (router, name) => {
         router.register && router.register(routers)
-        api.use(\`/\${_.snakeCase(name)}\`, router.routes())
+        api.use(\`/\${_.snakeCase(pluralize(name))}\`, router.routes())
       })
     }
     
@@ -57,10 +58,10 @@ test('should create koa Base', async (t) => {
     
     // routers set after auth middleware will be protected
     registerRouters({
-      Channels,
-      Comments,
-      Attachments,
-      Users
+      channel,
+      comment,
+      attachment,
+      user
     })
     
     export default api

@@ -43,12 +43,19 @@ test('should create axios Route', async (t) => {
         .then((data) => normalize(data, channel))
     }
     
-    export default {
+    /* mat Custom action [start] */
+    /* mat Custom action [end] */
+    
+    let actions = {
       index,
       show,
       create
     }
-
+    
+    /* mat Custom exports [start] */
+    /* mat Custom exports [end] */
+    
+    export default actions
   `
 
   t.is(format(code), format(expected))

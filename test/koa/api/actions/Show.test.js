@@ -12,12 +12,12 @@ test.afterEach((t) => {
 
 test('should create koa Base', async (t) => {
   const code = ShowAction({
-    model: 'User',
+    model: 'user',
     config: {}
   })
 
   const expected = build`
-    Users.get('/:id', async (ctx) => {
+    user.get('/:id', async (ctx) => {
       const {User} = ctx.state.models
       let params = {}
     

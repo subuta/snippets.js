@@ -12,17 +12,17 @@ test.afterEach((t) => {
 
 test('should create koa Base', async (t) => {
   const code = UpdateAction({
-    model: 'User',
+    model: 'user',
     config: {}
   })
 
   const expected = build`
-    Users.put('/:id', async (ctx) => {
+    user.put('/:id', async (ctx) => {
       const {User} = ctx.state.models
-      const {User} = ctx.request.body
+      const {user} = ctx.request.body
       const {sub} = ctx.state.user
       
-      // update specified User.
+      // update specified user.
       const params = {}
       
       /* mat Before update [start] */
@@ -30,7 +30,7 @@ test('should create koa Base', async (t) => {
       
       ctx.body = await User.query()
         .update({
-          ...User,
+          ...user,
           ...params
         })
         .where({id: ctx.params.id})

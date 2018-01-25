@@ -12,11 +12,11 @@ test.afterEach((t) => {
 
 test('should create redux entities Selector', async (t) => {
   const code = build`
-    export ${Selector.entities({tableName: 'books'})}
+    export ${Selector.entities({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
-    export const getEntities = state.book.entities
+    export const getEntities = (state) => state.book.entities
   `
 
   t.is(format(code), format(expected))
@@ -24,11 +24,11 @@ test('should create redux entities Selector', async (t) => {
 
 test('should create redux ids Selector', async (t) => {
   const code = build`
-    export ${Selector.ids({tableName: 'books'})}
+    export ${Selector.ids({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
-    export const getIds = state.book.ids
+    export const getIds = (state) => state.book.ids
   `
 
   t.is(format(code), format(expected))
@@ -36,11 +36,11 @@ test('should create redux ids Selector', async (t) => {
 
 test('should create redux requestProgress Selector', async (t) => {
   const code = build`
-    export ${Selector.requestProgress({tableName: 'books'})}
+    export ${Selector.isRequestProgress({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
-    export const getRequestProgress = state.book.requestProgress
+    export const getIsRequestProgress = (state) => state.book.isRequestProgress
   `
 
   t.is(format(code), format(expected))
@@ -48,7 +48,7 @@ test('should create redux requestProgress Selector', async (t) => {
 
 test('should create redux getAll Selector', async (t) => {
   const code = build`
-    export ${Selector.getAll({tableName: 'books'})}
+    export ${Selector.getAll({schema: {tableName: 'books'}})}
   `
 
   const expected = build`

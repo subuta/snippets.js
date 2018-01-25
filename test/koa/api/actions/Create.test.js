@@ -12,14 +12,14 @@ test.afterEach((t) => {
 
 test('should create koa Base', async (t) => {
   const code = CreateAction({
-    model: 'User',
+    model: 'user',
     config: {}
   })
 
   const expected = build`
-    Users.post('/', async (ctx) => {
+    user.post('/', async (ctx) => {
       const {User} = ctx.state.models
-      const {User} = ctx.request.body
+      const {user} = ctx.request.body
     
       let params = {}
     
@@ -28,7 +28,7 @@ test('should create koa Base', async (t) => {
     
       let response = await User.query()
         .insert({
-          ...User,
+          ...user,
           ...params
         })
         .eager('')

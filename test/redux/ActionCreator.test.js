@@ -12,7 +12,7 @@ test.afterEach((t) => {
 
 test('should create redux ActionCreator for setter', async (t) => {
   const code = build`
-    ${ActionCreator.set({ tableName: 'books' })}
+    ${ActionCreator.set({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
@@ -30,14 +30,14 @@ test('should create redux ActionCreator for setter', async (t) => {
 
 test('should create redux ActionCreator for create Action', async (t) => {
   const code = build`
-    ${ActionCreator.create({ tableName: 'books' })}
+    ${ActionCreator.create({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
     const createBook = (params) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.create(params).then((data) => {
+        return api.book.create(params).then((data) => {
           dispatch(setBooks(data))
           return data
         })
@@ -51,14 +51,14 @@ test('should create redux ActionCreator for create Action', async (t) => {
 
 test('should create redux ActionCreator for show Action', async (t) => {
   const code = build`
-    ${ActionCreator.show({ tableName: 'books' })}
+    ${ActionCreator.show({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
     const requestBook = (id) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.show(id).then((data) => {
+        return api.book.show(id).then((data) => {
           dispatch(setBooks(data))
           return data
         })
@@ -72,14 +72,14 @@ test('should create redux ActionCreator for show Action', async (t) => {
 
 test('should create redux ActionCreator for all(index) Action', async (t) => {
   const code = build`
-    ${ActionCreator.all({ tableName: 'books' })}
+    ${ActionCreator.all({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
     const requestBooks = () => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.index().then((data) => {
+        return api.book.index().then((data) => {
           dispatch(setBooks(data))
           return data
         })
@@ -93,14 +93,14 @@ test('should create redux ActionCreator for all(index) Action', async (t) => {
 
 test('should create redux ActionCreator for update Action', async (t) => {
   const code = build`
-    ${ActionCreator.update({ tableName: 'books' })}
+    ${ActionCreator.update({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
     const updateBook = (params, id) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.update(params, id).then((data) => {
+        return api.book.update(params, id).then((data) => {
           dispatch(setBooks(data))
           return data
         })
@@ -114,14 +114,14 @@ test('should create redux ActionCreator for update Action', async (t) => {
 
 test('should create redux ActionCreator for destroy Action', async (t) => {
   const code = build`
-    ${ActionCreator.destroy({ tableName: 'books' })}
+    ${ActionCreator.destroy({schema: {tableName: 'books'}})}
   `
 
   const expected = build`
     const deleteBook = (id) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
-        return api.books.destroy(id).then(() => {
+        return api.book.destroy(id).then(() => {
           dispatch(setBooks({}))
         })
       }

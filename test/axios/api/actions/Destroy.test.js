@@ -1,7 +1,7 @@
 import test from 'ava'
 import { build, format, snippets as s } from 'bld.js'
 
-import DeleteAction from 'lib/axios/api/actions/Delete'
+import DestroyAction from 'lib/axios/api/actions/Destroy'
 
 import {
   Models as ModelsConfig
@@ -15,7 +15,7 @@ test.afterEach((t) => {
 })
 
 test('should create axios Api delete action.', async (t) => {
-  const code = DeleteAction(ModelsConfig['channel'])
+  const code = DestroyAction(ModelsConfig['channel'])
 
   const expected = build`
     export const destroy = (id) => {
