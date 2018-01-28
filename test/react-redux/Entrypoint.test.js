@@ -19,13 +19,10 @@ test('should create react-redux Entrypoint', async (t) => {
     import {Provider} from 'react-redux'
     import store from './store'
     import Routes from './components/Routes'
-    import {wrap} from 'src/utils/style'
-    import './style'
+    import withStyles from './style'
     import {compose} from 'recompose'
     
-    const enhance = compose(
-      wrap // inject style
-    )
+    const enhance = compose(withStyles)
     
     let App = enhance(() => {
       return (
@@ -52,6 +49,7 @@ test('should create react-redux Entrypoint', async (t) => {
     if (module.hot) {
       module.hot.accept()
     }
+
 
   `
 

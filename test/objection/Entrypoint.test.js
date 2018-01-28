@@ -10,7 +10,7 @@ test.beforeEach(async (t) => {
 test.afterEach((t) => {
 })
 
-test('should create objection Child', async (t) => {
+test('should create objection Entrypoint', async (t) => {
   const code = Entrypoint({modelDir: 'src/model'})
 
   const expected = build`

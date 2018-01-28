@@ -15,7 +15,7 @@ test('should create react Routes', async (t) => {
 
   const expected = build`
     import React from 'react'
-    import lodash from '_'
+    import _ from 'lodash'
     import {ConnectedRouter} from 'react-router-redux'
     import history from 'src/utils/history'
     
