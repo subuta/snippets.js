@@ -26,7 +26,6 @@ test('should create axios Api index action with channel.', async (t) => {
         .put(\`/channels/\${id}\`, {
           channel: params
         })
-        .then((data) => normalize(data, channel))
     }
   `
 
@@ -45,7 +44,6 @@ test('should create axios Api index action with comment.', async (t) => {
         .put(\`/channels/\$\{params.channelId\}/comments/\$\{id\}\`, {
           comment: params
         })
-        .then((data) => normalize(data, comment))
     }
   `
 

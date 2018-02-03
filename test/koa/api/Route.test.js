@@ -98,6 +98,9 @@ test('should create koa Base', async (t) => {
       ctx.body = null
     })
     
+    /* mat Custom actions [start] */
+    /* mat Custom actions [end] */
+    
     export default {
       routes: () => _.cloneDeep(user.routes()),
       register: (routers) => {
@@ -200,6 +203,9 @@ test('should create koa Base with custom prefix', async (t) => {
         .where({id: ctx.params.id})
       ctx.body = null
     })
+    
+    /* mat Custom actions [start] */
+    /* mat Custom actions [end] */
     
     export default {
       routes: () => _.cloneDeep(user.routes()),

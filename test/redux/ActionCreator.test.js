@@ -38,7 +38,9 @@ test('should create redux ActionCreator for create Action', async (t) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
         return api.book.create(params).then((data) => {
-          dispatch(setBooks(data))
+          /* mat Create data transform [start] */
+          /* mat Create data transform [end] */
+          dispatch(setBooks(normalize(data, book)))
           return data
         })
       }
@@ -59,7 +61,9 @@ test('should create redux ActionCreator for show Action', async (t) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
         return api.book.show(id).then((data) => {
-          dispatch(setBooks(data))
+          /* mat Show data transform [start] */
+          /* mat Show data transform [end] */
+          dispatch(setBooks(normalize(data, book)))
           return data
         })
       }
@@ -80,7 +84,9 @@ test('should create redux ActionCreator for all(index) Action', async (t) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
         return api.book.index().then((data) => {
-          dispatch(setBooks(data))
+          /* mat Index data transform [start] */
+          /* mat Index data transform [end] */
+          dispatch(setBooks(normalize(data, bookList)))
           return data
         })
       }
@@ -101,7 +107,9 @@ test('should create redux ActionCreator for update Action', async (t) => {
       return (dispatch) => {
         dispatch({type: REQUEST_BOOKS})
         return api.book.update(params, id).then((data) => {
-          dispatch(setBooks(data))
+          /* mat Update data transform [start] */
+          /* mat Update data transform [end] */
+          dispatch(setBooks(normalize(data, book)))
           return data
         })
       }

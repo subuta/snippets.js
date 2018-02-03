@@ -28,17 +28,17 @@ test('should create axios Route with channel', async (t) => {
     import {channel, channelList} from 'src/utils/schema'
     
     export const index = () => {
-      return request.get(\`/channels\`).then((data) => normalize(data, channelList))
+      return request.get(\`/channels\`)
     }
     
     export const show = (id) => {
-      return request.get(\`/channels/\${id}\`).then((data) => normalize(data, channel))
+      return request.get(\`/channels/\${id}\`)
     }
     
     export const create = (params) => {
       return request.post(\`/channels\`, {
         channel: params
-      }).then((data) => normalize(data, channel))
+      })
     }
     
     /* mat Custom action [start] */
@@ -73,15 +73,13 @@ test('should create axios Route with comment', async (t) => {
     
     export const index = (params) => {
       const {channelId} = params
-      return request
-        .get(\`/channels/\$\{channelId\}/comments\`)
-        .then((data) => normalize(data, commentList))
+      return request.get(\`/channels/\$\{channelId\}/comments\`)
     }
     
     export const create = (params) => {
       return request.post(\`/channels/\$\{params.channelId\}/comments\`, {
         comment: params
-      }).then((data) => normalize(data, comment))
+      })
     }
     
     export const destroy = (id, params) => {

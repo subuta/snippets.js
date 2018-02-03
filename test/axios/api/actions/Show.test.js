@@ -23,7 +23,7 @@ test('should create axios Api index action with channel.', async (t) => {
 
   const expected = build`
     export const show = (id) => {
-      return request.get(\`/channels/\${id}\`).then((data) => normalize(data, channel))
+      return request.get(\`/channels/\${id}\`)
     }
   `
 
@@ -38,7 +38,7 @@ test('should create axios Api index action with comment.', async (t) => {
 
   const expected = build`
     export const show = (id, params) => {
-      return request.get(\`/channels/\$\{params.channelId\}/comments/\$\{id\}\`).then((data) => normalize(data, comment))
+      return request.get(\`/channels/\$\{params.channelId\}/comments/\$\{id\}\`)
     }
   `
 

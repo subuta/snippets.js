@@ -26,7 +26,8 @@ test('should create Ducks based module', async (t) => {
     import _ from 'lodash'
     import {combineReducers} from 'redux'
     import {createSelector} from 'reselect'
-    import {denormalize} from 'src/utils/schema'
+    import {normalize} from 'normalizr'
+    import {comment, commentList, denormalize} from 'src/utils/schema'
     import api from 'src/utils/api'
     
     import {SET_CHANNELS} from './channel'
@@ -57,7 +58,9 @@ test('should create Ducks based module', async (t) => {
       return (dispatch) => {
         dispatch({type: REQUEST_COMMENTS})
         return api.comment.index().then((data) => {
-          dispatch(setComments(data))
+          /* mat Index data transform [start] */
+          /* mat Index data transform [end] */
+          dispatch(setComments(normalize(data, commentList)))
           return data
         })
       }
@@ -67,7 +70,9 @@ test('should create Ducks based module', async (t) => {
       return (dispatch) => {
         dispatch({type: REQUEST_COMMENTS})
         return api.comment.create(params).then((data) => {
-          dispatch(setComments(data))
+          /* mat Create data transform [start] */
+          /* mat Create data transform [end] */
+          dispatch(setComments(normalize(data, comment)))
           return data
         })
       }

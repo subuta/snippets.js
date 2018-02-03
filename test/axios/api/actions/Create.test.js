@@ -27,7 +27,6 @@ test('should create axios Api create action with channel.', async (t) => {
         .post(\`/channels\`, {
           channel: params
         })
-        .then((data) => normalize(data, channel))
     }
   `
 
@@ -46,7 +45,6 @@ test('should create axios Api create action with comment.', async (t) => {
         .post(\`/channels/\$\{params.channelId\}/comments\`, {
           comment: params
         })
-        .then((data) => normalize(data, comment))
     }
   `
 
