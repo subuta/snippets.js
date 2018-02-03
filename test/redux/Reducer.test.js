@@ -19,7 +19,7 @@ test('should create redux entities Reducer', async (t) => {
 
   const expected = build`
     const entities = (state = {}, action) => {
-      if (action.type === SET_BOOKS) {
+      if (_.get(action, ['payload', 'entities', 'book'])) {
         return {...state, ...action.payload.entities.book}
       }
       return state
@@ -34,19 +34,19 @@ test('should create redux entities Reducer with relations', async (t) => {
     schema: {
       tableName: 'books',
       relations: {
-        users: {},
-        shops: {}
+        users: {
+          hasMany: 'users'
+        },
+        shops: {
+          hasMany: 'shops'
+        }
       }
     }
   })
 
   const expected = build`
     const entities = (state = {}, action) => {
-      if (
-        action.type === SET_BOOKS ||
-        action.type === SET_USERS ||
-        action.type === SET_SHOPS
-      ) {
+      if (_.get(action, ['payload', 'entities', 'book'])) {
         return {...state, ...action.payload.entities.book}
       }
       return state
