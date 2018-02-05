@@ -82,11 +82,10 @@ test('should create koa Base', async (t) => {
       /* mat Before update [end] */
     
       ctx.body = await User.query()
-        .update({
+        .patchAndFetchById(ctx.params.id, {
           ...user,
           ...params
         })
-        .where({id: ctx.params.id})
         .eager('')
     })
     
@@ -188,11 +187,10 @@ test('should create koa Base with custom prefix', async (t) => {
       /* mat Before update [end] */
     
       ctx.body = await User.query()
-        .update({
+        .patchAndFetchById(ctx.params.id, {
           ...user,
           ...params
         })
-        .where({id: ctx.params.id})
         .eager('')
     })
     

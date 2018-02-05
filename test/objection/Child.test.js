@@ -46,11 +46,8 @@ test('should create objection Child', async (t) => {
 
   const expected = build`
     import Model from './Model'
-    import {setSchema} from 'src/utils/ajvValidator'
     
     export const register = (models) => {
-      // setSchema to ajv.
-      setSchema(Book.jsonSchema)
       // then define relationMappings.
       Book.relationMappings = {
         comments: {
@@ -69,11 +66,7 @@ test('should create objection Child', async (t) => {
         $id: 'http://sub-labo.com/schemas/book.json',
         type: 'object',
         required: ['title'],
-        properties: {
-          id: {type: 'integer'},
-          title: {type: 'string'},
-          comments: {type: ['array', 'null'], items: [{$ref: 'comment.json'}]}
-        }
+        properties: {id: {type: 'integer'},title: {type: 'string'}}
       }
     }
 
