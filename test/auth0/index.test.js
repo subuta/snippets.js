@@ -1,5 +1,5 @@
 import test from 'ava'
-import { build, format, snippets as s } from 'bld.js'
+import {build, format, snippets as s} from 'bld.js'
 
 import auth0 from 'lib/auth0'
 

@@ -10,7 +10,7 @@ test.beforeEach(async (t) => {
 test.afterEach((t) => {
 })
 
-test('should create koa Index(All) action test', async (t) => {
+test('should create koa Show action test', async (t) => {
   const code = ShowTest({
     model: 'user',
     config: {}
