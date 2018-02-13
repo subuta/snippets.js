@@ -1,7 +1,7 @@
 import test from 'ava'
 import { build, format, snippets as s } from 'bld.js'
 
-import getControllerActions from 'lib/config/getControllerActions'
+import getControllerActions from 'lib/_utils/getControllerActions'
 
 test.beforeEach(async (t) => {
 

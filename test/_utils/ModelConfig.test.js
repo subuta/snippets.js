@@ -4,7 +4,7 @@ import {build, format, snippets as s} from 'bld.js'
 import {
   validateModels,
   validateModel,
-} from "lib/config/ModelConfig";
+} from "lib/_utils/ModelConfig";
 
 test.beforeEach(async (t) => {
 })
@@ -15,7 +15,10 @@ test.afterEach((t) => {
 test('validateRoutes should validate correct routes', async (t) => {
   validateModels({
     book: {
-      schema: {}
+      schema: {
+        tableName: 'books',
+        properties: {}
+      }
     }
   })
 })
@@ -26,7 +29,10 @@ test('validateRoutes should throw error for invalid route', async (t) => {
 
 test('validateRoute should validate correct route', async (t) => {
   validateModel({
-    schema: {}
+    schema: {
+      tableName: 'books',
+      properties: {}
+    }
   })
 })
 

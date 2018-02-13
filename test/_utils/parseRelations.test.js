@@ -1,7 +1,7 @@
 import test from 'ava'
 import { build, format, snippets as s } from 'bld.js'
 
-import parseRelations from 'lib/config/parseRelations'
+import parseRelations from 'lib/_utils/parseRelations'
 import { Models as ModelsConfig } from 'test/fixtures/config'
 
 test.beforeEach(async (t) => {

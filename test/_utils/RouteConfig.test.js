@@ -4,7 +4,7 @@ import {build, format, snippets as s} from 'bld.js'
 import {
   validateRoutes,
   validateRoute,
-} from "lib/config/RouteConfig";
+} from "lib/_utils/RouteConfig";
 
 test.beforeEach(async (t) => {
 })

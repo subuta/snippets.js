@@ -1,7 +1,7 @@
 import test from 'ava'
 import { build, format, snippets as s } from 'bld.js'
 
-import env from 'lib/config/env'
+import env from 'lib/_utils/env'
 
 test.beforeEach(async (t) => {
 
