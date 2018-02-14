@@ -52,7 +52,7 @@ test('should return seed data for fake user', async (t) => {
     }
   }, 'ja')
 
-  t.deepEqual(seed.name, 'Bauch Aryanna')
+  t.deepEqual(seed.name, '佐藤 蓮')
   t.deepEqual(seed.loggedInCount, 86856)
   t.deepEqual(seed.email, 'Monroe_Lowe45@yahoo.com')
   t.deepEqual(seed.avatar, 'https://s3.amazonaws.com/uifaces/faces/twitter/d_nny_m_cher/128.jpg')
