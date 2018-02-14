@@ -4,6 +4,7 @@ import _ from 'lodash'
 import { build, format, snippets as s } from 'bld.js'
 
 import generateSeed from 'lib/_utils/generateSeed'
+import sinon from 'sinon'
 
 test.beforeEach(async (t) => {
 
@@ -13,6 +14,8 @@ test.afterEach((t) => {
 })
 
 test('should return seed data for fake user', async (t) => {
+  const clock = sinon.useFakeTimers();
+
   const seed = generateSeed({
     schema: {
       tableName: 'users',
@@ -49,16 +52,21 @@ test('should return seed data for fake user', async (t) => {
     }
   }, 'ja')
 
-  t.truthy(_.isString(seed.name))
-  t.truthy(_.isString(seed.userName))
-  t.truthy(_.isNumber(seed.loggedInCount))
-  t.truthy(_.isString(seed.email))
-  t.truthy(_.isString(seed.avatar))
-  t.truthy(_.isString(seed.locale))
+  t.deepEqual(seed.name, 'Bauch Aryanna')
+  t.deepEqual(seed.loggedInCount, 86856)
+  t.deepEqual(seed.email, 'Monroe_Lowe45@yahoo.com')
+  t.deepEqual(seed.avatar, 'https://s3.amazonaws.com/uifaces/faces/twitter/d_nny_m_cher/128.jpg')
+  t.deepEqual(seed.locale, 'nb_NO')
+
   t.truthy(_.isDate(seed.lastSignInAt))
+  t.deepEqual(seed.lastSignInAt.toISOString(), '1969-02-13T23:42:37.074Z')
+
+  clock.restore();
 })
 
 test('should return seed data for fake book', async (t) => {
+  const clock = sinon.useFakeTimers();
+
   const seed = generateSeed({
     schema: {
       tableName: 'books',
@@ -83,10 +91,12 @@ test('should return seed data for fake book', async (t) => {
     }
   })
 
-  t.truthy(_.isString(seed.title))
-  t.truthy(_.isNumber(seed.authorId))
-  t.truthy(_.isString(seed.price))
-  t.truthy(_.isString(seed.dateStr))
+  t.deepEqual(seed.title, 'Oman')
+  t.deepEqual(seed.authorId, 12495)
+  t.deepEqual(seed.price, '91.00')
+  t.deepEqual(seed.dateStr, '1970-11-20T02:31:46.870Z')
+
+  clock.restore();
 })
 
 test('should return data for array with items', async (t) => {
@@ -102,7 +112,7 @@ test('should return data for array with items', async (t) => {
     }
   })
 
-  t.truthy(_.isString(seed.tag))
+  t.deepEqual(seed.tag, ['Accountability'])
 })
 
 test('should return data for object with items', async (t) => {
@@ -127,10 +137,10 @@ test('should return data for object with items', async (t) => {
   })
 
   t.truthy(_.isObject(seed.address))
-  t.truthy(_.isString(seed.address.streetAddress))
-  t.truthy(_.isString(seed.address.city))
-  t.truthy(_.isString(seed.address.state))
-  t.truthy(_.isString(seed.countryCode))
+  t.deepEqual(seed.address.streetAddress, '34543 Hills Coves')
+  t.deepEqual(seed.address.city, 'East Gabrielle')
+  t.deepEqual(seed.address.state, 'Oklahoma')
+  t.deepEqual(seed.countryCode, 'SN')
 })
 
 test('should return data for company name', async (t) => {
@@ -145,5 +155,5 @@ test('should return data for company name', async (t) => {
     }
   })
 
-  t.truthy(_.isString(seed.name))
+  t.deepEqual(seed.name, 'Gleichner, Hilll and Turner')
 })

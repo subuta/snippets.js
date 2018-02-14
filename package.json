@@ -50,7 +50,8 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
-    "common-tags": "^1.7.2"
+    "common-tags": "^1.7.2",
+    "sinon": "^4.3.0"
   },
   "dependencies": {
     "api-check": "^7.5.5",
@@ -58,6 +59,7 @@
     "faker": "^4.1.0",
     "lodash": "^4.17.4",
     "path-to-regexp": "^2.1.0",
-    "pluralize": "^7.0.0"
+    "pluralize": "^7.0.0",
+    "string-hash": "^1.1.3"
   }
 }
