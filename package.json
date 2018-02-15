@@ -40,7 +40,6 @@
   },
   "homepage": "https://github.com/subuta/snippets.js#readme",
   "devDependencies": {
-    "ava": "^0.24.0",
     "babel-core": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-module-resolver": "^2.7.1",
@@ -51,6 +50,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "common-tags": "^1.7.2",
+    "jest": "^22.3.0",
     "sinon": "^4.3.0"
   },
   "dependencies": {

@@ -5,27 +5,30 @@ module.exports = function (wallaby) {
   return {
     files: [
       'lib/**/*.js',
-      'test/fixtures/**/*.js',
+      'test2/helper/**/*.js',
     ],
 
     tests: [
-      'test/**/*.test.js'
+      'test2/**/*.test.js'
     ],
 
     env: {
       type: 'node',
       runner: 'node',
       params: {
-        env: 'NODE_ENV=test;NODE_PATH=' + path.join(wallaby.projectCacheDir, '../')
-      }
+        env: `NODE_ENV=test;NODE_PATH=${path.join(wallaby.projectCacheDir, '../')}:${path.join(__dirname, '../node_modules')}`,
+      },
     },
+
+    testFramework: 'jest',
 
     compilers: {
       '**/*.js': wallaby.compilers.babel({
         babel,
         babelrc: true,
         plugins: [
-          ['module-resolver',
+          [
+            'module-resolver',
             {
               root: ['./'],
               alias: {
@@ -35,11 +38,6 @@ module.exports = function (wallaby) {
           ]
         ]
       })
-    },
-
-    testFramework: 'ava',
-
-    setup: function () {
     }
   }
 }
