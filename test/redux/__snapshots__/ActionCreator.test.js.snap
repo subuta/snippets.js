@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux/ActionCreator should create redux ActionCreator for all(index) Action 1`] = `
+"const requestBooks = () => {
+  return (dispatch) => {
+    dispatch({type: REQUEST_BOOKS})
+    return api.book.index().then((data) => {
+      /* mat Index data transform [start] */
+      /* mat Index data transform [end] */
+      dispatch(setBooks(normalize(data, bookList)))
+      return data
+    })
+  }
+}
+"
+`;
+
+exports[`redux/ActionCreator should create redux ActionCreator for create Action 1`] = `
+"const createBook = (params) => {
+  return (dispatch) => {
+    dispatch({type: REQUEST_BOOKS})
+    return api.book.create(params).then((data) => {
+      /* mat Create data transform [start] */
+      /* mat Create data transform [end] */
+      dispatch(setBooks(normalize(data, book)))
+      return data
+    })
+  }
+}
+"
+`;
+
+exports[`redux/ActionCreator should create redux ActionCreator for destroy Action 1`] = `
+"const deleteBook = (id) => {
+  return (dispatch) => {
+    dispatch({type: REQUEST_BOOKS})
+    return api.book.destroy(id).then(() => {
+      dispatch(setBooks({}))
+    })
+  }
+}
+"
+`;
+
+exports[`redux/ActionCreator should create redux ActionCreator for setter 1`] = `
+"const setBooks = (books) => {
+  return {
+    type: SET_BOOKS,
+    payload: books
+  }
+}
+"
+`;
+
+exports[`redux/ActionCreator should create redux ActionCreator for show Action 1`] = `
+"const requestBook = (id) => {
+  return (dispatch) => {
+    dispatch({type: REQUEST_BOOKS})
+    return api.book.show(id).then((data) => {
+      /* mat Show data transform [start] */
+      /* mat Show data transform [end] */
+      dispatch(setBooks(normalize(data, book)))
+      return data
+    })
+  }
+}
+"
+`;
+
+exports[`redux/ActionCreator should create redux ActionCreator for update Action 1`] = `
+"const updateBook = (params, id) => {
+  return (dispatch) => {
+    dispatch({type: REQUEST_BOOKS})
+    return api.book.update(params, id).then((data) => {
+      /* mat Update data transform [start] */
+      /* mat Update data transform [end] */
+      dispatch(setBooks(normalize(data, book)))
+      return data
+    })
+  }
+}
+"
+`;

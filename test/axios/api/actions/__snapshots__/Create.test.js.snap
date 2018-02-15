@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`axios/api/actions/Create should create axios Api create action with channel 1`] = `
+"export const create = (params) => {
+  return request.post(\`/channels\`, {
+    channel: params
+  })
+}
+"
+`;
+
+exports[`axios/api/actions/Create should create axios Api create action with comment 1`] = `
+"export const create = (params) => {
+  return request.post(\`/channels/\${params.channelId}/comments\`, {
+    comment: params
+  })
+}
+"
+`;

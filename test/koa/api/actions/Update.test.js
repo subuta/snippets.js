@@ -1,42 +1,14 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import UpdateAction from 'lib/koa/api/actions/Update'
 
-test.beforeEach(async (t) => {
-
-})
-
-test.afterEach((t) => {
-})
-
-test('should create koa Base', async (t) => {
-  const code = UpdateAction({
-    model: 'user',
-    config: {}
+describe('knex/api/actions/Update', () => {
+  it('should Update koa action', () => {
+    expect(format(UpdateAction({
+      model: 'user',
+      config: {}
+    }))).toMatchSnapshot()
   })
-
-  const expected = build`
-    user.put('/:id', async (ctx) => {
-      const {User} = ctx.state.models
-      const {user} = ctx.request.body
-      const {sub} = ctx.state.user
-      
-      // update specified user.
-      const params = {}
-      
-      /* mat Before update [start] */
-      /* mat Before update [end] */
-      
-      ctx.body = await User.query()
-        .patchAndFetchById(ctx.params.id, {
-          ...user,
-          ...params
-        })
-        .eager('')
-    })
-
-  `
-
-  t.is(format(code), format(expected))
 })

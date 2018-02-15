@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`objection/ajvValidator should create objection ajvValidator 1`] = `
+"import {AjvValidator} from 'objection'
+
+const validator = new AjvValidator({
+  onCreateAjv: (ajv) => {},
+  options: {
+    allErrors: true,
+    validateSchema: false,
+    ownProperties: true,
+    removeAdditional: true,
+    useDefaults: true
+  }
+})
+
+export default validator
+"
+`;

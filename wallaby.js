@@ -5,11 +5,12 @@ module.exports = function (wallaby) {
   return {
     files: [
       'lib/**/*.js',
-      'test2/helper/**/*.js',
+      'test/helper/**/*.js',
+      'test/fixtures/**/*.js'
     ],
 
     tests: [
-      'test2/**/*.test.js'
+      'test/**/*.test.js'
     ],
 
     env: {

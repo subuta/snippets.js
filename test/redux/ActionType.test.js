@@ -1,143 +1,95 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import ActionType, { ActionTypeDef } from 'lib/redux/ActionType'
 
-test.beforeEach(async (t) => {
+describe('redux/ActionType', () => {
+  it('should create redux ActionType with single argument', () => {
+    const code = build`
+      ${ActionType.raw('setBooks')}
+    `
 
-})
+    expect(format(code)).toMatchSnapshot()
+  })
 
-test.afterEach((t) => {
-})
+  it('should create redux ActionType with prefix and type', () => {
+    const code = build`
+      ${ActionType.raw('set', 'books')}
+    `
 
-test('should create redux ActionType with single argument', async (t) => {
-  const code = build`
-    ${ActionType.raw('setBooks')}
-  `
+    expect(format(code)).toMatchSnapshot()
+  })
 
-  const expected = build`
-    SET_BOOKS
-  `
+  it('should create redux ActionType for setter', () => {
+    const code = build`
+      ${ActionType.set('books')}
+    `
 
-  t.is(format(code), format(expected))
-})
+    expect(format(code)).toMatchSnapshot()
+  })
 
-test('should create redux ActionType with prefix and type', async (t) => {
-  const code = build`
-    ${ActionType.raw('set', 'books')}
-  `
+  it('should create redux ActionType for request', () => {
+    const code = build`
+      ${ActionType.request('books')}
+    `
 
-  const expected = build`
-    SET_BOOKS
-  `
+    expect(format(code)).toMatchSnapshot()
+  })
 
-  t.is(format(code), format(expected))
-})
+  it('should create redux ActionType for failure', () => {
+    const code = build`
+      ${ActionType.failure('books')}
+    `
 
-test('should create redux ActionType for setter', async (t) => {
-  const code = build`
-    ${ActionType.set('books')}
-  `
+    expect(format(code)).toMatchSnapshot()
+  })
 
-  const expected = build`
-    SET_BOOKS
-  `
+  it('should create redux ActionType for create Action', () => {
+    const code = build`
+      ${ActionType.create('books')}
+    `
 
-  t.is(format(code), format(expected))
-})
+    expect(format(code)).toMatchSnapshot()
+  })
 
-test('should create redux ActionType for request', async (t) => {
-  const code = build`
-    ${ActionType.request('books')}
-  `
+  it('should create redux ActionType for all(index) Action', () => {
+    const code = build`
+      ${ActionType.all('books')}
+    `
 
-  const expected = build`
-    REQUEST_BOOKS
-  `
+    expect(format(code)).toMatchSnapshot()
+  })
 
-  t.is(format(code), format(expected))
-})
+  it('should create redux ActionType for show Action', () => {
+    const code = build`
+      ${ActionType.show('books')}
+    `
 
-test('should create redux ActionType for failure', async (t) => {
-  const code = build`
-    ${ActionType.failure('books')}
-  `
+    expect(format(code)).toMatchSnapshot()
+  })
 
-  const expected = build`
-    REQUEST_BOOKS_FAILURE
-  `
+  it('should create redux ActionType for update Action', () => {
+    const code = build`
+      ${ActionType.update('books')}
+    `
 
-  t.is(format(code), format(expected))
-})
+    expect(format(code)).toMatchSnapshot()
+  })
 
-test('should create redux ActionType for create Action', async (t) => {
-  const code = build`
-    ${ActionType.create('books')}
-  `
+  it('should create redux ActionType for destroy(delete) Action', () => {
+    const code = build`
+      ${ActionType.destroy('books')}
+    `
 
-  const expected = build`
-    CREATE_BOOK
-  `
+    expect(format(code)).toMatchSnapshot()
+  })
 
-  t.is(format(code), format(expected))
-})
+  it('should create redux ActionType Def', () => {
+    const code = build`
+      ${ActionTypeDef('setBooks')}
+    `
 
-test('should create redux ActionType for all(index) Action', async (t) => {
-  const code = build`
-    ${ActionType.all('books')}
-  `
-
-  const expected = build`
-    INDEX_BOOKS
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create redux ActionType for show Action', async (t) => {
-  const code = build`
-    ${ActionType.show('books')}
-  `
-
-  const expected = build`
-    SHOW_BOOK
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create redux ActionType for update Action', async (t) => {
-  const code = build`
-    ${ActionType.update('books')}
-  `
-
-  const expected = build`
-    UPDATE_BOOK
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create redux ActionType for destroy(delete) Action', async (t) => {
-  const code = build`
-    ${ActionType.destroy('books')}
-  `
-
-  const expected = build`
-    DELETE_BOOK
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create redux ActionType Def', async (t) => {
-  const code = build`
-    ${ActionTypeDef('setBooks')}
-  `
-
-  const expected = build`
-    const SET_BOOKS = 'SET_BOOKS'
-  `
-
-  t.is(format(code), format(expected))
+    expect(format(code)).toMatchSnapshot()
+  })
 })

@@ -1,4 +1,5 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import CreateAction from 'lib/axios/api/actions/Create'
@@ -8,45 +9,18 @@ import {
   Models as ModelsConfig
 } from 'test/fixtures/config'
 
-test.beforeEach(async (t) => {
+describe('axios/api/actions/Create', () => {
+  it('should create axios Api create action with channel', () => {
+    const channelRoute = RoutesConfig['channel']
+    const channelModel = ModelsConfig['channel']
 
-})
+    expect(format(CreateAction(channelRoute, channelModel))).toMatchSnapshot()
+  })
 
-test.afterEach((t) => {
-})
+  it('should create axios Api create action with comment', () => {
+    const channelRoute = RoutesConfig['comment']
+    const channelModel = ModelsConfig['comment']
 
-test('should create axios Api create action with channel.', async (t) => {
-  const channelRoute = RoutesConfig['channel']
-  const channelModel = ModelsConfig['channel']
-
-  const code = CreateAction(channelRoute, channelModel)
-
-  const expected = build`
-    export const create = (params) => {
-      return request
-        .post(\`/channels\`, {
-          channel: params
-        })
-    }
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create axios Api create action with comment.', async (t) => {
-  const channelRoute = RoutesConfig['comment']
-  const channelModel = ModelsConfig['comment']
-
-  const code = CreateAction(channelRoute, channelModel)
-
-  const expected = build`
-    export const create = (params) => {
-      return request
-        .post(\`/channels/\$\{params.channelId\}/comments\`, {
-          comment: params
-        })
-    }
-  `
-
-  t.is(format(code), format(expected))
+    expect(format(CreateAction(channelRoute, channelModel))).toMatchSnapshot()
+  })
 })

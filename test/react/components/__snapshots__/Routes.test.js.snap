@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`react/components/Routes should create react Routes 1`] = `
+"import React from 'react'
+import _ from 'lodash'
+import {ConnectedRouter} from 'react-router-redux'
+import history from 'src/utils/history'
+
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
+
+let routes = null
+
+/* mat Custom routes [start] */
+/* mat Custom routes [end] */
+
+export default routes
+"
+`;

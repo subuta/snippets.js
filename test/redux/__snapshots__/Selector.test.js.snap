@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux/Selector should create redux entities Selector 1`] = `
+"export const getEntities = (state) => state.book.entities
+"
+`;
+
+exports[`redux/Selector should create redux getAll Selector 1`] = `
+"export const getAll = createSelector(
+  getEntities,
+  getIds,
+  _.identity,
+  (entities, ids, state) =>
+    ids.map((id) => {
+      return denormalize(entities[id], 'book', state)
+    })
+)
+"
+`;
+
+exports[`redux/Selector should create redux ids Selector 1`] = `
+"export const getIds = (state) => state.book.ids
+"
+`;
+
+exports[`redux/Selector should create redux requestProgress Selector 1`] = `
+"export const getIsRequestProgress = (state) => state.book.isRequestProgress
+"
+`;

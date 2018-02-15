@@ -1,76 +1,42 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import Child from 'lib/objection/Child'
 
-test.beforeEach(async (t) => {
+describe('objection/Child', () => {
+  it('should create objection Child', () => {
+    const Book = {
+      tableName: 'books',
+      required: [
+        'title',
+      ],
 
-})
-
-test.afterEach((t) => {
-})
-
-test('should create objection Child', async (t) => {
-  const Book = {
-    tableName: 'books',
-    required: [
-      'title',
-    ],
-
-    properties: {
-      id: {
-        type: 'integer'
-      },
-      title: {
-        'type': 'string'
-      }
-    },
-
-    relations: {
-      comments: {
-        hasMany: 'comments',
-        join: {
-          from: 'books.id',
-          to: 'comments.bookId'
+      properties: {
+        id: {
+          type: 'integer'
+        },
+        title: {
+          'type': 'string'
         }
       },
-    }
-  }
 
-  const code = Child({
-    model: 'Book',
-    config: {
-      schema: Book
-    }
-  })
-
-  const expected = build`
-    import Model from './Model'
-    
-    export const register = (models) => {
-      // then define relationMappings.
-      Book.relationMappings = {
+      relations: {
         comments: {
-          modelClass: models.Comment,
-          relation: Model.HasManyRelation,
-          join: {from: 'books.id', to: 'comments.bookId'}
-        }
-      }
-    }
-    
-    export default class Book extends Model {
-      static tableName = 'books'
-    
-      static jsonSchema = {
-        title: 'Book',
-        $id: 'http://sub-labo.com/schemas/book.json',
-        type: 'object',
-        required: ['title'],
-        properties: {id: {type: 'integer'},title: {type: 'string'}}
+          hasMany: 'comments',
+          join: {
+            from: 'books.id',
+            to: 'comments.bookId'
+          }
+        },
       }
     }
 
-  `
-
-  t.is(format(code), format(expected))
+    expect(format(Child({
+      model: 'Book',
+      config: {
+        schema: Book
+      }
+    }))).toMatchSnapshot()
+  })
 })

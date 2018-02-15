@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`koa/api-test/actions/Update should Update koa Update action test 1`] = `
+"test('update should update user', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .put('/api/users/1')
+    .set('Authorization', \`Bearer \${token}\`)
+    .send({
+      article: {
+        title: 'Awesome Redux 2'
+      }
+    })
+
+  t.is(response.status, 200)
+  t.deepEqual(response.body.id, 1)
+  t.deepEqual(response.body.title, 'Awesome Redux 2')
+  t.deepEqual(response.body.tags[0].label, 'react')
+})
+"
+`;

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`axios/api/actions/Destroy should Destroy axios Api Destroy action with channel 1`] = `
+"export const destroy = (id) => {
+  return request.delete(\`/channels/\${id}\`)
+}
+"
+`;
+
+exports[`axios/api/actions/Destroy should Destroy axios Api Destroy action with comment 1`] = `
+"export const destroy = (id, params) => {
+  return request.delete(\`/channels/\${params.channelId}/comments/\${id}\`)
+}
+"
+`;

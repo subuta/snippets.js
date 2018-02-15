@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`axios/api/actions/Update should Update axios Api Update action with channel 1`] = `
+"export const update = (id, params) => {
+  return request.put(\`/channels/\${id}\`, {
+    channel: params
+  })
+}
+"
+`;
+
+exports[`axios/api/actions/Update should Update axios Api Update action with comment 1`] = `
+"export const update = (id, params) => {
+  return request.put(\`/channels/\${params.channelId}/comments/\${id}\`, {
+    comment: params
+  })
+}
+"
+`;

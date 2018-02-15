@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux/Action should create redux Action 1`] = `
+"const action = {
+  type: SET_BOOKS,
+  payload: {
+    name: 'an awesome Book'
+  }
+}
+"
+`;

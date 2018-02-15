@@ -1,34 +1,32 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import getControllerActions from 'lib/_utils/getControllerActions'
 
-test.beforeEach(async (t) => {
+describe('utils/getControllerActions', () => {
+  it('should return all Actions by default', () => {
+    expect(getControllerActions()).toEqual([
+      'index',
+      'show',
+      'create',
+      'update',
+      'destroy'
+    ])
+  })
 
-})
+  it('should return valid Actions with only', () => {
+    expect(getControllerActions({only: ['index']})).toEqual([
+      'index'
+    ])
+  })
 
-test.afterEach((t) => {
-})
-
-test('should return all Actions by default', async (t) => {
-  t.deepEqual(getControllerActions(), [
-    'index',
-    'show',
-    'create',
-    'update',
-    'destroy'
-  ])
-})
-
-test('should return valid Actions with only', async (t) => {
-  t.deepEqual(getControllerActions({only: ['index']}), ['index'])
-})
-
-test('should return valid Actions with except', async (t) => {
-  t.deepEqual(getControllerActions({except: ['index']}), [
-    'show',
-    'create',
-    'update',
-    'destroy'
-  ])
+  it('should return valid Actions with except', () => {
+    expect(getControllerActions({except: ['index']})).toEqual([
+      'show',
+      'create',
+      'update',
+      'destroy'
+    ])
+  })
 })

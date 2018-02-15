@@ -1,35 +1,36 @@
-import test from "ava";
-import {build, format, snippets as s} from 'bld.js'
+/* global expect, describe, it */
+
+import { build, format, snippets as s } from 'bld.js'
 
 import {
   validateRoutes,
   validateRoute,
-} from "lib/_utils/RouteConfig";
+} from 'lib/_utils/RouteConfig'
 
-test.beforeEach(async (t) => {
-})
+describe('utils/ModelConfig', () => {
+  it('validateRoutes should validate correct routes', () => {
+    validateRoutes({
+      book: {
+        except: ['index']
+      }
+    })
+  })
 
-test.afterEach((t) => {
-})
+  it('validateRoutes should throw error for invalid route', () => {
+    expect(() => {
+      validateRoutes({book: {except: ['invalid']}})
+    }).toThrow()
+  })
 
-test('validateRoutes should validate correct routes', async (t) => {
-  validateRoutes({
-    book: {
+  it('validateRoute should validate correct route', () => {
+    validateRoute({
       except: ['index']
-    }
+    })
   })
-})
 
-test('validateRoutes should throw error for invalid route', async (t) => {
-  t.throws(() => validateRoutes({book: {except: ['invalid']}}))
-})
-
-test('validateRoute should validate correct route', async (t) => {
-  validateRoute({
-    except: ['index']
+  it('validateRoute should throw error for invalid route', () => {
+    expect(() => {
+      validateRoute({except: ['invalid']})
+    }).toThrow()
   })
-})
-
-test('validateRoute should throw error for invalid route', async (t) => {
-  t.throws(() => validateRoute({except: ['invalid']}))
 })

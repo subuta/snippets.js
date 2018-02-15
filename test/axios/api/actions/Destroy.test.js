@@ -1,4 +1,5 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import DestroyAction from 'lib/axios/api/actions/Destroy'
@@ -8,39 +9,18 @@ import {
   Models as ModelsConfig
 } from 'test/fixtures/config'
 
-test.beforeEach(async (t) => {
+describe('axios/api/actions/Destroy', () => {
+  it('should Destroy axios Api Destroy action with channel', () => {
+    const channelRoute = RoutesConfig['channel']
+    const channelModel = ModelsConfig['channel']
 
-})
+    expect(format(DestroyAction(channelRoute, channelModel))).toMatchSnapshot()
+  })
 
-test.afterEach((t) => {
-})
+  it('should Destroy axios Api Destroy action with comment', () => {
+    const channelRoute = RoutesConfig['comment']
+    const channelModel = ModelsConfig['comment']
 
-test('should create axios Api delete action with channel.', async (t) => {
-  const channelRoute = RoutesConfig['channel']
-  const channelModel = ModelsConfig['channel']
-
-  const code = DestroyAction(channelRoute, channelModel)
-
-  const expected = build`
-    export const destroy = (id) => {
-      return request.delete(\`/channels/\${id}\`)
-    }
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create axios Api delete action with comment.', async (t) => {
-  const channelRoute = RoutesConfig['comment']
-  const channelModel = ModelsConfig['comment']
-
-  const code = DestroyAction(channelRoute, channelModel)
-
-  const expected = build`
-    export const destroy = (id, params) => {
-      return request.delete(\`/channels/\$\{params.channelId\}/comments/\$\{id\}\`)
-    }
-  `
-
-  t.is(format(code), format(expected))
+    expect(format(DestroyAction(channelRoute, channelModel))).toMatchSnapshot()
+  })
 })

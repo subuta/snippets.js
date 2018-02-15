@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`knex/api/middlewares/Models should create koa Models 1`] = `
+"import models from 'src/model'
+
+export default (ctx, next) => {
+  // expose Objection.js models to context.
+  ctx.state.models = models
+  return next()
+}
+"
+`;

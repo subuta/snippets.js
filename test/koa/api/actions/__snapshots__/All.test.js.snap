@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`knex/api/actions/All should create koa action 1`] = `
+"user.get('/', async (ctx) => {
+  const {User} = ctx.state.models
+  let params = {}
+
+  /* mat Before index [start] */
+  /* mat Before index [end] */
+
+  ctx.body = await User.query()
+    .eager('')
+    .where(params)
+})
+"
+`;

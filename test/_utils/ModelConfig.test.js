@@ -1,41 +1,42 @@
-import test from "ava";
-import {build, format, snippets as s} from 'bld.js'
+/* global expect, describe, it */
+
+import { build, format, snippets as s } from 'bld.js'
 
 import {
   validateModels,
   validateModel,
-} from "lib/_utils/ModelConfig";
+} from 'lib/_utils/ModelConfig'
 
-test.beforeEach(async (t) => {
-})
+describe('utils/ModelConfig', () => {
+  it('validateModels should validate correct models', () => {
+    validateModels({
+      book: {
+        schema: {
+          tableName: 'books',
+          properties: {}
+        }
+      }
+    })
+  })
 
-test.afterEach((t) => {
-})
+  it('validateModels should throw error for invalid models', () => {
+    expect(() => {
+      validateModels({book: {schema: 'invalid'}})
+    }).toThrow()
+  })
 
-test('validateRoutes should validate correct routes', async (t) => {
-  validateModels({
-    book: {
+  it('validateModel should validate correct model', () => {
+    validateModel({
       schema: {
         tableName: 'books',
         properties: {}
       }
-    }
+    })
   })
-})
 
-test('validateRoutes should throw error for invalid route', async (t) => {
-  t.throws(() => validateModels({book: {schema: 'invalid'}}))
-})
-
-test('validateRoute should validate correct route', async (t) => {
-  validateModel({
-    schema: {
-      tableName: 'books',
-      properties: {}
-    }
+  it('validateModel should throw error for invalid model', () => {
+    expect(() => {
+      validateModel({schema: 'invalid'})
+    }).toThrow()
   })
-})
-
-test('validateRoute should throw error for invalid route', async (t) => {
-  t.throws(() => validateModel({schema: 'invalid'}))
 })

@@ -1,34 +1,14 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import AllAction from 'lib/koa/api/actions/All'
 
-test.beforeEach(async (t) => {
-
-})
-
-test.afterEach((t) => {
-})
-
-test('should create koa Base', async (t) => {
-  const code = AllAction({
-    model: 'user',
-    config: {}
+describe('knex/api/actions/All', () => {
+  it('should create koa action', () => {
+    expect(format(AllAction({
+      model: 'user',
+      config: {}
+    }))).toMatchSnapshot()
   })
-
-  const expected = build`
-    user.get('/', async (ctx) => {
-      const {User} = ctx.state.models
-      let params = {}
-      
-      /* mat Before index [start] */
-      /* mat Before index [end] */
-      
-      ctx.body = await User.query()
-        .eager('')
-        .where(params)
-    })
-  `
-
-  t.is(format(code), format(expected))
 })

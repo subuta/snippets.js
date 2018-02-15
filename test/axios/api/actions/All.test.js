@@ -1,4 +1,5 @@
-import test from 'ava'
+/* global expect, describe, it */
+
 import { build, format, snippets as s } from 'bld.js'
 
 import IndexAction from 'lib/axios/api/actions/All'
@@ -8,40 +9,18 @@ import {
   Models as ModelsConfig
 } from 'test/fixtures/config'
 
-test.beforeEach(async (t) => {
+describe('axios/api/actions/All', () => {
+  it('should create axios Api index action with channel', () => {
+    const channelRoute = RoutesConfig['channel']
+    const channelModel = ModelsConfig['channel']
 
-})
+    expect(format(IndexAction(channelRoute, channelModel))).toMatchSnapshot()
+  })
 
-test.afterEach((t) => {
-})
+  it('should create axios Api index action with comment', () => {
+    const channelRoute = RoutesConfig['comment']
+    const channelModel = ModelsConfig['comment']
 
-test('should create axios Api index action with channel.', async (t) => {
-  const channelRoute = RoutesConfig['channel']
-  const channelModel = ModelsConfig['channel']
-
-  const code = IndexAction(channelRoute, channelModel)
-
-  const expected = build`
-    export const index = () => {
-      return request.get(\`/channels\`)
-    }
-  `
-
-  t.is(format(code), format(expected))
-})
-
-test('should create axios Api index action with comment.', async (t) => {
-  const channelRoute = RoutesConfig['comment']
-  const channelModel = ModelsConfig['comment']
-
-  const code = IndexAction(channelRoute, channelModel)
-
-  const expected = build`
-    export const index = (params) => {
-      const {channelId} = params
-      return request.get(\`/channels/\$\{channelId\}/comments\`)
-    }
-  `
-
-  t.is(format(code), format(expected))
+    expect(format(IndexAction(channelRoute, channelModel))).toMatchSnapshot()
+  })
 })

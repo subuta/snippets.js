@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux/ActionType should create redux ActionType Def 1`] = `
+"const SET_BOOKS = 'SET_BOOKS'
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for all(index) Action 1`] = `
+"INDEX_BOOKS
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for create Action 1`] = `
+"CREATE_BOOK
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for destroy(delete) Action 1`] = `
+"DELETE_BOOK
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for failure 1`] = `
+"REQUEST_BOOKS_FAILURE
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for request 1`] = `
+"REQUEST_BOOKS
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for setter 1`] = `
+"SET_BOOKS
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for show Action 1`] = `
+"SHOW_BOOK
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for update Action 1`] = `
+"UPDATE_BOOK
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType with prefix and type 1`] = `
+"SET_BOOKS
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType with single argument 1`] = `
+"SET_BOOKS
+"
+`;

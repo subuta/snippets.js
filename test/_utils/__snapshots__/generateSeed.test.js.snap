@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils/generateSeed should return data for array with items 1`] = `
+Object {
+  "tag": Array [
+    "Accountability",
+  ],
+}
+`;
+
+exports[`utils/generateSeed should return data for company name 1`] = `
+Object {
+  "name": "Gleichner, Hilll and Turner",
+}
+`;
+
+exports[`utils/generateSeed should return data for object with items 1`] = `
+Object {
+  "address": Object {
+    "city": "East Gabrielle",
+    "state": "Oklahoma",
+    "streetAddress": "34543 Hills Coves",
+  },
+  "countryCode": "SN",
+}
+`;
+
+exports[`utils/generateSeed should return seed data for fake book 1`] = `
+Object {
+  "authorId": 12495,
+  "dateStr": "1970-11-20T02:31:46.870Z",
+  "price": "91.00",
+  "title": "Oman",
+}
+`;
+
+exports[`utils/generateSeed should return seed data for fake user 1`] = `
+Object {
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/d_nny_m_cher/128.jpg",
+  "email": "Monroe_Lowe45@yahoo.com",
+  "lastSignInAt": 1969-02-13T23:42:37.074Z,
+  "locale": "nb_NO",
+  "loggedInCount": 86856,
+  "name": "佐藤 蓮",
+  "userName": "Ona.Kuhic",
+}
+`;

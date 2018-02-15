@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux/Reducer should create redux entities Reducer 1`] = `
+"const entities = (state = {}, action) => {
+  if (_.get(action, ['payload', 'entities', 'book'])) {
+    return {...state, ...action.payload.entities.book}
+  }
+  return state
+}
+"
+`;
+
+exports[`redux/Reducer should create redux entities Reducer with relations 1`] = `
+"const entities = (state = {}, action) => {
+  if (_.get(action, ['payload', 'entities', 'book'])) {
+    return {...state, ...action.payload.entities.book}
+  }
+  return state
+}
+"
+`;
+
+exports[`redux/Reducer should create redux ids Reducer 1`] = `
+"const ids = (state = [], action) => {
+  if (action.type === SET_BOOKS) {
+    if (_.isArray(action.payload.result)) {
+      return _.uniq([...state, ...action.payload.result])
+    }
+    return _.uniq([...state, action.payload.result])
+  }
+  return state
+}
+"
+`;
+
+exports[`redux/Reducer should create redux requestProgress Reducer 1`] = `
+"const isRequestProgress = (state = false, action) => {
+  if (action.type === REQUEST_BOOKS) {
+    return true
+  } else if (
+    action.type === SET_BOOKS ||
+    action.type === REQUEST_BOOKS_FAILURE
+  ) {
+    return false
+  }
+  return state
+}
+"
+`;

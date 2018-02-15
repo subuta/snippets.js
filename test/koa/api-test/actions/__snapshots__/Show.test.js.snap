@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`koa/api-test/actions/Show should Show koa Show action test 1`] = `
+"test('show should return user', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .get('/api/users/1')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  t.is(response.status, 200)
+  t.deepEqual(response.body.id, 1)
+  t.deepEqual(response.body.title, 'Awesome React')
+  t.deepEqual(response.body.tags.length, 1)
+})
+"
+`;

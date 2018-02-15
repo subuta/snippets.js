@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`knex/api/actions/Update should Update koa action 1`] = `
+"user.put('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  const {user} = ctx.request.body
+  const {sub} = ctx.state.user
+
+  // update specified user.
+  const params = {}
+
+  /* mat Before update [start] */
+  /* mat Before update [end] */
+
+  ctx.body = await User.query()
+    .patchAndFetchById(ctx.params.id, {
+      ...user,
+      ...params
+    })
+    .eager('')
+})
+"
+`;

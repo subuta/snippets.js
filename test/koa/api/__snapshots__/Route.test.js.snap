@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`knex/api/Route should create koa Route 1`] = `
+"import Router from 'koa-router'
+import _ from 'lodash'
+
+const user = new Router({
+  prefix: '/users'
+})
+
+user.get('/', async (ctx) => {
+  const {User} = ctx.state.models
+  let params = {}
+
+  /* mat Before index [start] */
+  /* mat Before index [end] */
+
+  ctx.body = await User.query()
+    .eager('')
+    .where(params)
+})
+
+user.get('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  let params = {}
+
+  /* mat Before show [start] */
+  /* mat Before show [end] */
+
+  ctx.body = await User.query()
+    .eager('')
+    .findFirst({...params, id: ctx.params.id})
+})
+
+user.post('/', async (ctx) => {
+  const {User} = ctx.state.models
+  const {user} = ctx.request.body
+
+  let params = {}
+
+  /* mat Before create [start] */
+  /* mat Before create [end] */
+
+  let response = await User.query()
+    .insert({
+      ...user,
+      ...params
+    })
+    .eager('')
+
+  /* mat After create [start] */
+  /* mat After create [end] */
+
+  ctx.body = response
+})
+
+user.put('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  const {user} = ctx.request.body
+  const {sub} = ctx.state.user
+
+  // update specified user.
+  const params = {}
+
+  /* mat Before update [start] */
+  /* mat Before update [end] */
+
+  ctx.body = await User.query()
+    .patchAndFetchById(ctx.params.id, {
+      ...user,
+      ...params
+    })
+    .eager('')
+})
+
+user.delete('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  await User.query()
+    .delete()
+    .where({id: ctx.params.id})
+  ctx.body = null
+})
+
+/* mat Custom actions [start] */
+/* mat Custom actions [end] */
+
+export default {
+  routes: () => _.cloneDeep(user.routes()),
+  register: (routers) => {
+    /* mat Register [start] */
+    /* mat Register [end] */
+  }
+}
+"
+`;
+
+exports[`knex/api/Route should create koa Route with custom prefix 1`] = `
+"import Router from 'koa-router'
+import _ from 'lodash'
+
+const user = new Router({
+  prefix: '/hoge/fuga/users'
+})
+
+user.get('/', async (ctx) => {
+  const {User} = ctx.state.models
+  let params = {}
+
+  /* mat Before index [start] */
+  /* mat Before index [end] */
+
+  ctx.body = await User.query()
+    .eager('')
+    .where(params)
+})
+
+user.get('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  let params = {}
+
+  /* mat Before show [start] */
+  /* mat Before show [end] */
+
+  ctx.body = await User.query()
+    .eager('')
+    .findFirst({...params, id: ctx.params.id})
+})
+
+user.post('/', async (ctx) => {
+  const {User} = ctx.state.models
+  const {user} = ctx.request.body
+
+  let params = {}
+
+  /* mat Before create [start] */
+  /* mat Before create [end] */
+
+  let response = await User.query()
+    .insert({
+      ...user,
+      ...params
+    })
+    .eager('')
+
+  /* mat After create [start] */
+  /* mat After create [end] */
+
+  ctx.body = response
+})
+
+user.put('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  const {user} = ctx.request.body
+  const {sub} = ctx.state.user
+
+  // update specified user.
+  const params = {}
+
+  /* mat Before update [start] */
+  /* mat Before update [end] */
+
+  ctx.body = await User.query()
+    .patchAndFetchById(ctx.params.id, {
+      ...user,
+      ...params
+    })
+    .eager('')
+})
+
+user.delete('/:id', async (ctx) => {
+  const {User} = ctx.state.models
+  await User.query()
+    .delete()
+    .where({id: ctx.params.id})
+  ctx.body = null
+})
+
+/* mat Custom actions [start] */
+/* mat Custom actions [end] */
+
+export default {
+  routes: () => _.cloneDeep(user.routes()),
+  register: (routers) => {
+    /* mat Register [start] */
+    /* mat Register [end] */
+  }
+}
+"
+`;

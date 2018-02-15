@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`axios/api/actions/Show should Show axios Api Show action with channel 1`] = `
+"export const show = (id) => {
+  return request.get(\`/channels/\${id}\`)
+}
+"
+`;
+
+exports[`axios/api/actions/Show should Show axios Api Show action with comment 1`] = `
+"export const show = (id, params) => {
+  return request.get(\`/channels/\${params.channelId}/comments/\${id}\`)
+}
+"
+`;
