@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/actions/Update should Update koa action 1`] = `
+exports[`koa/api/actions/Update should Update koa action 1`] = `
 "user.put('/:id', async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body

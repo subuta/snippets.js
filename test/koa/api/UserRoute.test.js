@@ -4,11 +4,13 @@ import { build, format, snippets as s } from 'bld.js'
 
 import UserRoute from 'lib/koa/api/UserRoute'
 
-describe('knex/api/UserRoute', () => {
+import { Routes as RoutesConfig } from 'test/fixtures/config'
+
+describe('koa/api/UserRoute', () => {
   it('should create koa UserRoute', () => {
     expect(format(UserRoute({
       model: 'user',
-      config: {}
+      routeConfig: RoutesConfig.user
     }))).toMatchSnapshot()
   })
 })

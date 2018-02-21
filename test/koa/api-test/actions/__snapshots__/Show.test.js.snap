@@ -9,13 +9,22 @@ exports[`koa/api-test/actions/Show should Show koa Show action test 1`] = `
   jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
 
   const response = await request
-    .get('/api/users/1')
+    .get('/api/users/19270')
     .set('Authorization', \`Bearer \${token}\`)
 
   t.is(response.status, 200)
-  t.deepEqual(response.body.id, 1)
-  t.deepEqual(response.body.title, 'Awesome React')
-  t.deepEqual(response.body.tags.length, 1)
+
+  t.deepEqual(response.body.id, 19270)
+  t.deepEqual(response.body.auth0Id, 79736)
+  t.deepEqual(response.body.locale, 'en_GB')
+  t.deepEqual(response.body.nickname, 'Investment Account XSS')
+  t.deepEqual(response.body.status, 'Fresh enhance')
+  t.deepEqual(
+    response.body.avatar,
+    'https://s3.amazonaws.com/uifaces/faces/twitter/buzzusborne/128.jpg'
+  )
+  t.deepEqual(response.body.created_at, '1970-09-26T17:59:42.227Z')
+  t.deepEqual(response.body.updated_at, '1970-09-16T03:49:30.128Z')
 })
 "
 `;

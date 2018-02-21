@@ -45,3 +45,35 @@ Object {
   "userName": "Ona.Kuhic",
 }
 `;
+
+exports[`utils/generateSeeds should return seed data for fake 3 user 1`] = `
+Array [
+  Object {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/d_nny_m_cher/128.jpg",
+    "email": "Monroe_Lowe45@yahoo.com",
+    "lastSignInAt": 1969-02-13T23:42:37.074Z,
+    "locale": "nb_NO",
+    "loggedInCount": 86856,
+    "name": "佐藤 蓮",
+    "userName": "Ona.Kuhic",
+  },
+  Object {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/millinet/128.jpg",
+    "email": "Lyla.Ritchie@yahoo.com",
+    "lastSignInAt": 1969-11-28T05:30:57.477Z,
+    "locale": "es_MX",
+    "loggedInCount": 68464,
+    "name": "高橋 太一",
+    "userName": "Kassandra_Zulauf12",
+  },
+  Object {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/tjrus/128.jpg",
+    "email": "Gage.Flatley48@hotmail.com",
+    "lastSignInAt": 1969-10-31T22:39:14.356Z,
+    "locale": "ja",
+    "loggedInCount": 76818,
+    "name": "佐々木 陸斗",
+    "userName": "Kaelyn_Wyman",
+  },
+]
+`;

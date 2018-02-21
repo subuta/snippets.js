@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/actions/Create should create koa action 1`] = `
+exports[`koa/api/actions/Create should create koa action 1`] = `
 "user.post('/', async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body

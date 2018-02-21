@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/actions/All should create koa action 1`] = `
+exports[`koa/api/actions/All should create koa action 1`] = `
 "user.get('/', async (ctx) => {
   const {User} = ctx.state.models
   let params = {}

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/UserRoute should create koa UserRoute 1`] = `
+exports[`koa/api/UserRoute should create koa UserRoute 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
 

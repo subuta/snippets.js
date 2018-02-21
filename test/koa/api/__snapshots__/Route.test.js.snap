@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/Route should create koa Route 1`] = `
+exports[`koa/api/Route should create koa Route 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
 
@@ -94,7 +94,7 @@ export default {
 "
 `;
 
-exports[`knex/api/Route should create koa Route with custom prefix 1`] = `
+exports[`koa/api/Route should create koa Route with custom prefix 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
 

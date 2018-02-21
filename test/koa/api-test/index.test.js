@@ -2,12 +2,12 @@
 
 import { build, format, snippets as s } from 'bld.js'
 
-import AllTest from 'lib/koa/api-test/actions/All'
+import IndexTest from 'lib/koa/api-test'
 
 import { Routes as RoutesConfig, Models as ModelsConfig } from 'test/fixtures/config'
 import sinon from 'sinon'
 
-describe('koa/api-test/actions/All', () => {
+describe('koa/api/UserRoute', () => {
   let clock
 
   beforeEach(() => {
@@ -18,11 +18,7 @@ describe('koa/api-test/actions/All', () => {
     clock.restore()
   })
 
-  it('should create koa Index(All) action test', () => {
-    expect(format(AllTest({
-      model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
-    }))).toMatchSnapshot()
+  it('should create koa UserRoute', () => {
+    expect(format(IndexTest(RoutesConfig, ModelsConfig))).toMatchSnapshot()
   })
 })

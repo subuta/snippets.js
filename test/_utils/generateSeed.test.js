@@ -1,16 +1,24 @@
-/* global expect, describe, it */
+/* global expect, describe, it, beforeEach, afterEach */
 
 import _ from 'lodash'
 
 import { build, format, snippets as s } from 'bld.js'
 
-import generateSeed from 'lib/_utils/generateSeed'
+import generateSeed, { generateSeeds } from 'lib/_utils/generateSeed'
 import sinon from 'sinon'
 
 describe('utils/generateSeed', () => {
-  it('should return seed data for fake user', () => {
-    const clock = sinon.useFakeTimers()
+  let clock
 
+  beforeEach(() => {
+    clock = sinon.useFakeTimers()
+  })
+
+  afterEach(() => {
+    clock.restore()
+  })
+
+  it('should return seed data for fake user', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'users',
@@ -45,16 +53,12 @@ describe('utils/generateSeed', () => {
           }
         }
       }
-    }, 'ja')
+    }, 0, 'ja')
 
     expect(seed).toMatchSnapshot()
-
-    clock.restore()
   })
 
   it('should return seed data for fake book', () => {
-    const clock = sinon.useFakeTimers()
-
     const seed = generateSeed({
       schema: {
         tableName: 'books',
@@ -80,8 +84,6 @@ describe('utils/generateSeed', () => {
     })
 
     expect(seed).toMatchSnapshot()
-
-    clock.restore()
   })
 
   it('should return data for array with items', () => {
@@ -135,6 +137,58 @@ describe('utils/generateSeed', () => {
         }
       }
     })
+
+    expect(seed).toMatchSnapshot()
+  })
+})
+
+describe('utils/generateSeeds', () => {
+  let clock
+
+  beforeEach(() => {
+    clock = sinon.useFakeTimers()
+  })
+
+  afterEach(() => {
+    clock.restore()
+  })
+
+  it('should return seed data for fake 3 user', () => {
+    const seed = generateSeeds({
+      schema: {
+        tableName: 'users',
+        properties: {
+          name: {
+            type: 'string'
+          },
+
+          userName: {
+            type: 'string'
+          },
+
+          loggedInCount: {
+            type: 'number'
+          },
+
+          email: {
+            type: 'string'
+          },
+
+          avatar: {
+            type: 'string'
+          },
+
+          locale: {
+            type: 'string'
+          },
+
+          lastSignInAt: {
+            type: 'string',
+            format: 'date'
+          }
+        }
+      }
+    }, 3, 'ja')
 
     expect(seed).toMatchSnapshot()
   })

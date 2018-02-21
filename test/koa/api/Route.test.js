@@ -4,18 +4,18 @@ import { build, format, snippets as s } from 'bld.js'
 
 import Route from 'lib/koa/api/Route'
 
-describe('knex/api/Route', () => {
+describe('koa/api/Route', () => {
   it('should create koa Route', () => {
     expect(format(Route({
       model: 'user',
-      config: {}
+      routeConfig: {}
     }))).toMatchSnapshot()
   })
 
   it('should create koa Route with custom prefix', () => {
     expect(format(Route({
       model: 'user',
-      config: {
+      routeConfig: {
         prefix: '/hoge/fuga/users'
       }
     }))).toMatchSnapshot()

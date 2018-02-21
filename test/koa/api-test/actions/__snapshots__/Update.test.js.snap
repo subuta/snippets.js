@@ -9,18 +9,35 @@ exports[`koa/api-test/actions/Update should Update koa Update action test 1`] = 
   jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
 
   const response = await request
-    .put('/api/users/1')
+    .put('/api/users/19270')
     .set('Authorization', \`Bearer \${token}\`)
     .send({
       article: {
-        title: 'Awesome Redux 2'
+        id: 19270,
+        auth0Id: 60926,
+        locale: 'en_BORK',
+        nickname: 'neural',
+        status: 'magenta Personal Loan Account',
+        avatar:
+          'https://s3.amazonaws.com/uifaces/faces/twitter/koridhandy/128.jpg',
+        created_at: '1970-05-03T17:39:05.087Z',
+        updated_at: '1970-03-18T01:59:20.639Z'
       }
     })
 
   t.is(response.status, 200)
-  t.deepEqual(response.body.id, 1)
-  t.deepEqual(response.body.title, 'Awesome Redux 2')
-  t.deepEqual(response.body.tags[0].label, 'react')
+
+  t.deepEqual(response.body.id, 19270)
+  t.deepEqual(response.body.auth0Id, 60926)
+  t.deepEqual(response.body.locale, 'en_BORK')
+  t.deepEqual(response.body.nickname, 'neural')
+  t.deepEqual(response.body.status, 'magenta Personal Loan Account')
+  t.deepEqual(
+    response.body.avatar,
+    'https://s3.amazonaws.com/uifaces/faces/twitter/koridhandy/128.jpg'
+  )
+  t.deepEqual(response.body.created_at, '1970-05-03T17:39:05.087Z')
+  t.deepEqual(response.body.updated_at, '1970-03-18T01:59:20.639Z')
 })
 "
 `;

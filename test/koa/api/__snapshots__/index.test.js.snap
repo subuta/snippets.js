@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/index should create koa Base 1`] = `
+exports[`koa/api/index should create koa Base 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
 import koaBody from 'koa-body'

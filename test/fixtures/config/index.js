@@ -42,15 +42,19 @@ export const Routes = {
 
 export const Models = {
   attachment: {
-    schema: Attachment
+    schema: Attachment,
+    seeds: 3
   },
   channel: {
-    schema: Channel
+    schema: Channel,
+    seeds: 3
   },
   comment: {
-    schema: Comment
+    schema: Comment,
+    seeds: 3
   },
   user: {
-    schema: User
+    schema: User,
+    seeds: 3
   }
 }

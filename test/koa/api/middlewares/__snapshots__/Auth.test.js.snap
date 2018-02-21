@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/api/middlewares/Auth should create koa Auth 1`] = `
+exports[`koa/api/middlewares/Auth should create koa Auth 1`] = `
 "import jwt from 'koa-jwt'
 import jwksRsa from 'jwks-rsa'
 import env from 'src/utils/env'
