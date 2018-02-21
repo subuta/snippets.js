@@ -28,7 +28,7 @@ Object {
 exports[`utils/generateSeed should return seed data for fake book 1`] = `
 Object {
   "authorId": 12495,
-  "dateStr": "1970-11-20T02:31:46.870Z",
+  "dateStr": "2000-11-19T03:31:46.870Z",
   "price": "91.00",
   "title": "Oman",
 }
@@ -38,11 +38,35 @@ exports[`utils/generateSeed should return seed data for fake user 1`] = `
 Object {
   "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/d_nny_m_cher/128.jpg",
   "email": "Monroe_Lowe45@yahoo.com",
-  "lastSignInAt": 1969-02-13T23:42:37.074Z,
+  "lastSignInAt": 1999-02-14T00:42:37.074Z,
   "locale": "nb_NO",
   "loggedInCount": 86856,
   "name": "佐藤 蓮",
   "userName": "Ona.Kuhic",
+}
+`;
+
+exports[`utils/generateSeed should return seed data for fake user with today(1970/1/1) 1`] = `
+Object {
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ramanathan_pdy/128.jpg",
+  "email": "Lavada65@hotmail.com",
+  "lastSignInAt": 1969-04-02T20:36:42.110Z,
+  "locale": "fr_CA",
+  "loggedInCount": 55005,
+  "name": "Mrs. Ona Kuhic",
+  "userName": "Alejandrin_Stroman",
+}
+`;
+
+exports[`utils/generateSeed should return seed data for fake user without locale 1`] = `
+Object {
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/ramanathan_pdy/128.jpg",
+  "email": "Lavada65@hotmail.com",
+  "lastSignInAt": 1999-04-03T06:36:42.110Z,
+  "locale": "fr_CA",
+  "loggedInCount": 55005,
+  "name": "Mrs. Ona Kuhic",
+  "userName": "Alejandrin_Stroman",
 }
 `;
 
@@ -51,7 +75,7 @@ Array [
   Object {
     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/d_nny_m_cher/128.jpg",
     "email": "Monroe_Lowe45@yahoo.com",
-    "lastSignInAt": 1969-02-13T23:42:37.074Z,
+    "lastSignInAt": 1999-02-14T00:42:37.074Z,
     "locale": "nb_NO",
     "loggedInCount": 86856,
     "name": "佐藤 蓮",
@@ -60,7 +84,7 @@ Array [
   Object {
     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/millinet/128.jpg",
     "email": "Lyla.Ritchie@yahoo.com",
-    "lastSignInAt": 1969-11-28T05:30:57.477Z,
+    "lastSignInAt": 1999-11-28T06:30:57.477Z,
     "locale": "es_MX",
     "loggedInCount": 68464,
     "name": "高橋 太一",
@@ -69,7 +93,7 @@ Array [
   Object {
     "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/tjrus/128.jpg",
     "email": "Gage.Flatley48@hotmail.com",
-    "lastSignInAt": 1969-10-31T22:39:14.356Z,
+    "lastSignInAt": 1999-10-31T23:39:14.356Z,
     "locale": "ja",
     "loggedInCount": 76818,
     "name": "佐々木 陸斗",

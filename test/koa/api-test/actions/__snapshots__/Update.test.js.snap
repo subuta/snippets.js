@@ -20,8 +20,8 @@ exports[`koa/api-test/actions/Update should Update koa Update action test 1`] = 
         status: 'magenta Personal Loan Account',
         avatar:
           'https://s3.amazonaws.com/uifaces/faces/twitter/koridhandy/128.jpg',
-        created_at: '1970-05-03T17:39:05.087Z',
-        updated_at: '1970-03-18T01:59:20.639Z'
+        created_at: '2000-05-02T18:39:05.087Z',
+        updated_at: '2000-03-17T02:59:20.639Z'
       }
     })
 
@@ -36,8 +36,8 @@ exports[`koa/api-test/actions/Update should Update koa Update action test 1`] = 
     response.body.avatar,
     'https://s3.amazonaws.com/uifaces/faces/twitter/koridhandy/128.jpg'
   )
-  t.deepEqual(response.body.created_at, '1970-05-03T17:39:05.087Z')
-  t.deepEqual(response.body.updated_at, '1970-03-18T01:59:20.639Z')
+  t.deepEqual(response.body.created_at, '2000-05-02T18:39:05.087Z')
+  t.deepEqual(response.body.updated_at, '2000-03-17T02:59:20.639Z')
 })
 "
 `;

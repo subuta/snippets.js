@@ -5,17 +5,12 @@ import _ from 'lodash'
 import { build, format, snippets as s } from 'bld.js'
 
 import generateSeed, { generateSeeds } from 'lib/_utils/generateSeed'
-import sinon from 'sinon'
 
 describe('utils/generateSeed', () => {
-  let clock
-
   beforeEach(() => {
-    clock = sinon.useFakeTimers()
   })
 
   afterEach(() => {
-    clock.restore()
   })
 
   it('should return seed data for fake user', () => {
@@ -53,7 +48,87 @@ describe('utils/generateSeed', () => {
           }
         }
       }
-    }, 0, 'ja')
+    }, 0, { locale: 'ja' })
+
+    expect(seed).toMatchSnapshot()
+  })
+
+  it('should return seed data for fake user without locale', () => {
+    const seed = generateSeed({
+      schema: {
+        tableName: 'users',
+        properties: {
+          name: {
+            type: 'string'
+          },
+
+          userName: {
+            type: 'string'
+          },
+
+          loggedInCount: {
+            type: 'number'
+          },
+
+          email: {
+            type: 'string'
+          },
+
+          avatar: {
+            type: 'string'
+          },
+
+          locale: {
+            type: 'string'
+          },
+
+          lastSignInAt: {
+            type: 'string',
+            format: 'date'
+          }
+        }
+      }
+    })
+
+    expect(seed).toMatchSnapshot()
+  })
+
+  it('should return seed data for fake user with today(1970/1/1)', () => {
+    const seed = generateSeed({
+      schema: {
+        tableName: 'users',
+        properties: {
+          name: {
+            type: 'string'
+          },
+
+          userName: {
+            type: 'string'
+          },
+
+          loggedInCount: {
+            type: 'number'
+          },
+
+          email: {
+            type: 'string'
+          },
+
+          avatar: {
+            type: 'string'
+          },
+
+          locale: {
+            type: 'string'
+          },
+
+          lastSignInAt: {
+            type: 'string',
+            format: 'date'
+          }
+        }
+      }
+    }, 0, { today: '1970/1/1' })
 
     expect(seed).toMatchSnapshot()
   })
@@ -143,16 +218,6 @@ describe('utils/generateSeed', () => {
 })
 
 describe('utils/generateSeeds', () => {
-  let clock
-
-  beforeEach(() => {
-    clock = sinon.useFakeTimers()
-  })
-
-  afterEach(() => {
-    clock.restore()
-  })
-
   it('should return seed data for fake 3 user', () => {
     const seed = generateSeeds({
       schema: {
@@ -188,7 +253,7 @@ describe('utils/generateSeeds', () => {
           }
         }
       }
-    }, 3, 'ja')
+    }, 3, { locale: 'ja' })
 
     expect(seed).toMatchSnapshot()
   })
