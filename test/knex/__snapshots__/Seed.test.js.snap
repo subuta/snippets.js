@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`knex/Entrypoint should create knex Entrypoint 1`] = `
+"exports.seed = async (knex) => {
+  // Deletes ALL and insert entries.
+  await knex('users').del()
+
+  // https://github.com/tgriesser/knex/issues/54
+  await knex('users').insert([
+    {
+      id: 19270,
+      auth0Id: 79736,
+      locale: 'en_GB',
+      nickname: 'Investment Account XSS',
+      status: 'Fresh enhance',
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/buzzusborne/128.jpg',
+      created_at: '2000-09-25T18:59:42.227Z',
+      updated_at: '2000-09-15T04:49:30.128Z'
+    },
+    {
+      id: 82970,
+      auth0Id: 5718,
+      locale: 'sv',
+      nickname: 'Bond Markets Units European Composite Unit (EURCO)',
+      status: 'payment Front-line matrix',
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/stefanotirloni/128.jpg',
+      created_at: '2000-02-28T21:53:57.130Z',
+      updated_at: '2000-03-24T11:21:36.740Z'
+    },
+    {
+      id: 93464,
+      auth0Id: 20806,
+      locale: 'ru',
+      nickname: 'Russian Ruble',
+      status: 'Rhode Island bypass',
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/shvelo96/128.jpg',
+      created_at: '2000-01-20T22:09:36.266Z',
+      updated_at: '2000-10-02T00:12:25.170Z'
+    }
+  ])
+}
+"
+`;
