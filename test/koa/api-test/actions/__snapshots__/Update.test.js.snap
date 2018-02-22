@@ -9,35 +9,35 @@ exports[`koa/api-test/actions/Update should Update koa Update action test 1`] = 
   jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
 
   const response = await request
-    .put('/api/users/19270')
+    .put('/api/users/2054')
     .set('Authorization', \`Bearer \${token}\`)
     .send({
       article: {
-        id: 19270,
-        auth0Id: 60926,
-        locale: 'en_BORK',
-        nickname: 'neural',
-        status: 'magenta Personal Loan Account',
+        id: 2054,
+        auth0Id: 40550,
+        locale: 'zh_TW',
+        nickname: 'Puerto Rico Kids',
+        status: 'CFA Franc BEAC',
         avatar:
-          'https://s3.amazonaws.com/uifaces/faces/twitter/koridhandy/128.jpg',
-        created_at: '2000-05-02T18:39:05.087Z',
-        updated_at: '2000-03-17T02:59:20.639Z'
+          'https://s3.amazonaws.com/uifaces/faces/twitter/samscouto/128.jpg',
+        created_at: '2000-02-02T09:44:39.710Z',
+        updated_at: '2000-12-12T14:14:34.366Z'
       }
     })
 
   t.is(response.status, 200)
 
-  t.deepEqual(response.body.id, 19270)
-  t.deepEqual(response.body.auth0Id, 60926)
-  t.deepEqual(response.body.locale, 'en_BORK')
-  t.deepEqual(response.body.nickname, 'neural')
-  t.deepEqual(response.body.status, 'magenta Personal Loan Account')
+  t.deepEqual(response.body.id, 2054)
+  t.deepEqual(response.body.auth0Id, 40550)
+  t.deepEqual(response.body.locale, 'zh_TW')
+  t.deepEqual(response.body.nickname, 'Puerto Rico Kids')
+  t.deepEqual(response.body.status, 'CFA Franc BEAC')
   t.deepEqual(
     response.body.avatar,
-    'https://s3.amazonaws.com/uifaces/faces/twitter/koridhandy/128.jpg'
+    'https://s3.amazonaws.com/uifaces/faces/twitter/samscouto/128.jpg'
   )
-  t.deepEqual(response.body.created_at, '2000-05-02T18:39:05.087Z')
-  t.deepEqual(response.body.updated_at, '2000-03-17T02:59:20.639Z')
+  t.deepEqual(response.body.created_at, '2000-02-02T09:44:39.710Z')
+  t.deepEqual(response.body.updated_at, '2000-12-12T14:14:34.366Z')
 })
 "
 `;

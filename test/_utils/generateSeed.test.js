@@ -215,6 +215,95 @@ describe('utils/generateSeed', () => {
 
     expect(seed).toMatchSnapshot()
   })
+
+  it('should generate same seed for same schema', () => {
+    const seed = generateSeed({
+      schema: {
+        tableName: 'users',
+        properties: {
+          address: {
+            type: 'object',
+            properties: {
+              'streetAddress': {'type': 'string'},
+              'city': {'type': 'string'},
+              'state': {'type': 'string'}
+            }
+          },
+
+          countryCode: {
+            type: 'string'
+          }
+        }
+      }
+    })
+
+    const anotherSeed = generateSeed({
+      schema: {
+        tableName: 'users',
+        properties: {
+          address: {
+            type: 'object',
+            properties: {
+              'streetAddress': {'type': 'string'},
+              'city': {'type': 'string'},
+              'state': {'type': 'string'}
+            }
+          },
+
+          countryCode: {
+            type: 'string'
+          }
+        }
+      },
+      seeds: 3
+    })
+
+    expect(seed).toEqual(anotherSeed)
+  })
+
+  it('should not generate same seed for different schema', () => {
+    const seed = generateSeed({
+      schema: {
+        tableName: 'users',
+        properties: {
+          address: {
+            type: 'object',
+            properties: {
+              'streetAddress': {'type': 'string'},
+              'city': {'type': 'string'},
+              'state': {'type': 'string'}
+            }
+          },
+
+          countryCode: {
+            type: 'string'
+          }
+        }
+      }
+    })
+
+    const anotherSeed = generateSeed({
+      schema: {
+        tableName: 'users',
+        properties: {
+          address: {
+            type: 'object',
+            properties: {
+              'streetAddress': {'type': 'string'},
+              'city': {'type': 'string'},
+              'state': {'type': 'string'}
+            }
+          },
+
+          countryCode: {
+            type: 'number'
+          }
+        }
+      }
+    })
+
+    expect(seed).not.toEqual(anotherSeed)
+  })
 })
 
 describe('utils/generateSeeds', () => {

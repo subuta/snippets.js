@@ -1,5 +1,8 @@
 import _ from 'lodash'
 import Attachment from './model/Attachment'
+import Article from './model/Article'
+import ArticleTag from './model/ArticleTag'
+import Tag from './model/Tag'
 import Channel from './model/Channel'
 import Comment from './model/Comment'
 import User from './model/User'
@@ -12,6 +15,9 @@ export const Routes = {
     ],
     eager: '[comments.[attachment, commentedBy]]'
   },
+  article: {
+    eager: '[tags]'
+  },
   comment: {
     // pass custom route prefix.
     prefix: '/channels/:channelId/comments',
@@ -20,7 +26,7 @@ export const Routes = {
       'update',
       'show'
     ],
-    eager: '[attachment, commentedBy]'
+    eager: '[channel, attachment, commentedBy]'
   },
   attachment: {
     imports: [
@@ -35,8 +41,15 @@ export const Routes = {
     ],
     eager: ''
   },
+  tag: {
+    only: [
+      'index'
+    ],
+    eager: '[articles]'
+  },
   user: {
-    eager: ''
+    eager: '',
+    only: []
   }
 }
 
@@ -45,12 +58,25 @@ export const Models = {
     schema: Attachment,
     seeds: 3
   },
+  article: {
+    schema: Article,
+    seeds: 3
+  },
+  articleTag: {
+    schema: ArticleTag,
+    isJunction: true,
+    seeds: 3
+  },
   channel: {
     schema: Channel,
     seeds: 3
   },
   comment: {
     schema: Comment,
+    seeds: 3
+  },
+  tag: {
+    schema: Tag,
     seeds: 3
   },
   user: {

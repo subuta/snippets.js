@@ -9,22 +9,22 @@ exports[`koa/api-test/actions/Show should Show koa Show action test 1`] = `
   jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
 
   const response = await request
-    .get('/api/users/19270')
+    .get('/api/users/2054')
     .set('Authorization', \`Bearer \${token}\`)
 
   t.is(response.status, 200)
 
-  t.deepEqual(response.body.id, 19270)
-  t.deepEqual(response.body.auth0Id, 79736)
-  t.deepEqual(response.body.locale, 'en_GB')
-  t.deepEqual(response.body.nickname, 'Investment Account XSS')
-  t.deepEqual(response.body.status, 'Fresh enhance')
+  t.deepEqual(response.body.id, 2054)
+  t.deepEqual(response.body.auth0Id, 47736)
+  t.deepEqual(response.body.locale, 'en')
+  t.deepEqual(response.body.nickname, 'Avon Buckinghamshire')
+  t.deepEqual(response.body.status, 'Practical')
   t.deepEqual(
     response.body.avatar,
-    'https://s3.amazonaws.com/uifaces/faces/twitter/buzzusborne/128.jpg'
+    'https://s3.amazonaws.com/uifaces/faces/twitter/petrangr/128.jpg'
   )
-  t.deepEqual(response.body.created_at, '2000-09-25T18:59:42.227Z')
-  t.deepEqual(response.body.updated_at, '2000-09-15T04:49:30.128Z')
+  t.deepEqual(response.body.created_at, '2000-03-15T05:45:28.720Z')
+  t.deepEqual(response.body.updated_at, '2000-09-21T19:03:58.079Z')
 })
 "
 `;

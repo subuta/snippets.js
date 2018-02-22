@@ -7,8 +7,10 @@ import koaBody from 'koa-body'
 import auth, {getCurrentUser} from './middlewares/auth'
 import models from './middlewares/models'
 import channel from './channel'
+import article from './article'
 import comment from './comment'
 import attachment from './attachment'
+import tag from './tag'
 import user from './user'
 
 const api = new Router({
@@ -43,8 +45,10 @@ api.use(getCurrentUser)
 // routers set after auth middleware will be protected
 registerRouters({
   channel,
+  article,
   comment,
   attachment,
+  tag,
   user
 })
 

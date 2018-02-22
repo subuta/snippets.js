@@ -8,36 +8,35 @@ exports[`knex/Entrypoint should create knex Entrypoint 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('users').insert([
     {
-      id: 19270,
-      auth0Id: 79736,
-      locale: 'en_GB',
-      nickname: 'Investment Account XSS',
-      status: 'Fresh enhance',
-      avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/buzzusborne/128.jpg',
-      created_at: '2000-09-25T18:59:42.227Z',
-      updated_at: '2000-09-15T04:49:30.128Z'
+      id: 2054,
+      auth0Id: 47736,
+      locale: 'en',
+      nickname: 'Avon Buckinghamshire',
+      status: 'Practical',
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/petrangr/128.jpg',
+      created_at: '2000-03-15T05:45:28.720Z',
+      updated_at: '2000-09-21T19:03:58.079Z'
     },
     {
-      id: 82970,
-      auth0Id: 5718,
-      locale: 'sv',
-      nickname: 'Bond Markets Units European Composite Unit (EURCO)',
-      status: 'payment Front-line matrix',
-      avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/stefanotirloni/128.jpg',
-      created_at: '2000-02-28T21:53:57.130Z',
-      updated_at: '2000-03-24T11:21:36.740Z'
+      id: 62371,
+      auth0Id: 66040,
+      locale: 'es_MX',
+      nickname: 'Ergonomic target Technician',
+      status: 'invoice Fresh Cambridgeshire',
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/hota_v/128.jpg',
+      created_at: '2000-01-24T11:41:50.805Z',
+      updated_at: '2000-03-20T03:34:03.300Z'
     },
     {
-      id: 93464,
-      auth0Id: 20806,
-      locale: 'ru',
-      nickname: 'Russian Ruble',
-      status: 'Rhode Island bypass',
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/shvelo96/128.jpg',
-      created_at: '2000-01-20T22:09:36.266Z',
-      updated_at: '2000-10-02T00:12:25.170Z'
+      id: 41854,
+      auth0Id: 79778,
+      locale: 'cz',
+      nickname: 'Gold blue actuating',
+      status: 'Berkshire virtual repurpose',
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/Shriiiiimp/128.jpg',
+      created_at: '2000-03-06T19:06:57.017Z',
+      updated_at: '2000-07-20T04:47:47.189Z'
     }
   ])
 }

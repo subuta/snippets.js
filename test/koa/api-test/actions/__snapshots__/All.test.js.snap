@@ -14,7 +14,7 @@ exports[`koa/api-test/actions/All should create koa Index(All) action test 1`] =
 
   t.is(response.status, 200)
   t.deepEqual(response.body.length, 3)
-  t.deepEqual(response.body, [19270, 82970, 93464])
+  t.deepEqual(response.body, [2054, 62371, 41854])
 })
 "
 `;

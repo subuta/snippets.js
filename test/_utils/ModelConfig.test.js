@@ -11,6 +11,7 @@ describe('utils/ModelConfig', () => {
   it('validateModels should validate correct models', () => {
     validateModels({
       book: {
+        isJunction: false,
         schema: {
           tableName: 'books',
           properties: {}
