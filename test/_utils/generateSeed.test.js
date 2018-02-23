@@ -7,7 +7,9 @@ import { build, format, snippets as s } from 'bld.js'
 import generateSeed, {
   generateSeeds,
   generateJunctionSeed,
-  generateJunctionSeeds
+  generateJunctionSeeds,
+  generateSeedWithRelation,
+  generateSeedsWithRelation
 } from 'lib/_utils/generateSeed'
 
 import { Models as ModelsConfig } from 'test/fixtures/config'
@@ -397,6 +399,32 @@ describe('utils/generateJunctionSeed', () => {
 describe('utils/generateJunctionSeeds', () => {
   it('should return multiple seed data for junction-table model', () => {
     const seed = generateJunctionSeeds('articleTag', ModelsConfig, 3)
+
+    expect(seed).toMatchSnapshot()
+  })
+})
+
+describe('utils/generateSeedWithRelation', () => {
+  it('should return single seed data with relation', () => {
+    const commentSeed = generateSeedWithRelation('comment', ModelsConfig)
+    const channelSeed = generateSeedWithRelation('channel', ModelsConfig)
+    
+    console.log(commentSeed)
+    console.log(channelSeed)
+
+    expect(commentSeed).toMatchSnapshot()
+  })
+
+  it('should return single seed data with relation as instance if asId = false', () => {
+    const seed = generateSeedWithRelation('comment', ModelsConfig, 0, { asId: false })
+
+    expect(seed).toMatchSnapshot()
+  })
+})
+
+describe('utils/generateSeedsWithRelation', () => {
+  it('should return multiple seed data with relation', () => {
+    const seed = generateSeedsWithRelation('comment', ModelsConfig, 3)
 
     expect(seed).toMatchSnapshot()
   })

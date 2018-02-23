@@ -33,6 +33,6 @@ export default {
         from: 'users.id',
         to: 'comments.commentedById'
       }
-    },
+    }
   }
 }

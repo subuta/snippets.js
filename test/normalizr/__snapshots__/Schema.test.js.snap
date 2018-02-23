@@ -27,7 +27,7 @@ export const user = new schema.Entity('user')
 export const userList = new schema.Array(user)
 
 attachment.define({
-  comments: [comment]
+  comment
 })
 
 article.define({

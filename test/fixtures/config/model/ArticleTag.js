@@ -2,7 +2,7 @@ export default {
   tableName: 'articles_tags',
   required: [
     'articleId',
-    'tagId',
+    'tagId'
   ],
 
   properties: {
@@ -14,7 +14,7 @@ export default {
     },
     tagId: {
       type: 'integer'
-    },
+    }
   },
 
   relations: {
@@ -22,7 +22,7 @@ export default {
       belongsTo: 'tag',
       join: {
         from: 'articles_tags.tagId',
-        to: 'tags.id',
+        to: 'tags.id'
       }
     },
 
@@ -30,8 +30,8 @@ export default {
       belongsTo: 'article',
       join: {
         from: 'articles_tags.articleId',
-        to: 'articles.id',
+        to: 'articles.id'
       }
-    },
+    }
   }
 }

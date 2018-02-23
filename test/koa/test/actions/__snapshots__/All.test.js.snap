@@ -14,7 +14,7 @@ exports[`koa/test/actions/All should create koa Index(All) action test 1`] = `
 
   t.is(response.status, 200)
   t.deepEqual(response.body.length, 3)
-  t.deepEqual(_.map(response.body, 'id'), [37436, 58010, 92666])
+  t.deepEqual(_.map(response.body, 'id'), [92666, 58010, 37436])
 })
 "
 `;

@@ -3,7 +3,7 @@ export default {
   required: [
     'name',
     'type',
-    'imageUrl',
+    'imageUrl'
   ],
 
   properties: {
@@ -28,6 +28,6 @@ export default {
         from: 'attachments.id',
         to: 'comments.attachmentId'
       }
-    },
+    }
   }
 }

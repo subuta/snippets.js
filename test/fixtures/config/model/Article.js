@@ -2,7 +2,7 @@ export default {
   tableName: 'articles',
   required: [
     'title',
-    'content',
+    'content'
   ],
 
   properties: {
@@ -26,8 +26,8 @@ export default {
           from: 'articles_tags.articleId',
           to: 'articles_tags.tagId'
         },
-        to: 'tags.id',
+        to: 'tags.id'
       }
-    },
+    }
   }
 }

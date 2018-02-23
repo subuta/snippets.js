@@ -1,7 +1,7 @@
 export default {
   tableName: 'comments',
   required: [
-    'text',
+    'text'
   ],
 
   properties: {

@@ -15,6 +15,22 @@ describe('knex/Seed', () => {
     }))).toMatchSnapshot()
   })
 
+  it('should create knex seed for comment', () => {
+    expect(format(Seed({
+      model: 'comment',
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
+    }))).toMatchSnapshot()
+  })
+
+  it('should create knex seed for channel', () => {
+    expect(format(Seed({
+      model: 'channel',
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
+    }))).toMatchSnapshot()
+  })
+
   it('should create knex seed for junction table', () => {
     expect(format(Seed({
       model: 'articleTag',

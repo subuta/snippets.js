@@ -8,30 +8,82 @@ exports[`knex/Seed should create knex seed 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('users').insert([
     {
-      id: 37436,
-      auth0Id: 'systemic Belarussian Ruble',
-      locale: 'en_BORK',
-      nickname: 'Ernestina.Feeney51',
-      status: 'withdrawal PCI morph',
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/rweve/128.jpg'
+      id: 54783,
+      auth0Id: 'turquoise revolutionize override',
+      locale: 'vi',
+      nickname: 'Tiffany.Erdman',
+      status: 'turquoise revolutionize override',
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/reetajayendra/128.jpg'
     },
     {
-      id: 58010,
-      auth0Id: 'SDD',
-      locale: 'pt_BR',
-      nickname: 'Thora.Kreiger40',
-      status: 'Plastic Awesome',
+      id: 34300,
+      auth0Id: 'Synergized Handmade',
+      locale: 'it',
+      nickname: 'Kory.Friesen75',
+      status: 'Synergized Handmade',
       avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/aislinnkelly/128.jpg'
+        'https://s3.amazonaws.com/uifaces/faces/twitter/dallasbpeters/128.jpg'
     },
     {
-      id: 92666,
-      auth0Id: 'Knoll',
-      locale: 'sk',
-      nickname: 'Ophelia.Dickens',
-      status: 'initiatives',
+      id: 17123,
+      auth0Id: 'morph SMTP',
+      locale: 'en_au_ocker',
+      nickname: 'Garnet86',
+      status: 'morph SMTP',
       avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/kapaluccio/128.jpg'
+        'https://s3.amazonaws.com/uifaces/faces/twitter/chris_witko/128.jpg'
+    }
+  ])
+}
+"
+`;
+
+exports[`knex/Seed should create knex seed for channel 1`] = `
+"exports.seed = async (knex) => {
+  // Deletes ALL and insert entries.
+  await knex('channels').del()
+
+  // https://github.com/tgriesser/knex/issues/54
+  await knex('channels').insert([
+    {id: 54783, name: 'International'},
+    {id: 34300, name: 'Buckinghamshire Fantastic Cotton Chair invoice'},
+    {id: 17123, name: 'capacitor reboot'}
+  ])
+}
+"
+`;
+
+exports[`knex/Seed should create knex seed for comment 1`] = `
+"exports.seed = async (knex) => {
+  // Deletes ALL and insert entries.
+  await knex('comments').del()
+
+  // https://github.com/tgriesser/knex/issues/54
+  await knex('comments').insert([
+    {
+      id: 54783,
+      text:
+        'Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.',
+      channelId: 31156,
+      commentedById: 92666,
+      attachmentId: 'Practical Frozen Bacon deposit open architecture'
+    },
+    {
+      id: 34300,
+      text:
+        'Nesciunt ea quisquam sed et repudiandae. Cumque facere earum repudiandae nam cum. Assumenda occaecati accusantium eligendi. Eum possimus odit eum necessitatibus nulla ut est.',
+      channelId: 99821,
+      commentedById: 58010,
+      attachmentId: 'calculating Orchestrator deposit'
+    },
+    {
+      id: 17123,
+      text:
+        'Laboriosam quisquam ut amet. Laboriosam autem animi quia autem. Quam iure aut molestiae laborum aut eos reiciendis.',
+      channelId: 54787,
+      commentedById: 37436,
+      attachmentId: 'Handmade driver'
     }
   ])
 }
@@ -45,9 +97,9 @@ exports[`knex/Seed should create knex seed for junction table 1`] = `
 
   // https://github.com/tgriesser/knex/issues/54
   await knex('articles_tags').insert([
-    {id: 37083, articleId: 36084, tagId: 91264},
-    {id: 48239, articleId: 6898, tagId: 10295},
-    {id: 52023, articleId: 14780, tagId: 89794}
+    {id: 42344, articleId: 36084, tagId: 91264},
+    {id: 42344, articleId: 6898, tagId: 10295},
+    {id: 42344, articleId: 14780, tagId: 89794}
   ])
 }
 "

@@ -2,9 +2,9 @@
 
 exports[`utils/generateJunctionSeed should return single seed data for junction-table model 1`] = `
 Object {
-  "articleId": 6898,
-  "id": 48239,
-  "tagId": 10295,
+  "articleId": 36084,
+  "id": 42344,
+  "tagId": 91264,
 }
 `;
 
@@ -12,17 +12,17 @@ exports[`utils/generateJunctionSeeds should return multiple seed data for juncti
 Array [
   Object {
     "articleId": 36084,
-    "id": 37083,
+    "id": 42344,
     "tagId": 91264,
   },
   Object {
     "articleId": 6898,
-    "id": 48239,
+    "id": 42344,
     "tagId": 10295,
   },
   Object {
     "articleId": 14780,
-    "id": 52023,
+    "id": 42344,
     "tagId": 89794,
   },
 ]
@@ -32,7 +32,7 @@ exports[`utils/generateSeed should return signle data for array with items 1`] =
 Object {
   "id": 32711,
   "tag": Array [
-    "Associate",
+    "workforce",
   ],
 }
 `;
@@ -46,95 +46,156 @@ Object {
 exports[`utils/generateSeed should return single data for object with items 1`] = `
 Object {
   "address": Object {
-    "city": "West Allan",
-    "state": "Arizona",
-    "streetAddress": "598 Dianna Landing",
+    "city": "Lake Lauriane",
+    "state": "Indiana",
+    "streetAddress": "85984 Kemmer Overpass",
   },
-  "countryCode": "SS",
+  "countryCode": "EG",
   "id": 26129,
 }
 `;
 
 exports[`utils/generateSeed should return single seed data for fake book 1`] = `
 Object {
-  "authorId": 48827,
-  "dateStr": "2000-01-05T14:03:33.395Z",
+  "authorId": 66879,
+  "dateStr": "2000-09-01T03:39:15.997Z",
   "id": 66879,
-  "price": "633.00",
-  "title": "Tasty Developer Credit Card Account",
+  "price": "669.00",
+  "title": "bypass Strategist Balboa US Dollar",
 }
 `;
 
 exports[`utils/generateSeed should return single seed data for fake user 1`] = `
 Object {
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
-  "email": "Nathanial.Boyle24@hotmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/imammuht/128.jpg",
+  "email": "Jensen_Bernier@yahoo.com",
   "id": 65336,
-  "lastSignInAt": 1999-12-09T13:52:36.585Z,
-  "locale": "de",
-  "loggedInCount": 73489,
-  "name": "加藤 蓮",
-  "userName": "Kyle.Robel52",
+  "lastSignInAt": 1999-05-07T13:33:49.879Z,
+  "locale": "nb_NO",
+  "loggedInCount": 65336,
+  "name": "山口 翼",
+  "userName": "Madaline58",
 }
 `;
 
 exports[`utils/generateSeed should return single seed data for fake user with today(1970/1/1) 1`] = `
 Object {
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
-  "email": "Ayla.Reynolds@hotmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/imammuht/128.jpg",
+  "email": "Jensen_Bernier@yahoo.com",
   "id": 65336,
-  "lastSignInAt": 1969-12-09T03:52:36.585Z,
-  "locale": "de",
-  "loggedInCount": 78888,
-  "name": "Kyle Robel",
-  "userName": "Pansy_Jast",
+  "lastSignInAt": 1969-05-07T03:33:49.879Z,
+  "locale": "nb_NO",
+  "loggedInCount": 65336,
+  "name": "Anthony McDermott",
+  "userName": "Madaline58",
 }
 `;
 
 exports[`utils/generateSeed should return single seed data for fake user without locale 1`] = `
 Object {
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
-  "email": "Ayla.Reynolds@hotmail.com",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/imammuht/128.jpg",
+  "email": "Jensen_Bernier@yahoo.com",
   "id": 65336,
-  "lastSignInAt": 1999-12-09T13:52:36.585Z,
-  "locale": "de",
-  "loggedInCount": 78888,
-  "name": "Kyle Robel",
-  "userName": "Pansy_Jast",
+  "lastSignInAt": 1999-05-07T13:33:49.879Z,
+  "locale": "nb_NO",
+  "loggedInCount": 65336,
+  "name": "Anthony McDermott",
+  "userName": "Madaline58",
+}
+`;
+
+exports[`utils/generateSeedWithRelation should return single seed data with relation 1`] = `
+Object {
+  "attachmentId": "Practical Frozen Bacon deposit open architecture",
+  "channelId": 31156,
+  "commentedById": 92666,
+  "id": 54783,
+  "text": "Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.",
+}
+`;
+
+exports[`utils/generateSeedWithRelation should return single seed data with relation as instance if asId = false 1`] = `
+Object {
+  "attachment": Object {
+    "id": "Practical Frozen Bacon deposit open architecture",
+    "imageUrl": "http://lorempixel.com/640/480/technics",
+    "name": "Practical Frozen Bacon deposit open architecture",
+    "type": "Practical Frozen Bacon deposit open architecture",
+  },
+  "channel": Object {
+    "id": 31156,
+    "name": "International",
+  },
+  "commentedBy": Object {
+    "auth0Id": "turquoise revolutionize override",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/reetajayendra/128.jpg",
+    "id": 92666,
+    "locale": "vi",
+    "nickname": "Tiffany.Erdman",
+    "status": "turquoise revolutionize override",
+  },
+  "id": 54783,
+  "text": "Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.",
 }
 `;
 
 exports[`utils/generateSeeds should return multiple seed data for fake 3 user 1`] = `
 Array [
   Object {
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/normanbox/128.jpg",
-    "email": "Jordi64@gmail.com",
-    "id": 61922,
-    "lastSignInAt": 1999-12-09T05:11:02.980Z,
-    "locale": "ru",
-    "loggedInCount": 4515,
-    "name": "山田 翼",
-    "userName": "Willy.Crist",
-  },
-  Object {
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
-    "email": "Nathanial.Boyle24@hotmail.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/imammuht/128.jpg",
+    "email": "Jensen_Bernier@yahoo.com",
     "id": 65336,
-    "lastSignInAt": 1999-12-09T13:52:36.585Z,
-    "locale": "de",
-    "loggedInCount": 73489,
-    "name": "加藤 蓮",
-    "userName": "Kyle.Robel52",
+    "lastSignInAt": 1999-05-07T13:33:49.879Z,
+    "locale": "nb_NO",
+    "loggedInCount": 65336,
+    "name": "山口 翼",
+    "userName": "Madaline58",
   },
   Object {
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/commadelimited/128.jpg",
-    "email": "Kathleen86@hotmail.com",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/the_winslet/128.jpg",
+    "email": "Kieran.Larkin66@yahoo.com",
+    "id": 61922,
+    "lastSignInAt": 1999-05-20T00:35:49.755Z,
+    "locale": "ja",
+    "loggedInCount": 61922,
+    "name": "佐々木 結愛",
+    "userName": "Lila_Marvin",
+  },
+  Object {
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/mkginfo/128.jpg",
+    "email": "Layla.Bailey@hotmail.com",
     "id": 75486,
-    "lastSignInAt": 1999-10-28T05:40:48.919Z,
-    "locale": "sv",
-    "loggedInCount": 99496,
-    "name": "佐々木 大翔",
-    "userName": "Irma0",
+    "lastSignInAt": 1999-03-31T12:22:15.438Z,
+    "locale": "pl",
+    "loggedInCount": 75486,
+    "name": "松本 結愛",
+    "userName": "Nico44",
+  },
+]
+`;
+
+exports[`utils/generateSeedsWithRelation should return multiple seed data with relation 1`] = `
+Array [
+  Object {
+    "attachmentId": "Practical Frozen Bacon deposit open architecture",
+    "channelId": 31156,
+    "commentedById": 92666,
+    "id": 54783,
+    "text": "Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.",
+  },
+  Object {
+    "attachmentId": "calculating Orchestrator deposit",
+    "channelId": 99821,
+    "commentedById": 58010,
+    "id": 34300,
+    "text": "Nesciunt ea quisquam sed et repudiandae. Cumque facere earum repudiandae nam cum. Assumenda occaecati accusantium eligendi. Eum possimus odit eum necessitatibus nulla ut est.",
+  },
+  Object {
+    "attachmentId": "Handmade driver",
+    "channelId": 54787,
+    "commentedById": 37436,
+    "id": 17123,
+    "text": "Laboriosam quisquam ut amet. Laboriosam autem animi quia autem. Quam iure aut molestiae laborum aut eos reiciendis.",
   },
 ]
 `;

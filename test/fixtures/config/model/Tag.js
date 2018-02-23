@@ -1,7 +1,7 @@
 export default {
   tableName: 'tags',
   required: [
-    'label',
+    'label'
   ],
 
   properties: {
@@ -22,8 +22,8 @@ export default {
           from: 'articles_tags.tagId',
           to: 'articles_tags.articleId'
         },
-        to: 'articles.id',
+        to: 'articles.id'
       }
-    },
+    }
   }
 }

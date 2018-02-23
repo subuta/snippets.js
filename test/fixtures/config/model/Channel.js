@@ -1,7 +1,7 @@
 export default {
   tableName: 'channels',
   required: [
-    'name',
+    'name'
   ],
 
   properties: {
@@ -20,6 +20,6 @@ export default {
         from: 'channels.id',
         to: 'comments.channelId'
       }
-    },
+    }
   }
 }
