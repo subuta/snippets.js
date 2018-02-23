@@ -405,13 +405,11 @@ describe('utils/generateJunctionSeeds', () => {
 })
 
 describe('utils/generateSeedWithRelation', () => {
-  it('should return single seed data with relation', () => {
+  it.only('should return single seed data with relation', () => {
     const commentSeed = generateSeedWithRelation('comment', ModelsConfig)
     const channelSeed = generateSeedWithRelation('channel', ModelsConfig)
-    
-    console.log(commentSeed)
-    console.log(channelSeed)
 
+    expect(commentSeed.id).not.toEqual(channelSeed.id)
     expect(commentSeed).toMatchSnapshot()
   })
 

@@ -8,7 +8,7 @@ exports[`knex/Seed should create knex seed 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('users').insert([
     {
-      id: 54783,
+      id: 92666,
       auth0Id: 'turquoise revolutionize override',
       locale: 'vi',
       nickname: 'Tiffany.Erdman',
@@ -17,7 +17,7 @@ exports[`knex/Seed should create knex seed 1`] = `
         'https://s3.amazonaws.com/uifaces/faces/twitter/reetajayendra/128.jpg'
     },
     {
-      id: 34300,
+      id: 58010,
       auth0Id: 'Synergized Handmade',
       locale: 'it',
       nickname: 'Kory.Friesen75',
@@ -26,7 +26,7 @@ exports[`knex/Seed should create knex seed 1`] = `
         'https://s3.amazonaws.com/uifaces/faces/twitter/dallasbpeters/128.jpg'
     },
     {
-      id: 17123,
+      id: 37436,
       auth0Id: 'morph SMTP',
       locale: 'en_au_ocker',
       nickname: 'Garnet86',
@@ -46,9 +46,9 @@ exports[`knex/Seed should create knex seed for channel 1`] = `
 
   // https://github.com/tgriesser/knex/issues/54
   await knex('channels').insert([
-    {id: 54783, name: 'International'},
-    {id: 34300, name: 'Buckinghamshire Fantastic Cotton Chair invoice'},
-    {id: 17123, name: 'capacitor reboot'}
+    {id: 31156, name: 'International'},
+    {id: 99821, name: 'Buckinghamshire Fantastic Cotton Chair invoice'},
+    {id: 54787, name: 'capacitor reboot'}
   ])
 }
 "
