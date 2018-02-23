@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`koa/test/actions/Create should create koa Create action test 1`] = `
+"test('post should create user', async (t) => {
+  const {request, User} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .post('/api/users')
+    .set('Authorization', \`Bearer \${token}\`)
+    .send({
+      user: {
+        id: 38169,
+        auth0Id: 'static contingency proactive',
+        locale: 'nb_NO',
+        nickname: 'Elna.Gaylord',
+        status: 'solid state COM',
+        avatar:
+          'https://s3.amazonaws.com/uifaces/faces/twitter/finchjke/128.jpg'
+      }
+    })
+
+  t.is(response.status, 200)
+
+  t.deepEqual(response.body.id, 38169)
+  t.deepEqual(response.body.auth0Id, 'static contingency proactive')
+  t.deepEqual(response.body.locale, 'nb_NO')
+  t.deepEqual(response.body.nickname, 'Elna.Gaylord')
+  t.deepEqual(response.body.status, 'solid state COM')
+  t.deepEqual(
+    response.body.avatar,
+    'https://s3.amazonaws.com/uifaces/faces/twitter/finchjke/128.jpg'
+  )
+})
+"
+`;

@@ -4,7 +4,13 @@ import _ from 'lodash'
 
 import { build, format, snippets as s } from 'bld.js'
 
-import generateSeed, { generateSeeds } from 'lib/_utils/generateSeed'
+import generateSeed, {
+  generateSeeds,
+  generateJunctionSeed,
+  generateJunctionSeeds
+} from 'lib/_utils/generateSeed'
+
+import { Models as ModelsConfig } from 'test/fixtures/config'
 
 describe('utils/generateSeed', () => {
   beforeEach(() => {
@@ -13,11 +19,15 @@ describe('utils/generateSeed', () => {
   afterEach(() => {
   })
 
-  it('should return seed data for fake user', () => {
+  it('should return single seed data for fake user', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'users',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           name: {
             type: 'string'
           },
@@ -48,16 +58,20 @@ describe('utils/generateSeed', () => {
           }
         }
       }
-    }, 0, { locale: 'ja' })
+    }, 0, {locale: 'ja'})
 
     expect(seed).toMatchSnapshot()
   })
 
-  it('should return seed data for fake user without locale', () => {
+  it('should return single seed data for fake user without locale', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'users',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           name: {
             type: 'string'
           },
@@ -93,11 +107,15 @@ describe('utils/generateSeed', () => {
     expect(seed).toMatchSnapshot()
   })
 
-  it('should return seed data for fake user with today(1970/1/1)', () => {
+  it('should return single seed data for fake user with today(1970/1/1)', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'users',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           name: {
             type: 'string'
           },
@@ -128,16 +146,20 @@ describe('utils/generateSeed', () => {
           }
         }
       }
-    }, 0, { today: '1970/1/1' })
+    }, 0, {today: '1970/1/1'})
 
     expect(seed).toMatchSnapshot()
   })
 
-  it('should return seed data for fake book', () => {
+  it('should return single seed data for fake book', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'books',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           title: {
             type: 'string'
           },
@@ -161,11 +183,15 @@ describe('utils/generateSeed', () => {
     expect(seed).toMatchSnapshot()
   })
 
-  it('should return data for array with items', () => {
+  it('should return signle data for array with items', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'article',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           tag: {
             type: 'array',
             items: {type: 'string'}
@@ -177,11 +203,15 @@ describe('utils/generateSeed', () => {
     expect(seed).toMatchSnapshot()
   })
 
-  it('should return data for object with items', () => {
+  it('should return single data for object with items', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'users',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           address: {
             type: 'object',
             properties: {
@@ -201,7 +231,7 @@ describe('utils/generateSeed', () => {
     expect(seed).toMatchSnapshot()
   })
 
-  it('should return data for company name', () => {
+  it('should return single data for company name', () => {
     const seed = generateSeed({
       schema: {
         tableName: 'companies',
@@ -286,6 +316,10 @@ describe('utils/generateSeed', () => {
       schema: {
         tableName: 'users',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           address: {
             type: 'object',
             properties: {
@@ -307,11 +341,15 @@ describe('utils/generateSeed', () => {
 })
 
 describe('utils/generateSeeds', () => {
-  it('should return seed data for fake 3 user', () => {
+  it('should return multiple seed data for fake 3 user', () => {
     const seed = generateSeeds({
       schema: {
         tableName: 'users',
         properties: {
+          id: {
+            type: 'integer'
+          },
+
           name: {
             type: 'string'
           },
@@ -342,7 +380,23 @@ describe('utils/generateSeeds', () => {
           }
         }
       }
-    }, 3, { locale: 'ja' })
+    }, 3, {locale: 'ja'})
+
+    expect(seed).toMatchSnapshot()
+  })
+})
+
+describe('utils/generateJunctionSeed', () => {
+  it('should return single seed data for junction-table model', () => {
+    const seed = generateJunctionSeed('articleTag', ModelsConfig)
+
+    expect(seed).toMatchSnapshot()
+  })
+})
+
+describe('utils/generateJunctionSeeds', () => {
+  it('should return multiple seed data for junction-table model', () => {
+    const seed = generateJunctionSeeds('articleTag', ModelsConfig, 3)
 
     expect(seed).toMatchSnapshot()
   })

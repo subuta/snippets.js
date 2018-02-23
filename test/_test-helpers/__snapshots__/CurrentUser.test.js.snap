@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`_test-helpers/CurrentUser should create currentUser payload 1`] = `
+"export const createPayload = (sub) => ({
+  sub,
+  iss: 'https://xxx.com/',
+  aud: ['https://xxx.com/api', 'https://xxx.auth0.com/userinfo'],
+  scope: 'openid profile email'
+})
+
+export const currentUser = createPayload('google-oauth2|dummy')
+"
+`;
+
+exports[`_test-helpers/CurrentUser should create currentUser payload with customSub 1`] = `
+"export const createPayload = (sub) => ({
+  sub,
+  iss: 'https://xxx.com/',
+  aud: ['https://xxx.com/api', 'https://xxx.auth0.com/userinfo'],
+  scope: 'openid profile email'
+})
+
+export const currentUser = createPayload('systemic Belarussian Ruble')
+"
+`;

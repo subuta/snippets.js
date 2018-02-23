@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`knex/Entrypoint should create knex Entrypoint 1`] = `
+exports[`knex/Seed should create knex seed 1`] = `
 "exports.seed = async (knex) => {
   // Deletes ALL and insert entries.
   await knex('users').del()
@@ -8,36 +8,46 @@ exports[`knex/Entrypoint should create knex Entrypoint 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('users').insert([
     {
-      id: 2054,
-      auth0Id: 47736,
-      locale: 'en',
-      nickname: 'Avon Buckinghamshire',
-      status: 'Practical',
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/petrangr/128.jpg',
-      created_at: '2000-03-15T05:45:28.720Z',
-      updated_at: '2000-09-21T19:03:58.079Z'
+      id: 37436,
+      auth0Id: 'systemic Belarussian Ruble',
+      locale: 'en_BORK',
+      nickname: 'Ernestina.Feeney51',
+      status: 'withdrawal PCI morph',
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/rweve/128.jpg'
     },
     {
-      id: 62371,
-      auth0Id: 66040,
-      locale: 'es_MX',
-      nickname: 'Ergonomic target Technician',
-      status: 'invoice Fresh Cambridgeshire',
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/hota_v/128.jpg',
-      created_at: '2000-01-24T11:41:50.805Z',
-      updated_at: '2000-03-20T03:34:03.300Z'
-    },
-    {
-      id: 41854,
-      auth0Id: 79778,
-      locale: 'cz',
-      nickname: 'Gold blue actuating',
-      status: 'Berkshire virtual repurpose',
+      id: 58010,
+      auth0Id: 'SDD',
+      locale: 'pt_BR',
+      nickname: 'Thora.Kreiger40',
+      status: 'Plastic Awesome',
       avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/Shriiiiimp/128.jpg',
-      created_at: '2000-03-06T19:06:57.017Z',
-      updated_at: '2000-07-20T04:47:47.189Z'
+        'https://s3.amazonaws.com/uifaces/faces/twitter/aislinnkelly/128.jpg'
+    },
+    {
+      id: 92666,
+      auth0Id: 'Knoll',
+      locale: 'sk',
+      nickname: 'Ophelia.Dickens',
+      status: 'initiatives',
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/kapaluccio/128.jpg'
     }
+  ])
+}
+"
+`;
+
+exports[`knex/Seed should create knex seed for junction table 1`] = `
+"exports.seed = async (knex) => {
+  // Deletes ALL and insert entries.
+  await knex('articles_tags').del()
+
+  // https://github.com/tgriesser/knex/issues/54
+  await knex('articles_tags').insert([
+    {id: 37083, articleId: 36084, tagId: 91264},
+    {id: 48239, articleId: 6898, tagId: 10295},
+    {id: 52023, articleId: 14780, tagId: 89794}
   ])
 }
 "

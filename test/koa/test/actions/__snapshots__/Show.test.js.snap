@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`koa/test/actions/Show should Show koa Show action test 1`] = `
+"test('show should return user', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .get('/api/users/37436')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  t.is(response.status, 200)
+
+  t.deepEqual(response.body.id, 37436)
+  t.deepEqual(response.body.auth0Id, 'systemic Belarussian Ruble')
+  t.deepEqual(response.body.locale, 'en_BORK')
+  t.deepEqual(response.body.nickname, 'Ernestina.Feeney51')
+  t.deepEqual(response.body.status, 'withdrawal PCI morph')
+  t.deepEqual(
+    response.body.avatar,
+    'https://s3.amazonaws.com/uifaces/faces/twitter/rweve/128.jpg'
+  )
+})
+"
+`;

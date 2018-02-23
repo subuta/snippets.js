@@ -1,312 +1,140 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`utils/generateSeed should on 1`] = `
+exports[`utils/generateJunctionSeed should return single seed data for junction-table model 1`] = `
 Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
+  "articleId": 6898,
+  "id": 48239,
+  "tagId": 10295,
 }
 `;
 
-exports[`utils/generateSeed should only  1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
+exports[`utils/generateJunctionSeeds should return multiple seed data for junction-table model 1`] = `
+Array [
+  Object {
+    "articleId": 36084,
+    "id": 37083,
+    "tagId": 91264,
   },
-  "countryCode": "LU",
-}
+  Object {
+    "articleId": 6898,
+    "id": 48239,
+    "tagId": 10295,
+  },
+  Object {
+    "articleId": 14780,
+    "id": 52023,
+    "tagId": 89794,
+  },
+]
 `;
 
-exports[`utils/generateSeed should only ch 1`] = `
+exports[`utils/generateSeed should return signle data for array with items 1`] = `
 Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only chec 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only checks  1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only checks 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only checks s 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only checks sch 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only checks schem 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only checks schema 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only co 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only con 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only conc 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only conce 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only concer 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only concern 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only concerns  1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should only concerns 1`] = `
-Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
-}
-`;
-
-exports[`utils/generateSeed should return data for array with items 1`] = `
-Object {
+  "id": 32711,
   "tag": Array [
-    "Shirt",
+    "Associate",
   ],
 }
 `;
 
-exports[`utils/generateSeed should return data for company name 1`] = `
+exports[`utils/generateSeed should return single data for company name 1`] = `
 Object {
   "name": "Kihn Group",
 }
 `;
 
-exports[`utils/generateSeed should return data for object with items 1`] = `
+exports[`utils/generateSeed should return single data for object with items 1`] = `
 Object {
   "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
+    "city": "West Allan",
+    "state": "Arizona",
+    "streetAddress": "598 Dianna Landing",
   },
-  "countryCode": "LU",
+  "countryCode": "SS",
+  "id": 26129,
 }
 `;
 
-exports[`utils/generateSeed should return data for object with items 2`] = `
+exports[`utils/generateSeed should return single seed data for fake book 1`] = `
 Object {
-  "address": Object {
-    "city": "Huelbury",
-    "state": "Wyoming",
-    "streetAddress": "367 Bosco Prairie",
-  },
-  "countryCode": "LU",
+  "authorId": 48827,
+  "dateStr": "2000-01-05T14:03:33.395Z",
+  "id": 66879,
+  "price": "633.00",
+  "title": "Tasty Developer Credit Card Account",
 }
 `;
 
-exports[`utils/generateSeed should return seed data for fake book 1`] = `
+exports[`utils/generateSeed should return single seed data for fake user 1`] = `
 Object {
-  "authorId": 610,
-  "dateStr": "2000-05-27T11:18:26.855Z",
-  "price": "349.00",
-  "title": "Rustic Fresh Tuna grey optical",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
+  "email": "Nathanial.Boyle24@hotmail.com",
+  "id": 65336,
+  "lastSignInAt": 1999-12-09T13:52:36.585Z,
+  "locale": "de",
+  "loggedInCount": 73489,
+  "name": "加藤 蓮",
+  "userName": "Kyle.Robel52",
 }
 `;
 
-exports[`utils/generateSeed should return seed data for fake user 1`] = `
+exports[`utils/generateSeed should return single seed data for fake user with today(1970/1/1) 1`] = `
 Object {
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bfrohs/128.jpg",
-  "email": "Herminio.Kuvalis@hotmail.com",
-  "lastSignInAt": 1999-08-30T15:13:11.807Z,
-  "locale": "fr_CA",
-  "loggedInCount": 73797,
-  "name": "清水 大和",
-  "userName": "Tremayne_Wiza13",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
+  "email": "Ayla.Reynolds@hotmail.com",
+  "id": 65336,
+  "lastSignInAt": 1969-12-09T03:52:36.585Z,
+  "locale": "de",
+  "loggedInCount": 78888,
+  "name": "Kyle Robel",
+  "userName": "Pansy_Jast",
 }
 `;
 
-exports[`utils/generateSeed should return seed data for fake user with today(1970/1/1) 1`] = `
+exports[`utils/generateSeed should return single seed data for fake user without locale 1`] = `
 Object {
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jacksonlatka/128.jpg",
-  "email": "Joan77@yahoo.com",
-  "lastSignInAt": 1969-03-27T08:45:28.309Z,
-  "locale": "en_US",
-  "loggedInCount": 87295,
-  "name": "Tremayne Wiza",
-  "userName": "Maya73",
+  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
+  "email": "Ayla.Reynolds@hotmail.com",
+  "id": 65336,
+  "lastSignInAt": 1999-12-09T13:52:36.585Z,
+  "locale": "de",
+  "loggedInCount": 78888,
+  "name": "Kyle Robel",
+  "userName": "Pansy_Jast",
 }
 `;
 
-exports[`utils/generateSeed should return seed data for fake user without locale 1`] = `
-Object {
-  "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/jacksonlatka/128.jpg",
-  "email": "Joan77@yahoo.com",
-  "lastSignInAt": 1999-03-27T18:45:28.309Z,
-  "locale": "en_US",
-  "loggedInCount": 87295,
-  "name": "Tremayne Wiza",
-  "userName": "Maya73",
-}
-`;
-
-exports[`utils/generateSeeds should return seed data for fake 3 user 1`] = `
+exports[`utils/generateSeeds should return multiple seed data for fake 3 user 1`] = `
 Array [
   Object {
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bfrohs/128.jpg",
-    "email": "Herminio.Kuvalis@hotmail.com",
-    "lastSignInAt": 1999-08-30T15:13:11.807Z,
-    "locale": "fr_CA",
-    "loggedInCount": 73797,
-    "name": "清水 大和",
-    "userName": "Tremayne_Wiza13",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/normanbox/128.jpg",
+    "email": "Jordi64@gmail.com",
+    "id": 61922,
+    "lastSignInAt": 1999-12-09T05:11:02.980Z,
+    "locale": "ru",
+    "loggedInCount": 4515,
+    "name": "山田 翼",
+    "userName": "Willy.Crist",
   },
   Object {
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/gauchomatt/128.jpg",
-    "email": "Riley.Graham99@yahoo.com",
-    "lastSignInAt": 1999-03-23T12:10:46.894Z,
-    "locale": "es_MX",
-    "loggedInCount": 29651,
-    "name": "吉田 蓮",
-    "userName": "Rosanna5",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/madebyvadim/128.jpg",
+    "email": "Nathanial.Boyle24@hotmail.com",
+    "id": 65336,
+    "lastSignInAt": 1999-12-09T13:52:36.585Z,
+    "locale": "de",
+    "loggedInCount": 73489,
+    "name": "加藤 蓮",
+    "userName": "Kyle.Robel52",
   },
   Object {
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/carbontwelve/128.jpg",
-    "email": "Liana_Hahn@yahoo.com",
-    "lastSignInAt": 1999-06-06T21:55:16.120Z,
-    "locale": "en_US",
-    "loggedInCount": 21251,
-    "name": "佐々木 大和",
-    "userName": "Shana10",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/commadelimited/128.jpg",
+    "email": "Kathleen86@hotmail.com",
+    "id": 75486,
+    "lastSignInAt": 1999-10-28T05:40:48.919Z,
+    "locale": "sv",
+    "loggedInCount": 99496,
+    "name": "佐々木 大翔",
+    "userName": "Irma0",
   },
 ]
 `;

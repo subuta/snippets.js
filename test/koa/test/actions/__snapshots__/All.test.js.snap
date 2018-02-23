@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`koa/test/actions/All should create koa Index(All) action test 1`] = `
+"test('index should list user', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .get('/api/users')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  t.is(response.status, 200)
+  t.deepEqual(response.body.length, 3)
+  t.deepEqual(_.map(response.body, 'id'), [37436, 58010, 92666])
+})
+"
+`;

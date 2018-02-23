@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`koa/test/actions/Destroy should Destroy koa Destroy action test 1`] = `
+"test('delete should delete user', async (t) => {
+  const {request, Article} = t.context
+
+  let articles = await Article.query()
+  t.deepEqual(articles.length, 3)
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .delete('/api/users/37436')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  articles = await Article.query()
+  t.deepEqual(articles.length, 2)
+
+  t.is(response.status, 204)
+  t.deepEqual(response.body, {})
+})
+"
+`;
