@@ -106,20 +106,10 @@ Object {
 
 exports[`utils/generateSeedWithRelation should return single seed data with relation 1`] = `
 Object {
-  "attachmentId": "Practical Frozen Bacon deposit open architecture",
+  "attachmentId": "e06fda25-bf75-4b3b-8897-de04a0f02280",
   "channelId": 31156,
   "commentedById": 92666,
   "id": 54783,
-  "text": "Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.",
-}
-`;
-
-exports[`utils/generateSeedWithRelation should return single seed data with relation 2`] = `
-Object {
-  "attachmentId": "Practical Frozen Bacon deposit open architecture",
-  "channelId": 91952,
-  "commentedById": 22037,
-  "id": 67339,
   "text": "Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.",
 }
 `;

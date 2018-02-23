@@ -26,6 +26,7 @@ export const Routes = {
       'update',
       'show'
     ],
+
     eager: '[channel, attachment, commentedBy]'
   },
   attachment: {

@@ -16,8 +16,16 @@ describe('koa/test/actions/All', () => {
   it('should create koa Index(All) action test', () => {
     expect(format(AllTest({
       model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
+    }))).toMatchSnapshot()
+  })
+
+  it('should create koa Index(All) action test with prefix', () => {
+    expect(format(AllTest({
+      model: 'comment',
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
 })

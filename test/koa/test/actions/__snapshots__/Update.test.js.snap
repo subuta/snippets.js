@@ -14,7 +14,7 @@ exports[`koa/test/actions/Update should Update koa Update action test 1`] = `
     .send({
       article: {
         id: 92666,
-        auth0Id: 'card copying',
+        auth0Id: '6b4d5350-a44a-467c-ae9d-5738e1efbaf2',
         locale: 'es',
         nickname: 'Georgette84',
         status: 'card copying',
@@ -26,7 +26,7 @@ exports[`koa/test/actions/Update should Update koa Update action test 1`] = `
   t.is(response.status, 200)
 
   t.deepEqual(response.body.id, 92666)
-  t.deepEqual(response.body.auth0Id, 'card copying')
+  t.deepEqual(response.body.auth0Id, '6b4d5350-a44a-467c-ae9d-5738e1efbaf2')
   t.deepEqual(response.body.locale, 'es')
   t.deepEqual(response.body.nickname, 'Georgette84')
   t.deepEqual(response.body.status, 'card copying')

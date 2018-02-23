@@ -16,8 +16,8 @@ describe('koa/test/actions/Update', () => {
   it('should Update koa Update action test', () => {
     expect(format(UpdateTest({
       model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
 })

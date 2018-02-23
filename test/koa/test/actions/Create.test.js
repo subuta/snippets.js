@@ -16,8 +16,8 @@ describe('koa/test/actions/Create', () => {
   it('should create koa Create action test', () => {
     expect(format(CreateTest({
       model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
 })

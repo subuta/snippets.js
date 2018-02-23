@@ -16,8 +16,8 @@ describe('koa/api/UserRoute', () => {
   it('should create koa UserRoute', () => {
     expect(format(UserRouteTest({
       model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
 })

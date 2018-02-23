@@ -16,8 +16,8 @@ describe('koa/test/actions/Show', () => {
   it('should Show koa Show action test', () => {
     expect(format(ShowTest({
       model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
 })

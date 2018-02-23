@@ -2,10 +2,10 @@
 
 exports[`koa/test/actions/Destroy should Destroy koa Destroy action test 1`] = `
 "test('delete should delete user', async (t) => {
-  const {request, Article} = t.context
+  const {request, User} = t.context
 
-  let articles = await Article.query()
-  t.deepEqual(articles.length, 3)
+  let users = await User.query()
+  t.deepEqual(users.length, 3)
 
   // mock jwks
   const token = createToken(privateKey, '123', currentUser)
@@ -15,8 +15,8 @@ exports[`koa/test/actions/Destroy should Destroy koa Destroy action test 1`] = `
     .delete('/api/users/92666')
     .set('Authorization', \`Bearer \${token}\`)
 
-  articles = await Article.query()
-  t.deepEqual(articles.length, 2)
+  users = await User.query()
+  t.deepEqual(users.length, 2)
 
   t.is(response.status, 204)
   t.deepEqual(response.body, {})

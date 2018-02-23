@@ -9,7 +9,7 @@ exports[`knex/Seed should create knex seed 1`] = `
   await knex('users').insert([
     {
       id: 92666,
-      auth0Id: 'turquoise revolutionize override',
+      auth0Id: 'e376dc36-3072-45e7-84b0-8109641881ca',
       locale: 'vi',
       nickname: 'Tiffany.Erdman',
       status: 'turquoise revolutionize override',
@@ -18,7 +18,7 @@ exports[`knex/Seed should create knex seed 1`] = `
     },
     {
       id: 58010,
-      auth0Id: 'Synergized Handmade',
+      auth0Id: '93d1ce7c-1651-4518-a382-b01458d25ee8',
       locale: 'it',
       nickname: 'Kory.Friesen75',
       status: 'Synergized Handmade',
@@ -27,7 +27,7 @@ exports[`knex/Seed should create knex seed 1`] = `
     },
     {
       id: 37436,
-      auth0Id: 'morph SMTP',
+      auth0Id: '564da235-3b38-4fa7-a554-a260bd71c365',
       locale: 'en_au_ocker',
       nickname: 'Garnet86',
       status: 'morph SMTP',
@@ -67,7 +67,7 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
         'Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.',
       channelId: 31156,
       commentedById: 92666,
-      attachmentId: 'Practical Frozen Bacon deposit open architecture'
+      attachmentId: 'e06fda25-bf75-4b3b-8897-de04a0f02280'
     },
     {
       id: 34300,
@@ -75,7 +75,7 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
         'Nesciunt ea quisquam sed et repudiandae. Cumque facere earum repudiandae nam cum. Assumenda occaecati accusantium eligendi. Eum possimus odit eum necessitatibus nulla ut est.',
       channelId: 99821,
       commentedById: 58010,
-      attachmentId: 'calculating Orchestrator deposit'
+      attachmentId: 'bdbf9a3f-f9f7-4981-afac-a1931a57af40'
     },
     {
       id: 17123,
@@ -83,7 +83,7 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
         'Laboriosam quisquam ut amet. Laboriosam autem animi quia autem. Quam iure aut molestiae laborum aut eos reiciendis.',
       channelId: 54787,
       commentedById: 37436,
-      attachmentId: 'Handmade driver'
+      attachmentId: '51cb0acf-acb0-44e0-8aed-601243b1bae3'
     }
   ])
 }
@@ -97,9 +97,9 @@ exports[`knex/Seed should create knex seed for junction table 1`] = `
 
   // https://github.com/tgriesser/knex/issues/54
   await knex('articles_tags').insert([
-    {id: 42344, articleId: 36084, tagId: 91264},
-    {id: 42344, articleId: 6898, tagId: 10295},
-    {id: 42344, articleId: 14780, tagId: 89794}
+    {id: 48239, articleId: 36084, tagId: 91264},
+    {id: 52023, articleId: 6898, tagId: 10295},
+    {id: 37083, articleId: 14780, tagId: 89794}
   ])
 }
 "

@@ -15,7 +15,7 @@ exports[`koa/test/actions/Show should Show koa Show action test 1`] = `
   t.is(response.status, 200)
 
   t.deepEqual(response.body.id, 92666)
-  t.deepEqual(response.body.auth0Id, 'turquoise revolutionize override')
+  t.deepEqual(response.body.auth0Id, 'e376dc36-3072-45e7-84b0-8109641881ca')
   t.deepEqual(response.body.locale, 'vi')
   t.deepEqual(response.body.nickname, 'Tiffany.Erdman')
   t.deepEqual(response.body.status, 'turquoise revolutionize override')

@@ -16,8 +16,8 @@ describe('koa/test/actions/Destroy', () => {
   it('should Destroy koa Destroy action test', () => {
     expect(format(DestroyTest({
       model: 'user',
-      routeConfig: RoutesConfig.user,
-      modelConfig: ModelsConfig.user
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
 })
