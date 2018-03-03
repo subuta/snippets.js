@@ -6,3 +6,24 @@ exports[`koa/api/actions/Base should create koa action 1`] = `
 })
 "
 `;
+
+exports[`koa/api/actions/Base should not skip auth for koa action with skipAuth: ['show'] & action = 'create' 1`] = `
+"user.post('/', auth, async (ctx) => {
+  const {User} = ctx.state.models
+})
+"
+`;
+
+exports[`koa/api/actions/Base should skip auth for koa action with skipAuth: ['create'] & action = 'create' 1`] = `
+"user.post('/', async (ctx) => {
+  const {User} = ctx.state.models
+})
+"
+`;
+
+exports[`koa/api/actions/Base should skip auth for koa action with skipAuth: true 1`] = `
+"user.post('/', async (ctx) => {
+  const {User} = ctx.state.models
+})
+"
+`;

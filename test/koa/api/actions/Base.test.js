@@ -10,7 +10,48 @@ describe('koa/api/actions/Base', () => {
       model: 'user',
       routeConfig: {},
       path: '/',
-      method: 'post'
+      method: 'post',
+      action: 'create'
+    }))).toMatchSnapshot()
+  })
+
+  it('should skip auth for koa action with skipAuth: true', () => {
+    expect(format(Base({
+      model: 'user',
+      routeConfig: {
+        skipAuth: true
+      },
+      path: '/',
+      method: 'post',
+      action: 'create'
+    }))).toMatchSnapshot()
+  })
+
+  it('should skip auth for koa action with skipAuth: [\'create\'] & action = \'create\'', () => {
+    expect(format(Base({
+      model: 'user',
+      routeConfig: {
+        skipAuth: [
+          'create'
+        ]
+      },
+      path: '/',
+      method: 'post',
+      action: 'create'
+    }))).toMatchSnapshot()
+  })
+
+  it('should not skip auth for koa action with skipAuth: [\'show\'] & action = \'create\'', () => {
+    expect(format(Base({
+      model: 'user',
+      routeConfig: {
+        skipAuth: [
+          'show'
+        ]
+      },
+      path: '/',
+      method: 'post',
+      action: 'create'
     }))).toMatchSnapshot()
   })
 })

@@ -13,27 +13,35 @@ export const Routes = {
       'update',
       'destroy'
     ],
+    skipAuth: true,
     eager: '[comments.[attachment, commentedBy]]'
   },
   article: {
+    skipAuth: [
+      'index',
+      'show'
+    ],
     eager: '[tags]'
   },
   comment: {
     // pass custom route prefix.
     prefix: '/channels/:channelId/comments',
 
+    skipAuth: [
+      'index'
+    ],
+
     except: [
       'update',
       'show'
     ],
-
     eager: '[channel, attachment, commentedBy]'
   },
   attachment: {
     imports: [
       ['uuid/v4', 'uuid'],
       ['path', 'path'],
-      ['src/utils/s3', null, [
+      ['src/api/utils/s3', null, [
         'getSignedUrl'
       ]],
     ],
@@ -46,6 +54,7 @@ export const Routes = {
     only: [
       'index'
     ],
+    skipAuth: true,
     eager: '[articles]'
   },
   user: {

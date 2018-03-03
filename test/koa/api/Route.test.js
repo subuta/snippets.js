@@ -20,4 +20,16 @@ describe('koa/api/Route', () => {
       }
     }))).toMatchSnapshot()
   })
+
+  it('should create koa Route with skipAuth', () => {
+    expect(format(Route({
+      model: 'user',
+      routeConfig: {
+        prefix: '/hoge/fuga/users',
+        skipAuth: [
+          'index'
+        ]
+      }
+    }))).toMatchSnapshot()
+  })
 })
