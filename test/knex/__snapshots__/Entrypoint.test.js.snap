@@ -2,9 +2,9 @@
 
 exports[`knex/Entrypoint should create knex Entrypoint 1`] = `
 "const knex = require('knex')
-const env = require('src/utils/env')
+const env = require('src/api/utils/env')
 
-const {MIGRATION_DIR, FIXTURES_DIR} = require('../../config')
+const {MIGRATION_DIR, FIXTURES_DIR} = require('../../../config')
 
 const host = env.POSTGRES_HOST || 'localhost'
 const database = env.POSTGRES_DB || 'blog-js-development'

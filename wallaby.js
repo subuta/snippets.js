@@ -6,7 +6,8 @@ module.exports = function (wallaby) {
     files: [
       'lib/**/*.js',
       'test/helper/**/*.js',
-      'test/fixtures/**/*.js'
+      'test/fixtures/**/*.js',
+      'package.json'
     ],
 
     tests: [

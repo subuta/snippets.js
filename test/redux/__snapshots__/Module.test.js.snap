@@ -5,8 +5,8 @@ exports[`redux/Module should create Ducks based module 1`] = `
 import {combineReducers} from 'redux'
 import {createSelector} from 'reselect'
 import {normalize} from 'normalizr'
-import {comment, commentList, denormalize} from 'src/utils/schema'
-import api from 'src/utils/api'
+import {comment, commentList, denormalize} from 'src/views/utils/schema'
+import api from 'src/views/utils/api'
 
 import {SET_CHANNELS} from './channel'
 import {SET_USERS} from './user'

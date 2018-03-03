@@ -3,18 +3,18 @@
 exports[`objection/Child should create objection Child 1`] = `
 "import Model from './Model'
 
-export const register = (models) => {
-  // then define relationMappings.
-  Book.relationMappings = {
-    comments: {
-      modelClass: models.Comment,
-      relation: Model.HasManyRelation,
-      join: {from: 'books.id', to: 'comments.bookId'}
+export default class Book extends Model {
+  static register = (models) => {
+    // then define relationMappings.
+    Book.relationMappings = {
+      comments: {
+        modelClass: models.Comment,
+        relation: Model.HasManyRelation,
+        join: {from: 'books.id', to: 'comments.bookId'}
+      }
     }
   }
-}
 
-export default class Book extends Model {
   static tableName = 'books'
 
   static jsonSchema = {

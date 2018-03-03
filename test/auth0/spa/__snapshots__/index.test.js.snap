@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`auth0/index should create auth0 index 1`] = `
+exports[`auth0/spa should create auth0 index for Single Page App 1`] = `
 "import Promise from 'bluebird'
 import store from 'store'
 import {ACCESS_TOKEN, AUTH0_EXPIRATION} from 'src/constants/config'

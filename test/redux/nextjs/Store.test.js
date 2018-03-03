@@ -2,10 +2,10 @@
 
 import { build, format, snippets as s } from 'bld.js'
 
-import Store from 'lib/redux/Store'
+import Store from 'lib/redux/nextjs/Store'
 
-describe('redux/Store', () => {
-  it('should create redux Store', () => {
+describe('redux/spa/Store', () => {
+  it('should create redux Store for next.js', () => {
     expect(format(Store())).toMatchSnapshot()
   })
 })

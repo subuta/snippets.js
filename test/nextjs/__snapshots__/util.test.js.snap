@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nextjs/hoc/connext should create util for next.js 1`] = `
+"import _ from 'lodash'
+
+export const inject = (ctx, key, value) => {
+  if (!ctx) return
+  if (!_.get(ctx, 'res.locals')) {
+    _.set(ctx, 'res.locals', {})
+  }
+  // mutate ctx and set reference of value.
+  ctx.res.locals[key] = value
+}
+
+export const extract = (ctx, key) => {
+  if (!ctx || !ctx.res) return
+  return _.get(ctx, ['res', 'locals', key])
+}
+"
+`;

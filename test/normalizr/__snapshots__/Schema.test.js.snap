@@ -3,7 +3,7 @@
 exports[`normalizr/Schema should create normalizr Schema 1`] = `
 "import _ from 'lodash'
 import pluralize from 'pluralize'
-import {fetchEntities} from 'src/modules'
+import {fetchEntities} from 'src/views/modules'
 import * as normalizr from 'normalizr'
 
 const {schema} = normalizr

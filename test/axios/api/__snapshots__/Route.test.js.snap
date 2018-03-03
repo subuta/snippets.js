@@ -2,9 +2,9 @@
 
 exports[`axios/api/Route should create axios Route with channel 1`] = `
 "import _ from 'lodash'
-import request from 'src/utils/request'
+import request from 'src/views/utils/request'
 import {normalize} from 'normalizr'
-import {channel, channelList} from 'src/utils/schema'
+import {channel, channelList} from 'src/views/utils/schema'
 
 export const index = () => {
   return request.get(\`/channels\`)
@@ -33,20 +33,5 @@ let actions = {
 /* mat Custom exports [end] */
 
 export default actions
-"
-`;
-
-exports[`axios/api/index should create axios Api index 1`] = `
-"import channel from './channel'
-import comment from './comment'
-import attachment from './attachment'
-import user from './user'
-
-export default {
-  channel,
-  comment,
-  attachment,
-  user
-}
 "
 `;

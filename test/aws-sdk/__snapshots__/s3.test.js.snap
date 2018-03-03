@@ -2,7 +2,7 @@
 
 exports[`aws-sdk/s3 should create aws-sdk s3 util 1`] = `
 "import AWS from 'aws-sdk'
-import env from 'src/utils/env'
+import env from 'src/api/utils/env'
 
 const S3_BUCKET = env.S3_BUCKET
 export let urlPrefix = \`https://\${S3_BUCKET}.s3.amazonaws.com\`

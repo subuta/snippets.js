@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`knex/knexfile should create knexfile 1`] = `
+"require('babel-register')
+module.exports = require('./src/api/utils/knex').config
+"
+`;

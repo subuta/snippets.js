@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`redux/Store should create redux Store 1`] = `
+exports[`redux/spa/Store should create redux Store for SPA 1`] = `
 "import {createStore, applyMiddleware, compose} from 'redux'
 import thunk from 'redux-thunk'
 import history from 'src/utils/history'
