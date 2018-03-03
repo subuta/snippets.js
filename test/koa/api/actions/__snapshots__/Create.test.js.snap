@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`koa/api/actions/Create should create koa action 1`] = `
-"user.post('/', async (ctx) => {
+"user.post('/', auth, async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body
 

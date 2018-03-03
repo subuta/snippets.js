@@ -3,12 +3,13 @@
 exports[`koa/api/Route should create koa Route 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
+import {authenticate as auth} from 'src/api/middlewares/auth'
 
 const user = new Router({
   prefix: '/users'
 })
 
-user.get('/', async (ctx) => {
+user.get('/', auth, async (ctx) => {
   const {User} = ctx.state.models
   let params = {}
 
@@ -20,7 +21,7 @@ user.get('/', async (ctx) => {
     .where(params)
 })
 
-user.get('/:id', async (ctx) => {
+user.get('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   let params = {}
 
@@ -32,7 +33,7 @@ user.get('/:id', async (ctx) => {
     .findFirst({...params, id: ctx.params.id})
 })
 
-user.post('/', async (ctx) => {
+user.post('/', auth, async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body
 
@@ -54,7 +55,7 @@ user.post('/', async (ctx) => {
   ctx.body = response
 })
 
-user.put('/:id', async (ctx) => {
+user.put('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body
   const {sub} = ctx.state.user
@@ -73,7 +74,7 @@ user.put('/:id', async (ctx) => {
     .eager('')
 })
 
-user.delete('/:id', async (ctx) => {
+user.delete('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   await User.query()
     .delete()
@@ -97,12 +98,13 @@ export default {
 exports[`koa/api/Route should create koa Route with custom prefix 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
+import {authenticate as auth} from 'src/api/middlewares/auth'
 
 const user = new Router({
   prefix: '/hoge/fuga/users'
 })
 
-user.get('/', async (ctx) => {
+user.get('/', auth, async (ctx) => {
   const {User} = ctx.state.models
   let params = {}
 
@@ -114,7 +116,7 @@ user.get('/', async (ctx) => {
     .where(params)
 })
 
-user.get('/:id', async (ctx) => {
+user.get('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   let params = {}
 
@@ -126,7 +128,7 @@ user.get('/:id', async (ctx) => {
     .findFirst({...params, id: ctx.params.id})
 })
 
-user.post('/', async (ctx) => {
+user.post('/', auth, async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body
 
@@ -148,7 +150,7 @@ user.post('/', async (ctx) => {
   ctx.body = response
 })
 
-user.put('/:id', async (ctx) => {
+user.put('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   const {user} = ctx.request.body
   const {sub} = ctx.state.user
@@ -167,7 +169,7 @@ user.put('/:id', async (ctx) => {
     .eager('')
 })
 
-user.delete('/:id', async (ctx) => {
+user.delete('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   await User.query()
     .delete()

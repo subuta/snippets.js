@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`koa/api/actions/Destroy should Destroy koa action 1`] = `
-"user.delete('/:id', async (ctx) => {
+"user.delete('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
   await User.query()
     .delete()
