@@ -4,11 +4,14 @@ import { build, format, snippets as s } from 'bld.js'
 
 import Base from 'lib/koa/api/actions/Base'
 
+import { Routes as RoutesConfig, Models as ModelsConfig } from 'test/fixtures/config'
+
 describe('koa/api/actions/Base', () => {
   it('should create koa action', () => {
     expect(format(Base({
       model: 'user',
-      routeConfig: {},
+      routeConfig: RoutesConfig.user,
+      modelConfig: ModelsConfig.user,
       path: '/',
       method: 'post',
       action: 'create'
@@ -21,6 +24,7 @@ describe('koa/api/actions/Base', () => {
       routeConfig: {
         skipAuth: true
       },
+      modelConfig: ModelsConfig.user,
       path: '/',
       method: 'post',
       action: 'create'
@@ -35,6 +39,7 @@ describe('koa/api/actions/Base', () => {
           'create'
         ]
       },
+      modelConfig: ModelsConfig.user,
       path: '/',
       method: 'post',
       action: 'create'
@@ -49,6 +54,7 @@ describe('koa/api/actions/Base', () => {
           'show'
         ]
       },
+      modelConfig: ModelsConfig.user,
       path: '/',
       method: 'post',
       action: 'create'

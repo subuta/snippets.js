@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`koa/api/actions/All should create koa action 1`] = `
-"user.get('/', auth, async (ctx) => {
-  const {User} = ctx.state.models
+"article.get('/', async (ctx) => {
+  const {Article} = ctx.state.models
   let params = {}
 
   /* mat Before index [start] */
   /* mat Before index [end] */
 
-  ctx.body = await User.query()
-    .eager('')
+  ctx.body = await Article.query()
+    .eager('[tags]')
+    .joinRelation('[tags]')
     .where(params)
 })
 "

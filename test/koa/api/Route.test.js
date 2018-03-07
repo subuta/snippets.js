@@ -4,11 +4,14 @@ import { build, format, snippets as s } from 'bld.js'
 
 import Route from 'lib/koa/api/Route'
 
+import { Routes as RoutesConfig, Models as ModelsConfig } from 'test/fixtures/config'
+
 describe('koa/api/Route', () => {
   it('should create koa Route', () => {
     expect(format(Route({
       model: 'user',
-      routeConfig: {}
+      routeConfig: RoutesConfig.user,
+      modelConfig: ModelsConfig.user
     }))).toMatchSnapshot()
   })
 
@@ -17,7 +20,8 @@ describe('koa/api/Route', () => {
       model: 'user',
       routeConfig: {
         prefix: '/hoge/fuga/users'
-      }
+      },
+      modelConfig: ModelsConfig.user
     }))).toMatchSnapshot()
   })
 
@@ -29,7 +33,8 @@ describe('koa/api/Route', () => {
         skipAuth: [
           'index'
         ]
-      }
+      },
+      modelConfig: ModelsConfig.user
     }))).toMatchSnapshot()
   })
 })

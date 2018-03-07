@@ -9,79 +9,6 @@ const user = new Router({
   prefix: '/users'
 })
 
-user.get('/', auth, async (ctx) => {
-  const {User} = ctx.state.models
-  let params = {}
-
-  /* mat Before index [start] */
-  /* mat Before index [end] */
-
-  ctx.body = await User.query()
-    .eager('')
-    .where(params)
-})
-
-user.get('/:id', auth, async (ctx) => {
-  const {User} = ctx.state.models
-  let params = {}
-
-  /* mat Before show [start] */
-  /* mat Before show [end] */
-
-  ctx.body = await User.query()
-    .eager('')
-    .findFirst({...params, id: ctx.params.id})
-})
-
-user.post('/', auth, async (ctx) => {
-  const {User} = ctx.state.models
-  const {user} = ctx.request.body
-
-  let params = {}
-
-  /* mat Before create [start] */
-  /* mat Before create [end] */
-
-  let response = await User.query()
-    .insert({
-      ...user,
-      ...params
-    })
-    .eager('')
-
-  /* mat After create [start] */
-  /* mat After create [end] */
-
-  ctx.body = response
-})
-
-user.put('/:id', auth, async (ctx) => {
-  const {User} = ctx.state.models
-  const {user} = ctx.request.body
-  const {sub} = ctx.state.user
-
-  // update specified user.
-  const params = {}
-
-  /* mat Before update [start] */
-  /* mat Before update [end] */
-
-  ctx.body = await User.query()
-    .patchAndFetchById(ctx.params.id, {
-      ...user,
-      ...params
-    })
-    .eager('')
-})
-
-user.delete('/:id', auth, async (ctx) => {
-  const {User} = ctx.state.models
-  await User.query()
-    .delete()
-    .where({id: ctx.params.id})
-  ctx.body = null
-})
-
 /* mat Custom actions [start] */
 /* mat Custom actions [end] */
 
@@ -111,9 +38,7 @@ user.get('/', auth, async (ctx) => {
   /* mat Before index [start] */
   /* mat Before index [end] */
 
-  ctx.body = await User.query()
-    .eager('')
-    .where(params)
+  ctx.body = await User.query().where(params)
 })
 
 user.get('/:id', auth, async (ctx) => {
@@ -206,9 +131,7 @@ user.get('/', async (ctx) => {
   /* mat Before index [start] */
   /* mat Before index [end] */
 
-  ctx.body = await User.query()
-    .eager('')
-    .where(params)
+  ctx.body = await User.query().where(params)
 })
 
 user.get('/:id', auth, async (ctx) => {
