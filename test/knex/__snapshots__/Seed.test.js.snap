@@ -8,31 +8,30 @@ exports[`knex/Seed should create knex seed 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('users').insert([
     {
-      id: 92666,
-      auth0Id: 'e376dc36-3072-45e7-84b0-8109641881ca',
-      locale: 'vi',
-      nickname: 'Tiffany.Erdman',
-      status: 'turquoise revolutionize override',
-      avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/reetajayendra/128.jpg'
-    },
-    {
-      id: 58010,
-      auth0Id: '93d1ce7c-1651-4518-a382-b01458d25ee8',
-      locale: 'it',
-      nickname: 'Kory.Friesen75',
-      status: 'Synergized Handmade',
-      avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/dallasbpeters/128.jpg'
-    },
-    {
-      id: 37436,
-      auth0Id: '564da235-3b38-4fa7-a554-a260bd71c365',
+      id: 54551,
+      auth0Id: '4be76d72-37c6-4af4-9b6d-5cf3cb62d63a',
       locale: 'en_au_ocker',
-      nickname: 'Garnet86',
-      status: 'morph SMTP',
+      nickname: 'Juana5',
+      status: 'New Israeli Sheqel',
       avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/chris_witko/128.jpg'
+        'https://s3.amazonaws.com/uifaces/faces/twitter/devankoshal/128.jpg'
+    },
+    {
+      id: 15599,
+      auth0Id: 'e5ad378c-913f-4366-bb72-507428a10360',
+      locale: 'en_BORK',
+      nickname: 'Shanel.Barton',
+      status: 'web-enabled',
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/antongenkin/128.jpg'
+    },
+    {
+      id: 34490,
+      auth0Id: 'c5d5096e-8b5e-4c16-9cc6-f15cf8fdcef5',
+      locale: 'en_au_ocker',
+      nickname: 'Marisol66',
+      status: 'Mobility Missouri Administrator',
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/dgajjar/128.jpg'
     }
   ])
 }
@@ -46,9 +45,9 @@ exports[`knex/Seed should create knex seed for channel 1`] = `
 
   // https://github.com/tgriesser/knex/issues/54
   await knex('channels').insert([
-    {id: 31156, name: 'International'},
-    {id: 99821, name: 'Buckinghamshire Fantastic Cotton Chair invoice'},
-    {id: 54787, name: 'capacitor reboot'}
+    {id: 68264, name: 'convergence Administrator Clothing'},
+    {id: 36069, name: 'Baby Lead solutions'},
+    {id: 63669, name: 'functionalities'}
   ])
 }
 "
@@ -62,28 +61,28 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('comments').insert([
     {
-      id: 54783,
+      id: 57447,
       text:
-        'Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.',
-      channelId: 31156,
-      commentedById: 92666,
-      attachmentId: 'e06fda25-bf75-4b3b-8897-de04a0f02280'
+        'Ut amet molestiae aliquam numquam ad ut et. Et ut perspiciatis fugiat expedita fuga hic odio. Ducimus cumque aut harum in perferendis veritatis tempora aut. Facilis officia sed. Eum excepturi officia ipsum sunt voluptatem eius. Rerum qui doloremque ex velit porro animi odio saepe sunt.',
+      channelId: 68264,
+      commentedById: 54551,
+      attachmentId: '28d15c5a-a70c-48e4-9772-bc910f421907'
     },
     {
-      id: 34300,
+      id: 33984,
       text:
-        'Nesciunt ea quisquam sed et repudiandae. Cumque facere earum repudiandae nam cum. Assumenda occaecati accusantium eligendi. Eum possimus odit eum necessitatibus nulla ut est.',
-      channelId: 99821,
-      commentedById: 58010,
-      attachmentId: 'bdbf9a3f-f9f7-4981-afac-a1931a57af40'
+        'Id optio rem culpa minus. Nostrum aut et. Aliquam repellat est reprehenderit.',
+      channelId: 36069,
+      commentedById: 15599,
+      attachmentId: 'abfbc020-04b2-4d70-a1ed-aa85e702e181'
     },
     {
-      id: 17123,
+      id: 46230,
       text:
-        'Laboriosam quisquam ut amet. Laboriosam autem animi quia autem. Quam iure aut molestiae laborum aut eos reiciendis.',
-      channelId: 54787,
-      commentedById: 37436,
-      attachmentId: '51cb0acf-acb0-44e0-8aed-601243b1bae3'
+        'Facilis cupiditate quo nemo hic. Rem nesciunt aliquid aut qui architecto saepe enim laborum. Quia dolor consequuntur et dolorem tenetur totam nisi asperiores.',
+      channelId: 63669,
+      commentedById: 34490,
+      attachmentId: '62fc4caf-224d-4658-949e-b68307f974d2'
     }
   ])
 }
@@ -97,9 +96,9 @@ exports[`knex/Seed should create knex seed for junction table 1`] = `
 
   // https://github.com/tgriesser/knex/issues/54
   await knex('articles_tags').insert([
-    {id: 48239, articleId: 36084, tagId: 91264},
-    {id: 52023, articleId: 6898, tagId: 10295},
-    {id: 37083, articleId: 14780, tagId: 89794}
+    {id: 48239, articleId: 52697, tagId: 82337},
+    {id: 52023, articleId: 14400, tagId: 43149},
+    {id: 37083, articleId: 29655, tagId: 3838}
   ])
 }
 "

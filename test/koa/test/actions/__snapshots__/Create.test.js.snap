@@ -13,26 +13,26 @@ exports[`koa/test/actions/Create should create koa Create action test 1`] = `
     .set('Authorization', \`Bearer \${token}\`)
     .send({
       user: {
-        id: 38169,
-        auth0Id: '6b4d5350-a44a-467c-ae9d-5738e1efbaf2',
-        locale: 'es',
-        nickname: 'Georgette84',
-        status: 'card copying',
+        id: 20643,
+        auth0Id: '8a7a4d7c-d980-462d-9986-fb2f25daee50',
+        locale: 'en_CA',
+        nickname: 'Matteo.Hills50',
+        status: 'Chair Soap',
         avatar:
-          'https://s3.amazonaws.com/uifaces/faces/twitter/reabo101/128.jpg'
+          'https://s3.amazonaws.com/uifaces/faces/twitter/billyroshan/128.jpg'
       }
     })
 
   t.is(response.status, 200)
 
-  t.deepEqual(response.body.id, 38169)
-  t.deepEqual(response.body.auth0Id, '6b4d5350-a44a-467c-ae9d-5738e1efbaf2')
-  t.deepEqual(response.body.locale, 'es')
-  t.deepEqual(response.body.nickname, 'Georgette84')
-  t.deepEqual(response.body.status, 'card copying')
+  t.deepEqual(response.body.id, 20643)
+  t.deepEqual(response.body.auth0Id, '8a7a4d7c-d980-462d-9986-fb2f25daee50')
+  t.deepEqual(response.body.locale, 'en_CA')
+  t.deepEqual(response.body.nickname, 'Matteo.Hills50')
+  t.deepEqual(response.body.status, 'Chair Soap')
   t.deepEqual(
     response.body.avatar,
-    'https://s3.amazonaws.com/uifaces/faces/twitter/reabo101/128.jpg'
+    'https://s3.amazonaws.com/uifaces/faces/twitter/billyroshan/128.jpg'
   )
 })
 "

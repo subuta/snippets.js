@@ -14,7 +14,7 @@ exports[`koa/test/actions/All should create koa Index(All) action test 1`] = `
 
   t.is(response.status, 200)
   t.deepEqual(response.body.length, 3)
-  t.deepEqual(_.map(response.body, 'id').sort(), [37436, 58010, 92666])
+  t.deepEqual(_.map(response.body, 'id').sort(), [15599, 34490, 54551])
 })
 "
 `;
@@ -28,12 +28,12 @@ exports[`koa/test/actions/All should create koa Index(All) action test with pref
   jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
 
   const response = await request
-    .get('/api/channels/31156/comments')
+    .get('/api/channels/68264/comments')
     .set('Authorization', \`Bearer \${token}\`)
 
   t.is(response.status, 200)
   t.deepEqual(response.body.length, 1)
-  t.deepEqual(_.map(response.body, 'id').sort(), [54783])
+  t.deepEqual(_.map(response.body, 'id').sort(), [57447])
 })
 "
 `;

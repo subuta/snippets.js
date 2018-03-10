@@ -106,11 +106,11 @@ Object {
 
 exports[`utils/generateSeedWithRelation should return single seed data with relation 1`] = `
 Object {
-  "attachmentId": "e06fda25-bf75-4b3b-8897-de04a0f02280",
-  "channelId": 31156,
-  "commentedById": 92666,
-  "id": 54783,
-  "text": "Doloribus consequuntur quos saepe voluptate quibusdam est et. Aut officiis dolores officiis necessitatibus vel. Aut maxime consequatur facilis voluptas ex aspernatur est et rerum. Eius inventore in eius et dolor et praesentium molestiae quis. Sed modi recusandae quidem.",
+  "attachmentId": "28d15c5a-a70c-48e4-9772-bc910f421907",
+  "channelId": 68264,
+  "commentedById": 54551,
+  "id": 57447,
+  "text": "Ut amet molestiae aliquam numquam ad ut et. Et ut perspiciatis fugiat expedita fuga hic odio. Ducimus cumque aut harum in perferendis veritatis tempora aut. Facilis officia sed. Eum excepturi officia ipsum sunt voluptatem eius. Rerum qui doloremque ex velit porro animi odio saepe sunt.",
 }
 `;
 

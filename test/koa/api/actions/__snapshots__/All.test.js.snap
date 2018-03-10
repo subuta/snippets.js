@@ -9,7 +9,7 @@ exports[`koa/api/actions/All should create koa action 1`] = `
   /* mat Before index [end] */
 
   ctx.body = await Article.query()
-    .eager('[tags]')
+    .eager('[tags.articles]')
     .joinRelation('[tags]')
     .where(params)
 })

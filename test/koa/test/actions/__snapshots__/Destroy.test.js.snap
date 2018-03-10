@@ -12,7 +12,7 @@ exports[`koa/test/actions/Destroy should Destroy koa Destroy action test 1`] = `
   jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
 
   const response = await request
-    .delete('/api/users/92666')
+    .delete('/api/users/54551')
     .set('Authorization', \`Bearer \${token}\`)
 
   users = await User.query()

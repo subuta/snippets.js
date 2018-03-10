@@ -22,7 +22,7 @@ export const Routes = {
       'index',
       'show'
     ],
-    eager: '[tags]',
+    eager: '[tags.articles]',
     joinRelation: '[tags]'
   },
   comment: {
