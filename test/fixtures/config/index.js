@@ -34,7 +34,6 @@ export const Routes = {
     ],
 
     except: [
-      'update',
       'show'
     ],
     eager: '[channel.[comments.[attachment, commentedBy]], attachment, commentedBy]',
@@ -59,8 +58,7 @@ export const Routes = {
       'index'
     ],
     skipAuth: true,
-    eager: '[articles]',
-    joinRelation: ''
+    eager: '[articles]'
   },
   user: {
     eager: '',

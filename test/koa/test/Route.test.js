@@ -20,4 +20,12 @@ describe('koa/test/Route', () => {
       modelsConfig: ModelsConfig
     }))).toMatchSnapshot()
   })
+
+  it('should create koa Route for Article', () => {
+    expect(format(RouteTest({
+      model: 'article',
+      routesConfig: RoutesConfig,
+      modelsConfig: ModelsConfig
+    }))).toMatchSnapshot()
+  })
 })

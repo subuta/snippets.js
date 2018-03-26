@@ -84,6 +84,42 @@ test('post should create comment', async (t) => {
   )
 })
 
+test('update should update comment', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .put('/api/channels/68264/comments/57447')
+    .set('Authorization', \`Bearer \${token}\`)
+    .send({
+      comment: {
+        id: 57447,
+        text:
+          'Laudantium minus consequatur. Doloribus est aut modi illum et exercitationem. Nihil laudantium quas.',
+        channelId: 68264,
+        commentedById: 54551,
+        attachmentId: '28d15c5a-a70c-48e4-9772-bc910f421907'
+      }
+    })
+
+  t.is(response.status, 200)
+
+  t.deepEqual(response.body.id, 57447)
+  t.deepEqual(
+    response.body.text,
+    'Laudantium minus consequatur. Doloribus est aut modi illum et exercitationem. Nihil laudantium quas.'
+  )
+  t.deepEqual(response.body.channelId, 68264)
+  t.deepEqual(response.body.commentedById, 54551)
+  t.deepEqual(
+    response.body.attachmentId,
+    '28d15c5a-a70c-48e4-9772-bc910f421907'
+  )
+})
+
 test('delete should delete comment', async (t) => {
   const {request, Comment} = t.context
 
@@ -100,6 +136,168 @@ test('delete should delete comment', async (t) => {
 
   comments = await Comment.query()
   t.deepEqual(comments.length, 2)
+
+  t.is(response.status, 204)
+  t.deepEqual(response.body, {})
+})
+
+/* mat Custom tests [start] */
+/* mat Custom tests [end] */
+"
+`;
+
+exports[`koa/test/Route should create koa Route for Article 1`] = `
+"import test from 'ava'
+import _ from 'lodash'
+import sinon from 'sinon'
+import request from 'supertest'
+import {jwksEndpoint} from 'jwks-rsa/tests/mocks/jwks'
+import {publicKey, privateKey} from 'jwks-rsa/tests/mocks/keys'
+import {createToken} from 'jwks-rsa/tests/mocks/tokens'
+import Koa from 'koa'
+import importFresh from 'import-fresh'
+import {absolutePath} from '../../../config'
+import {currentUser} from 'test/api/helper/user'
+import runSeed, {runMigration} from 'test/api/helper/fixtures'
+import proxyquire from 'proxyquire'
+
+const sandbox = sinon.sandbox.create()
+
+test.beforeEach(async (t) => {
+  const knex = importFresh(absolutePath('src/api/utils/knex')).default
+
+  await runMigration(knex)
+  await runSeed(knex)
+
+  const api = require('test/api/helper/mocked').api(knex)
+  const models = require('test/api/helper/mocked').model(knex)
+
+  const app = new Koa()
+  // handle /api requests
+  app.use(api.routes())
+  app.use(api.allowedMethods())
+
+  t.context = {
+    ...models,
+    request: request(app.listen(0))
+  }
+})
+
+test.afterEach((t) => {
+  sandbox.reset()
+})
+
+test('index should list article', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .get('/api/articles')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  t.is(response.status, 200)
+  t.deepEqual(response.body.length, 3)
+  t.deepEqual(_.map(response.body, 'id').sort(), [14400, 29655, 52697])
+})
+
+test('show should return article', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .get('/api/articles/52697')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  t.is(response.status, 200)
+
+  t.deepEqual(response.body.id, 52697)
+  t.deepEqual(response.body.title, 'Boliviano Mvdol Jewelery networks')
+  t.deepEqual(
+    response.body.content,
+    'Omnis aut aut dolore eaque accusantium voluptatibus eos nihil. Repudiandae et architecto doloribus est ipsum autem rerum. Nihil et modi quidem ab soluta nobis.'
+  )
+})
+
+test('post should create article', async (t) => {
+  const {request, Article} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .post('/api/articles')
+    .set('Authorization', \`Bearer \${token}\`)
+    .send({
+      article: {
+        id: 94151,
+        title: 'Enhanced bypass',
+        content:
+          'Quod fugit expedita vitae debitis qui aliquid. Rem vitae ut expedita necessitatibus sed veniam. Dicta et voluptas rerum quia temporibus molestiae veritatis.'
+      }
+    })
+
+  t.is(response.status, 200)
+
+  t.deepEqual(response.body.id, 94151)
+  t.deepEqual(response.body.title, 'Enhanced bypass')
+  t.deepEqual(
+    response.body.content,
+    'Quod fugit expedita vitae debitis qui aliquid. Rem vitae ut expedita necessitatibus sed veniam. Dicta et voluptas rerum quia temporibus molestiae veritatis.'
+  )
+})
+
+test('update should update article', async (t) => {
+  const {request} = t.context
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .put('/api/articles/52697')
+    .set('Authorization', \`Bearer \${token}\`)
+    .send({
+      article: {
+        id: 52697,
+        title: 'Enhanced bypass',
+        content:
+          'Quod fugit expedita vitae debitis qui aliquid. Rem vitae ut expedita necessitatibus sed veniam. Dicta et voluptas rerum quia temporibus molestiae veritatis.'
+      }
+    })
+
+  t.is(response.status, 200)
+
+  t.deepEqual(response.body.id, 52697)
+  t.deepEqual(response.body.title, 'Enhanced bypass')
+  t.deepEqual(
+    response.body.content,
+    'Quod fugit expedita vitae debitis qui aliquid. Rem vitae ut expedita necessitatibus sed veniam. Dicta et voluptas rerum quia temporibus molestiae veritatis.'
+  )
+})
+
+test('delete should delete article', async (t) => {
+  const {request, Article} = t.context
+
+  let articles = await Article.query()
+  t.deepEqual(articles.length, 3)
+
+  // mock jwks
+  const token = createToken(privateKey, '123', currentUser)
+  jwksEndpoint('http://localhost', [{pub: publicKey, kid: '123'}])
+
+  const response = await request
+    .delete('/api/articles/52697')
+    .set('Authorization', \`Bearer \${token}\`)
+
+  articles = await Article.query()
+  t.deepEqual(articles.length, 2)
 
   t.is(response.status, 204)
   t.deepEqual(response.body, {})

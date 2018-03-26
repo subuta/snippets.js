@@ -68,10 +68,10 @@ exports[`redux/ActionCreator should create redux ActionCreator for show Action 1
 `;
 
 exports[`redux/ActionCreator should create redux ActionCreator for update Action 1`] = `
-"const updateBook = (params, id) => {
+"const updateBook = (id, params) => {
   return (dispatch) => {
     dispatch({type: REQUEST_BOOKS})
-    return api.book.update(params, id).then((data) => {
+    return api.book.update(id, params).then((data) => {
       /* mat Update data transform [start] */
       /* mat Update data transform [end] */
       dispatch(setBooks(normalize(data, book)))
