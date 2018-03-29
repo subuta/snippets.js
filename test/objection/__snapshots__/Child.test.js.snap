@@ -2,12 +2,15 @@
 
 exports[`objection/Child should create objection Child 1`] = `
 "import Model from './Model'
+import _ from 'lodash'
 
 export default class Book extends Model {
   // SEE: https://github.com/Vincit/objection.js/issues/825
   $parseDatabaseJson(db) {
     // Remember to call the super class's implementation.
-    return super.$parseDatabaseJson(db)
+    const json = super.$parseDatabaseJson(db)
+
+    return json
   }
 
   $formatDatabaseJson(json) {
@@ -40,12 +43,19 @@ export default class Book extends Model {
 
 exports[`objection/Child should create objection Child with Boolean property 1`] = `
 "import Model from './Model'
+import _ from 'lodash'
 
 export default class Book extends Model {
   // SEE: https://github.com/Vincit/objection.js/issues/825
   $parseDatabaseJson(db) {
     // Remember to call the super class's implementation.
-    return super.$parseDatabaseJson(db)
+    const json = super.$parseDatabaseJson(db)
+
+    if (_.isNumber(parseInt(json['isOutOfPrint']))) {
+      json['isOutOfPrint'] = !!json['isOutOfPrint']
+    }
+
+    return json
   }
 
   $formatDatabaseJson(json) {

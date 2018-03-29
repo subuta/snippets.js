@@ -166,6 +166,10 @@ describe('utils/generateSeed', () => {
             type: 'string'
           },
 
+          slug: {
+            type: 'string'
+          },
+
           authorId: {
             type: 'number'
           },
@@ -405,7 +409,7 @@ describe('utils/generateJunctionSeeds', () => {
 })
 
 describe('utils/generateSeedWithRelation', () => {
-  it.only('should return single seed data with relation', () => {
+  it('should return single seed data with relation', () => {
     const commentSeed = generateSeedWithRelation('comment', ModelsConfig)
     const channelSeed = generateSeedWithRelation('channel', ModelsConfig)
 
@@ -414,7 +418,7 @@ describe('utils/generateSeedWithRelation', () => {
   })
 
   it('should return single seed data with relation as instance if asId = false', () => {
-    const seed = generateSeedWithRelation('comment', ModelsConfig, 0, { asId: false })
+    const seed = generateSeedWithRelation('comment', ModelsConfig, 0, {asId: false})
 
     expect(seed).toMatchSnapshot()
   })
