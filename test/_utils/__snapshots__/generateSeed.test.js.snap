@@ -125,7 +125,7 @@ Object {
   },
   "channel": Object {
     "id": 68264,
-    "name": "convergence Administrator Clothing",
+    "name": "administrator",
   },
   "commentedBy": Object {
     "auth0Id": "4be76d72-37c6-4af4-9b6d-5cf3cb62d63a",

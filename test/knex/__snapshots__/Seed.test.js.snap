@@ -45,9 +45,9 @@ exports[`knex/Seed should create knex seed for channel 1`] = `
 
   // https://github.com/tgriesser/knex/issues/54
   await knex('channels').insert([
-    {id: 68264, name: 'convergence Administrator Clothing'},
-    {id: 36069, name: 'Baby Lead solutions'},
-    {id: 63669, name: 'functionalities'}
+    {id: 68264, name: 'administrator'},
+    {id: 36069, name: 'solutions'},
+    {id: 63669, name: 'incredible'}
   ])
 }
 "
