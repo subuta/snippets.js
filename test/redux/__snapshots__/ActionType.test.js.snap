@@ -25,12 +25,22 @@ exports[`redux/ActionType should create redux ActionType for failure 1`] = `
 "
 `;
 
+exports[`redux/ActionType should create redux ActionType for ids setter 1`] = `
+"SET_BOOK_IDS
+"
+`;
+
 exports[`redux/ActionType should create redux ActionType for request 1`] = `
 "REQUEST_BOOKS
 "
 `;
 
 exports[`redux/ActionType should create redux ActionType for setter 1`] = `
+"SET_BOOKS
+"
+`;
+
+exports[`redux/ActionType should create redux ActionType for setter 2`] = `
 "SET_BOOKS
 "
 `;

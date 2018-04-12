@@ -29,6 +29,14 @@ describe('redux/ActionType', () => {
     expect(format(code)).toMatchSnapshot()
   })
 
+  it('should create redux ActionType for ids setter', () => {
+    const code = build`
+      ${ActionType.setIds('books')}
+    `
+
+    expect(format(code)).toMatchSnapshot()
+  })
+
   it('should create redux ActionType for request', () => {
     const code = build`
       ${ActionType.request('books')}

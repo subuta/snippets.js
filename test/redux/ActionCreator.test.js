@@ -13,6 +13,14 @@ describe('redux/ActionCreator', () => {
     expect(format(code)).toMatchSnapshot()
   })
 
+  it('should create redux ActionCreator for ids setter', () => {
+    const code = build`
+      ${ActionCreator.setIds({schema: {tableName: 'books'}})}
+    `
+
+    expect(format(code)).toMatchSnapshot()
+  })
+
   it('should create redux ActionCreator for create Action', () => {
     const code = build`
       ${ActionCreator.create({schema: {tableName: 'books'}})}

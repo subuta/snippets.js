@@ -24,9 +24,11 @@ exports[`redux/Reducer should create redux ids Reducer 1`] = `
 "const ids = (state = [], action) => {
   if (action.type === SET_BOOKS) {
     if (_.isArray(action.payload.result)) {
-      return _.uniq([...state, ...action.payload.result])
+      return _.compact(_.uniq([...state, ...action.payload.result]))
     }
-    return _.uniq([...state, action.payload.result])
+    return _.compact(_.uniq([...state, action.payload.result]))
+  } else if (action.type === SET_BOOK_IDS) {
+    return _.compact(_.uniq(action.payload))
   }
   return state
 }

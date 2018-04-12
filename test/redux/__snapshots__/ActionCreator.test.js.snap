@@ -32,17 +32,39 @@ exports[`redux/ActionCreator should create redux ActionCreator for create Action
 
 exports[`redux/ActionCreator should create redux ActionCreator for destroy Action 1`] = `
 "const deleteBook = (id) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
     dispatch({type: REQUEST_BOOKS})
     return api.book.destroy(id).then(() => {
-      dispatch(setBooks({}))
+      const state = getState()
+      const nextIds = _.without(getIds(state), id)
+      dispatch(setBookIds(nextIds))
     })
   }
 }
 "
 `;
 
+exports[`redux/ActionCreator should create redux ActionCreator for ids setter 1`] = `
+"const setBookIds = (ids) => {
+  return {
+    type: SET_BOOK_IDS,
+    payload: ids
+  }
+}
+"
+`;
+
 exports[`redux/ActionCreator should create redux ActionCreator for setter 1`] = `
+"const setBooks = (books) => {
+  return {
+    type: SET_BOOKS,
+    payload: books
+  }
+}
+"
+`;
+
+exports[`redux/ActionCreator should create redux ActionCreator for setter 2`] = `
 "const setBooks = (books) => {
   return {
     type: SET_BOOKS,

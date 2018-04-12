@@ -77,4 +77,43 @@ describe('objection/Child', () => {
       }
     }))).toMatchSnapshot()
   })
+
+  it('should create objection Child with MorphAs property', () => {
+    const Book = {
+      tableName: 'books',
+      required: [
+        'title',
+      ],
+
+      properties: {
+        id: {
+          type: 'integer'
+        },
+        title: {
+          'type': 'string'
+        },
+        isOutOfPrint: {
+          'type': 'boolean'
+        }
+      },
+
+      relations: {
+        comments: {
+          hasMany: 'comments',
+          morphAs: 'commentable',
+          join: {
+            from: 'books.id',
+            to: 'comments.commentableId'
+          }
+        },
+      }
+    }
+
+    expect(format(Child({
+      model: 'Book',
+      config: {
+        schema: Book
+      }
+    }))).toMatchSnapshot()
+  })
 })
