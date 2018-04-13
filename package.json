@@ -1,6 +1,6 @@
 {
   "name": "@subuta/snippets",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "my javascript re-usable snippets used along with https://github.com/subuta/matryoshka.js :)",
   "scripts": {},
   "ava": {
