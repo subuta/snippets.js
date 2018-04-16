@@ -78,6 +78,90 @@ describe('objection/Child', () => {
     }))).toMatchSnapshot()
   })
 
+  it('should create objection Child with visible', () => {
+    const Book = {
+      tableName: 'books',
+      required: [
+        'title',
+      ],
+
+      visible: [
+        'title'
+      ],
+
+      properties: {
+        id: {
+          type: 'integer'
+        },
+        title: {
+          'type': 'string'
+        },
+        isOutOfPrint: {
+          'type': 'boolean'
+        }
+      },
+
+      relations: {
+        comments: {
+          hasMany: 'comments',
+          join: {
+            from: 'books.id',
+            to: 'comments.bookId'
+          }
+        },
+      }
+    }
+
+    expect(format(Child({
+      model: 'Book',
+      config: {
+        schema: Book
+      }
+    }))).toMatchSnapshot()
+  })
+
+  it('should create objection Child with hidden', () => {
+    const Book = {
+      tableName: 'books',
+      required: [
+        'title',
+      ],
+
+      hidden: [
+        'title'
+      ],
+
+      properties: {
+        id: {
+          type: 'integer'
+        },
+        title: {
+          'type': 'string'
+        },
+        isOutOfPrint: {
+          'type': 'boolean'
+        }
+      },
+
+      relations: {
+        comments: {
+          hasMany: 'comments',
+          join: {
+            from: 'books.id',
+            to: 'comments.bookId'
+          }
+        },
+      }
+    }
+
+    expect(format(Child({
+      model: 'Book',
+      config: {
+        schema: Book
+      }
+    }))).toMatchSnapshot()
+  })
+
   it('should create objection Child with MorphAs property', () => {
     const Book = {
       tableName: 'books',
