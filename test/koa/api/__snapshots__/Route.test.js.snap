@@ -5,6 +5,9 @@ exports[`koa/api/Route should create koa Route 1`] = `
 import _ from 'lodash'
 import {authenticate as auth} from 'src/api/middlewares/auth'
 
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
+
 const user = new Router({
   prefix: '/users'
 })
@@ -26,6 +29,9 @@ exports[`koa/api/Route should create koa Route with custom prefix 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
 import {authenticate as auth} from 'src/api/middlewares/auth'
+
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
 
 const user = new Router({
   prefix: '/hoge/fuga/users'
@@ -137,6 +143,9 @@ exports[`koa/api/Route should create koa Route with skipAuth 1`] = `
 "import Router from 'koa-router'
 import _ from 'lodash'
 import {authenticate as auth} from 'src/api/middlewares/auth'
+
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
 
 const user = new Router({
   prefix: '/hoge/fuga/users'
