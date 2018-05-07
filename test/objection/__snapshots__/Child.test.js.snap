@@ -37,6 +37,9 @@ export default class Book extends Model {
     required: ['title'],
     properties: {id: {type: 'integer'}, title: {type: 'string'}}
   }
+
+  /* mat Custom methods [start] */
+  /* mat Custom methods [end] */
 }
 "
 `;
@@ -86,55 +89,9 @@ export default class Book extends Model {
       isOutOfPrint: {type: 'boolean'}
     }
   }
-}
-"
-`;
 
-exports[`objection/Child should create objection Child with Boolean property 2`] = `
-"import Model from './Model'
-import _ from 'lodash'
-
-export default class Book extends Model {
-  // SEE: https://github.com/Vincit/objection.js/issues/825
-  $parseDatabaseJson(db) {
-    // Remember to call the super class's implementation.
-    const json = super.$parseDatabaseJson(db)
-
-    if (_.isNumber(parseInt(json['isOutOfPrint']))) {
-      json['isOutOfPrint'] = !!json['isOutOfPrint']
-    }
-
-    return json
-  }
-
-  $formatDatabaseJson(json) {
-    return super.$formatDatabaseJson(json)
-  }
-
-  static register = (models) => {
-    // then define relationMappings.
-    Book.relationMappings = {
-      comments: {
-        modelClass: models.Comment,
-        relation: Model.HasManyRelation,
-        join: {from: 'books.id', to: 'comments.bookId'}
-      }
-    }
-  }
-
-  static tableName = 'books'
-
-  static jsonSchema = {
-    title: 'Book',
-    $id: 'http://sub-labo.com/schemas/book.json',
-    type: 'object',
-    required: ['title'],
-    properties: {
-      id: {type: 'integer'},
-      title: {type: 'string'},
-      isOutOfPrint: {type: 'boolean'}
-    }
-  }
+  /* mat Custom methods [start] */
+  /* mat Custom methods [end] */
 }
 "
 `;
@@ -190,6 +147,9 @@ export default class Book extends Model {
       isOutOfPrint: {type: 'boolean'}
     }
   }
+
+  /* mat Custom methods [start] */
+  /* mat Custom methods [end] */
 }
 "
 `;
@@ -243,6 +203,9 @@ export default class Book extends Model {
   static get hidden() {
     return ['title']
   }
+
+  /* mat Custom methods [start] */
+  /* mat Custom methods [end] */
 }
 "
 `;
@@ -296,59 +259,9 @@ export default class Book extends Model {
   static get visible() {
     return ['title']
   }
-}
-"
-`;
 
-exports[`objection/Child should create objection Child with visible 2`] = `
-"import Model from './Model'
-import _ from 'lodash'
-
-export default class Book extends Model {
-  // SEE: https://github.com/Vincit/objection.js/issues/825
-  $parseDatabaseJson(db) {
-    // Remember to call the super class's implementation.
-    const json = super.$parseDatabaseJson(db)
-
-    if (_.isNumber(parseInt(json['isOutOfPrint']))) {
-      json['isOutOfPrint'] = !!json['isOutOfPrint']
-    }
-
-    return json
-  }
-
-  $formatDatabaseJson(json) {
-    return super.$formatDatabaseJson(json)
-  }
-
-  static register = (models) => {
-    // then define relationMappings.
-    Book.relationMappings = {
-      comments: {
-        modelClass: models.Comment,
-        relation: Model.HasManyRelation,
-        join: {from: 'books.id', to: 'comments.bookId'}
-      }
-    }
-  }
-
-  static tableName = 'books'
-
-  static jsonSchema = {
-    title: 'Book',
-    $id: 'http://sub-labo.com/schemas/book.json',
-    type: 'object',
-    required: ['title'],
-    properties: {
-      id: {type: 'integer'},
-      title: {type: 'string'},
-      isOutOfPrint: {type: 'boolean'}
-    }
-  }
-
-  static get visible() {
-    return ['title']
-  }
+  /* mat Custom methods [start] */
+  /* mat Custom methods [end] */
 }
 "
 `;

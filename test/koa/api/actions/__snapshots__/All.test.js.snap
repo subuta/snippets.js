@@ -8,10 +8,16 @@ exports[`koa/api/actions/All should create koa action 1`] = `
   /* mat Before index [start] */
   /* mat Before index [end] */
 
-  ctx.body = await Article.query()
+  let response = await Article.query()
+    .applyFilter('default')
     .eager('[tags.articles]')
-    .joinRelation('[tags]')
+    .leftOuterJoinRelation('[tags]')
     .where(params)
+
+  /* mat After index [start] */
+  /* mat After index [end] */
+
+  ctx.body = response
 })
 "
 `;

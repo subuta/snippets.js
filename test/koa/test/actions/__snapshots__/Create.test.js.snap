@@ -13,26 +13,26 @@ exports[`koa/test/actions/Create should create koa Create action test 1`] = `
     .set('Authorization', \`Bearer \${token}\`)
     .send({
       user: {
-        id: 20643,
-        auth0Id: '8a7a4d7c-d980-462d-9986-fb2f25daee50',
-        locale: 'en_CA',
-        nickname: 'Matteo.Hills50',
-        status: 'Chair Soap',
+        id: 53297,
+        locale: 'pt_BR',
+        nickname: 'Mathew_Kunde22',
+        status: 'Shirt 1080p rich',
+        isAdmin: true,
         avatar:
-          'https://s3.amazonaws.com/uifaces/faces/twitter/billyroshan/128.jpg'
+          'https://s3.amazonaws.com/uifaces/faces/twitter/Silveredge9/128.jpg'
       }
     })
 
   t.is(response.status, 200)
 
-  t.deepEqual(response.body.id, 20643)
-  t.deepEqual(response.body.auth0Id, '8a7a4d7c-d980-462d-9986-fb2f25daee50')
-  t.deepEqual(response.body.locale, 'en_CA')
-  t.deepEqual(response.body.nickname, 'Matteo.Hills50')
-  t.deepEqual(response.body.status, 'Chair Soap')
+  t.deepEqual(response.body.id, 53297)
+  t.deepEqual(response.body.locale, 'pt_BR')
+  t.deepEqual(response.body.nickname, 'Mathew_Kunde22')
+  t.deepEqual(response.body.status, 'Shirt 1080p rich')
+  t.deepEqual(response.body.isAdmin, true)
   t.deepEqual(
     response.body.avatar,
-    'https://s3.amazonaws.com/uifaces/faces/twitter/billyroshan/128.jpg'
+    'https://s3.amazonaws.com/uifaces/faces/twitter/Silveredge9/128.jpg'
   )
 })
 "

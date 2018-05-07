@@ -38,7 +38,14 @@ user.get('/', auth, async (ctx) => {
   /* mat Before index [start] */
   /* mat Before index [end] */
 
-  ctx.body = await User.query().where(params)
+  let response = await User.query()
+    .applyFilter('default')
+    .where(params)
+
+  /* mat After index [start] */
+  /* mat After index [end] */
+
+  ctx.body = response
 })
 
 user.get('/:id', auth, async (ctx) => {
@@ -49,6 +56,7 @@ user.get('/:id', auth, async (ctx) => {
   /* mat Before show [end] */
 
   ctx.body = await User.query()
+    .applyFilter('default')
     .eager('')
     .findFirst({...params, id: ctx.params.id})
 })
@@ -86,19 +94,29 @@ user.put('/:id', auth, async (ctx) => {
   /* mat Before update [start] */
   /* mat Before update [end] */
 
-  ctx.body = await User.query()
+  let response = await User.query()
     .patchAndFetchById(ctx.params.id, {
       ...user,
       ...params
     })
     .eager('')
+
+  /* mat After update [start] */
+  /* mat After update [end] */
+
+  ctx.body = response
 })
 
 user.delete('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
+  let params = {id: ctx.params.id}
+
+  /* mat Before destroy [start] */
+  /* mat Before destroy [end] */
+
   await User.query()
     .delete()
-    .where({id: ctx.params.id})
+    .where(params)
   ctx.body = null
 })
 
@@ -131,7 +149,14 @@ user.get('/', async (ctx) => {
   /* mat Before index [start] */
   /* mat Before index [end] */
 
-  ctx.body = await User.query().where(params)
+  let response = await User.query()
+    .applyFilter('default')
+    .where(params)
+
+  /* mat After index [start] */
+  /* mat After index [end] */
+
+  ctx.body = response
 })
 
 user.get('/:id', auth, async (ctx) => {
@@ -142,6 +167,7 @@ user.get('/:id', auth, async (ctx) => {
   /* mat Before show [end] */
 
   ctx.body = await User.query()
+    .applyFilter('default')
     .eager('')
     .findFirst({...params, id: ctx.params.id})
 })
@@ -179,19 +205,29 @@ user.put('/:id', auth, async (ctx) => {
   /* mat Before update [start] */
   /* mat Before update [end] */
 
-  ctx.body = await User.query()
+  let response = await User.query()
     .patchAndFetchById(ctx.params.id, {
       ...user,
       ...params
     })
     .eager('')
+
+  /* mat After update [start] */
+  /* mat After update [end] */
+
+  ctx.body = response
 })
 
 user.delete('/:id', auth, async (ctx) => {
   const {User} = ctx.state.models
+  let params = {id: ctx.params.id}
+
+  /* mat Before destroy [start] */
+  /* mat Before destroy [end] */
+
   await User.query()
     .delete()
-    .where({id: ctx.params.id})
+    .where(params)
   ctx.body = null
 })
 

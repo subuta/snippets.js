@@ -11,9 +11,12 @@ import {createToken} from 'jwks-rsa/tests/mocks/tokens'
 import Koa from 'koa'
 import importFresh from 'import-fresh'
 import {absolutePath} from '../../../config'
-import {currentUser} from 'test/api/helper/user'
+import {currentUser, createPayload} from 'test/api/helper/user'
 import runSeed, {runMigration} from 'test/api/helper/fixtures'
 import proxyquire from 'proxyquire'
+
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
 
 const sandbox = sinon.sandbox.create()
 
@@ -100,7 +103,7 @@ test('update should update comment', async (t) => {
         text:
           'Laudantium minus consequatur. Doloribus est aut modi illum et exercitationem. Nihil laudantium quas.',
         channelId: 68264,
-        commentedById: 54551,
+        commentedById: 25376,
         attachmentId: '28d15c5a-a70c-48e4-9772-bc910f421907'
       }
     })
@@ -113,7 +116,7 @@ test('update should update comment', async (t) => {
     'Laudantium minus consequatur. Doloribus est aut modi illum et exercitationem. Nihil laudantium quas.'
   )
   t.deepEqual(response.body.channelId, 68264)
-  t.deepEqual(response.body.commentedById, 54551)
+  t.deepEqual(response.body.commentedById, 25376)
   t.deepEqual(
     response.body.attachmentId,
     '28d15c5a-a70c-48e4-9772-bc910f421907'
@@ -157,9 +160,12 @@ import {createToken} from 'jwks-rsa/tests/mocks/tokens'
 import Koa from 'koa'
 import importFresh from 'import-fresh'
 import {absolutePath} from '../../../config'
-import {currentUser} from 'test/api/helper/user'
+import {currentUser, createPayload} from 'test/api/helper/user'
 import runSeed, {runMigration} from 'test/api/helper/fixtures'
 import proxyquire from 'proxyquire'
+
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
 
 const sandbox = sinon.sandbox.create()
 

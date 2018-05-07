@@ -5,6 +5,10 @@ export default {
     'nickname'
   ],
 
+  hidden: [
+    'auth0Id'
+  ],
+
   properties: {
     id: {
       type: 'integer'
@@ -20,6 +24,10 @@ export default {
     },
     status: {
       'type': 'string'
+    },
+    isAdmin: {
+      'type': 'boolean',
+      'default': false
     },
     avatar: {
       'type': 'string'

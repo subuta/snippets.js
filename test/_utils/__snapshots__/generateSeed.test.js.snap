@@ -37,6 +37,15 @@ Object {
 }
 `;
 
+exports[`utils/generateSeed should return signle data for array with items 2`] = `
+Object {
+  "id": 50444,
+  "tag": Array [
+    "South Dakota",
+  ],
+}
+`;
+
 exports[`utils/generateSeed should return single data for company name 1`] = `
 Object {
   "name": "Wolff and Sons",
@@ -105,11 +114,20 @@ Object {
 }
 `;
 
+exports[`utils/generateSeed should use transformSeed func to modify seed data 1`] = `
+Object {
+  "id": 50444,
+  "tag": Array [
+    "South Dakota",
+  ],
+}
+`;
+
 exports[`utils/generateSeedWithRelation should return single seed data with relation 1`] = `
 Object {
   "attachmentId": "28d15c5a-a70c-48e4-9772-bc910f421907",
   "channelId": 68264,
-  "commentedById": 54551,
+  "commentedById": 25376,
   "id": 57447,
   "text": "Ut amet molestiae aliquam numquam ad ut et. Et ut perspiciatis fugiat expedita fuga hic odio. Ducimus cumque aut harum in perferendis veritatis tempora aut. Facilis officia sed. Eum excepturi officia ipsum sunt voluptatem eius. Rerum qui doloremque ex velit porro animi odio saepe sunt.",
 }
@@ -128,12 +146,13 @@ Object {
     "name": "administrator",
   },
   "commentedBy": Object {
-    "auth0Id": "4be76d72-37c6-4af4-9b6d-5cf3cb62d63a",
-    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/devankoshal/128.jpg",
-    "id": 54551,
-    "locale": "en_au_ocker",
-    "nickname": "Juana5",
-    "status": "New Israeli Sheqel",
+    "auth0Id": "2e00568e-58c4-44d2-a3b4-785f8c0a1b70",
+    "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/woodydotmx/128.jpg",
+    "id": 25376,
+    "isAdmin": false,
+    "locale": "ko",
+    "nickname": "Madisen.Kling",
+    "status": "Liberian Dollar",
   },
   "id": 57447,
   "text": "Ut amet molestiae aliquam numquam ad ut et. Et ut perspiciatis fugiat expedita fuga hic odio. Ducimus cumque aut harum in perferendis veritatis tempora aut. Facilis officia sed. Eum excepturi officia ipsum sunt voluptatem eius. Rerum qui doloremque ex velit porro animi odio saepe sunt.",
@@ -180,21 +199,21 @@ Array [
   Object {
     "attachmentId": "28d15c5a-a70c-48e4-9772-bc910f421907",
     "channelId": 68264,
-    "commentedById": 54551,
+    "commentedById": 25376,
     "id": 57447,
     "text": "Ut amet molestiae aliquam numquam ad ut et. Et ut perspiciatis fugiat expedita fuga hic odio. Ducimus cumque aut harum in perferendis veritatis tempora aut. Facilis officia sed. Eum excepturi officia ipsum sunt voluptatem eius. Rerum qui doloremque ex velit porro animi odio saepe sunt.",
   },
   Object {
     "attachmentId": "abfbc020-04b2-4d70-a1ed-aa85e702e181",
     "channelId": 36069,
-    "commentedById": 15599,
+    "commentedById": 43042,
     "id": 33984,
     "text": "Id optio rem culpa minus. Nostrum aut et. Aliquam repellat est reprehenderit.",
   },
   Object {
     "attachmentId": "62fc4caf-224d-4658-949e-b68307f974d2",
     "channelId": 63669,
-    "commentedById": 34490,
+    "commentedById": 95569,
     "id": 46230,
     "text": "Facilis cupiditate quo nemo hic. Rem nesciunt aliquid aut qui architecto saepe enim laborum. Quia dolor consequuntur et dolorem tenetur totam nisi asperiores.",
   },

@@ -12,6 +12,9 @@ import {SET_CHANNELS} from './channel'
 import {SET_USERS} from './user'
 import {SET_ATTACHMENTS} from './attachment'
 
+/* mat Custom imports [start] */
+/* mat Custom imports [end] */
+
 // -------------
 // Constants
 // -------------
@@ -40,10 +43,10 @@ export const setCommentIds = (ids) => {
   }
 }
 
-export const requestComments = () => {
+export const requestComments = (params) => {
   return (dispatch) => {
     dispatch({type: REQUEST_COMMENTS})
-    return api.comment.index().then((data) => {
+    return api.comment.index(params).then((data) => {
       /* mat Index data transform [start] */
       /* mat Index data transform [end] */
       dispatch(setComments(normalize(data, commentList)))
@@ -76,10 +79,10 @@ export const updateComment = (id, params) => {
   }
 }
 
-export const deleteComment = (id) => {
+export const deleteComment = (id, params) => {
   return (dispatch, getState) => {
     dispatch({type: REQUEST_COMMENTS})
-    return api.comment.destroy(id).then(() => {
+    return api.comment.destroy(id, params).then(() => {
       const state = getState()
       const nextIds = _.without(getIds(state), id)
       dispatch(setCommentIds(nextIds))

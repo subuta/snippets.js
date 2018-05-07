@@ -56,6 +56,9 @@ registerRouters({
   user
 })
 
+/* mat Custom routes [start] */
+/* mat Custom routes [end] */
+
 export default api
 "
 `;

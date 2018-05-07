@@ -344,6 +344,33 @@ describe('utils/generateSeed', () => {
 
     expect(seed).not.toEqual(anotherSeed)
   })
+
+  it('should use transformSeed func to modify seed data', () => {
+    const seed = generateSeed({
+      schema: {
+        tableName: 'article',
+        properties: {
+          id: {
+            type: 'integer'
+          },
+
+          tag: {
+            type: 'array',
+            items: {type: 'string'}
+          }
+        }
+      },
+      transformSeed: () => {
+        return {
+          modified: true
+        }
+      }
+    })
+
+    expect(seed).toEqual({
+      modified: true
+    })
+  })
 })
 
 describe('utils/generateSeeds', () => {

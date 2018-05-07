@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`redux/ActionCreator should create redux ActionCreator for all(index) Action 1`] = `
-"const requestBooks = () => {
+"const requestBooks = (params) => {
   return (dispatch) => {
     dispatch({type: REQUEST_BOOKS})
-    return api.book.index().then((data) => {
+    return api.book.index(params).then((data) => {
       /* mat Index data transform [start] */
       /* mat Index data transform [end] */
       dispatch(setBooks(normalize(data, bookList)))
@@ -31,10 +31,10 @@ exports[`redux/ActionCreator should create redux ActionCreator for create Action
 `;
 
 exports[`redux/ActionCreator should create redux ActionCreator for destroy Action 1`] = `
-"const deleteBook = (id) => {
+"const deleteBook = (id, params) => {
   return (dispatch, getState) => {
     dispatch({type: REQUEST_BOOKS})
-    return api.book.destroy(id).then(() => {
+    return api.book.destroy(id, params).then(() => {
       const state = getState()
       const nextIds = _.without(getIds(state), id)
       dispatch(setBookIds(nextIds))

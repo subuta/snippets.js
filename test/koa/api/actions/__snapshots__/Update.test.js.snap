@@ -12,12 +12,17 @@ exports[`koa/api/actions/Update should Update koa action 1`] = `
   /* mat Before update [start] */
   /* mat Before update [end] */
 
-  ctx.body = await User.query()
+  let response = await User.query()
     .patchAndFetchById(ctx.params.id, {
       ...user,
       ...params
     })
     .eager('')
+
+  /* mat After update [start] */
+  /* mat After update [end] */
+
+  ctx.body = response
 })
 "
 `;

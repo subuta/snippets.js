@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`axios/api/actions/All should create axios Api index action with channel 1`] = `
-"export const index = () => {
-  return request.get(\`/channels\`)
+"export const index = (params) => {
+  return request.get(\`/channels\`, {params})
 }
 "
 `;
@@ -10,7 +10,7 @@ exports[`axios/api/actions/All should create axios Api index action with channel
 exports[`axios/api/actions/All should create axios Api index action with comment 1`] = `
 "export const index = (params) => {
   const {channelId} = params
-  return request.get(\`/channels/\${channelId}/comments\`)
+  return request.get(\`/channels/\${channelId}/comments\`, {params})
 }
 "
 `;

@@ -20,6 +20,6 @@ exports[`_test-helpers/CurrentUser should create currentUser payload with custom
   scope: 'openid profile email'
 })
 
-export const currentUser = createPayload('4be76d72-37c6-4af4-9b6d-5cf3cb62d63a')
+export const currentUser = createPayload('2e00568e-58c4-44d2-a3b4-785f8c0a1b70')
 "
 `;

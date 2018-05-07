@@ -8,33 +8,42 @@ exports[`knex/Seed should create knex seed 1`] = `
   // https://github.com/tgriesser/knex/issues/54
   await knex('users').insert([
     {
-      id: 54551,
-      auth0Id: '4be76d72-37c6-4af4-9b6d-5cf3cb62d63a',
-      locale: 'en_au_ocker',
-      nickname: 'Juana5',
-      status: 'New Israeli Sheqel',
+      id: 25376,
+      auth0Id: '2e00568e-58c4-44d2-a3b4-785f8c0a1b70',
+      locale: 'ko',
+      nickname: 'Madisen.Kling',
+      status: 'Liberian Dollar',
+      isAdmin: false,
       avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/devankoshal/128.jpg'
+        'https://s3.amazonaws.com/uifaces/faces/twitter/woodydotmx/128.jpg'
     },
     {
-      id: 15599,
-      auth0Id: 'e5ad378c-913f-4366-bb72-507428a10360',
-      locale: 'en_BORK',
-      nickname: 'Shanel.Barton',
-      status: 'web-enabled',
-      avatar:
-        'https://s3.amazonaws.com/uifaces/faces/twitter/antongenkin/128.jpg'
+      id: 43042,
+      auth0Id: '233ef44a-9e80-4cc1-b36d-533d06ca3785',
+      locale: 'nl',
+      nickname: 'Laisha.Wunsch',
+      status: 'quantifying Credit Card Account',
+      isAdmin: true,
+      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/klimmka/128.jpg'
     },
     {
-      id: 34490,
-      auth0Id: 'c5d5096e-8b5e-4c16-9cc6-f15cf8fdcef5',
-      locale: 'en_au_ocker',
-      nickname: 'Marisol66',
-      status: 'Mobility Missouri Administrator',
-      avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/dgajjar/128.jpg'
+      id: 95569,
+      auth0Id: 'd1a5bf68-da4c-47a9-8025-5b7672dc5d67',
+      locale: 'es_MX',
+      nickname: 'Marcos98',
+      status: 'Agent Steel',
+      isAdmin: true,
+      avatar:
+        'https://s3.amazonaws.com/uifaces/faces/twitter/alxndrustinov/128.jpg'
     }
   ])
+
+  /* mat After seed [start] */
+  /* mat After seed [end] */
 }
+
+/* mat Custom exports [start] */
+/* mat Custom exports [end] */
 "
 `;
 
@@ -49,7 +58,13 @@ exports[`knex/Seed should create knex seed for channel 1`] = `
     {id: 36069, name: 'solutions'},
     {id: 63669, name: 'incredible'}
   ])
+
+  /* mat After seed [start] */
+  /* mat After seed [end] */
 }
+
+/* mat Custom exports [start] */
+/* mat Custom exports [end] */
 "
 `;
 
@@ -65,7 +80,7 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
       text:
         'Ut amet molestiae aliquam numquam ad ut et. Et ut perspiciatis fugiat expedita fuga hic odio. Ducimus cumque aut harum in perferendis veritatis tempora aut. Facilis officia sed. Eum excepturi officia ipsum sunt voluptatem eius. Rerum qui doloremque ex velit porro animi odio saepe sunt.',
       channelId: 68264,
-      commentedById: 54551,
+      commentedById: 25376,
       attachmentId: '28d15c5a-a70c-48e4-9772-bc910f421907'
     },
     {
@@ -73,7 +88,7 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
       text:
         'Id optio rem culpa minus. Nostrum aut et. Aliquam repellat est reprehenderit.',
       channelId: 36069,
-      commentedById: 15599,
+      commentedById: 43042,
       attachmentId: 'abfbc020-04b2-4d70-a1ed-aa85e702e181'
     },
     {
@@ -81,11 +96,17 @@ exports[`knex/Seed should create knex seed for comment 1`] = `
       text:
         'Facilis cupiditate quo nemo hic. Rem nesciunt aliquid aut qui architecto saepe enim laborum. Quia dolor consequuntur et dolorem tenetur totam nisi asperiores.',
       channelId: 63669,
-      commentedById: 34490,
+      commentedById: 95569,
       attachmentId: '62fc4caf-224d-4658-949e-b68307f974d2'
     }
   ])
+
+  /* mat After seed [start] */
+  /* mat After seed [end] */
 }
+
+/* mat Custom exports [start] */
+/* mat Custom exports [end] */
 "
 `;
 
@@ -100,6 +121,12 @@ exports[`knex/Seed should create knex seed for junction table 1`] = `
     {id: 52023, articleId: 14400, tagId: 43149},
     {id: 37083, articleId: 29655, tagId: 3838}
   ])
+
+  /* mat After seed [start] */
+  /* mat After seed [end] */
 }
+
+/* mat Custom exports [start] */
+/* mat Custom exports [end] */
 "
 `;
